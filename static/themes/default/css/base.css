@@ -1,0 +1,82 @@
+/*================基本样式重置================*/
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,img,span,i,a,em,strong,b,input,textarea,br,select { margin:0; padding:0; }
+i,em { font-size:12px; font-weight:normal; font-style:normal; }
+html, body { height:100%;}
+body { font:12px/1.5 tahoma,arial,\5b8b\4f53,sans-serif; }
+li { list-style:none; }
+a,img,input { border:0 none; }
+a { text-decoration:none; outline:none; }
+a:hover { text-decoration:underline; }
+a:focus,input:focus { outline:0 none;}
+textarea { resize:none; font-size:12px; } /*去掉火狐和谷歌浏览器的Textarea改变尺寸大小功能*/
+.hide { display:none;}
+.fl { float:left;}
+.fr { float:right;}
+.clearfix:after { content:" "; display:block; clear:both; height:0; }
+.clearfix { zoom:1; }
+
+/************************登陆页面****************************/
+.bgstretcher, .bgstretcher ul, .bgstretcher ul li {position: absolute;top: 0; left: 0;}
+.bgstretcher ul, .bgstretcher ul li { margin: 0; padding: 0;list-style: none;}
+.bgstretcher { overflow: hidden;width: 100%; position: fixed;z-index: 1;_position: absolute; /*IE6 doesn't support fixed positioning*/top: 0;left: 0;}
+.image-path { display: none;}
+
+#login { width: 303px; height:265px; position:fixed; left: 50%; margin-left: -150px; top: 50%; margin-top: -132px;}
+#login li {display:block; width: 100%; margin-top: 20px; float:left;}
+#login li.logo { height:25px; margin: 0 0 20px;}
+#login li.logo div { height: 63px; background: url(/static/themes/default/images/logo1.png) no-repeat center center; }
+#login li.text { height: 42px; background: url(/static/themes/default/images/user.png) no-repeat center center;}
+#login li.text input { background:none; border: 0; outline:none; display:block;float: left; width: 245px;height:22px;line-height:22px; margin:11px 0 10px 48px; color: #fff;}
+#login li.password { height: 42px; background: url(/static/themes/default/images/password.png) no-repeat center center;}
+#login li.password input { background:none; border: 0; outline:none; display:block;float: left; width: 245px;height:22px;line-height:22px; margin:11px 0 10px 48px; color: #fff;}
+#login li.input { height: 42px; background: url(/static/themes/default/images/dl.png) no-repeat center center;}
+#login li.input input { background:none; border: 0; outline:none; display:block;float: left; width:100%;height:42px; text-indent: -9999px; cursor: pointer;}
+#login li.cz { height:16px; margin-top: 18px; line-height: 16px;color: #fff;}
+#login li.cz input {vertical-align: -2px;margin-right:5px;}
+#login li.cz a {float: right;color: #fff;margin-right:3px;}
+#login li.cz a:hover { color:#ffcd61;}
+.foot { position: fixed; left: 0; bottom:15px; width: 100%;}
+.foot p { text-align:center; line-height: 38px; color: #fff;}
+.foot p a { color: #fff; text-decoration:underline; }
+.foot p a:hover { color:#ffcd61;}
+
+
+/*************头部区域***************/
+.header { overflow: hidden; border-top-width:0; border-bottom-width:0;}
+.top { height: 80px; width: 100%; background-color: #373737; position:relative;}
+.top .logos { width: 303px; height: 50px; float:left; background: url(/static/themes/default/images/logo2.png) no-repeat center center; position: absolute; left: -56px; top: 19px;}
+.top .navs {float: right; height: 80px; }
+.top .navs .nav1 { height:30px; line-height: 30px; text-align: right; color: #fff;}
+.top .navs .nav1 a { color: #fff;padding: 0 15px 0 15px;}
+.top .navs .nav2 { height:50px; line-height: 50px; text-align:center;  padding-top: 5px;}
+.top .navs .nav2 a {color:#fff;display:block;width:102px; text-decoration: none; height: 30px; padding: 10px 5px 10px 10px; float:left;border-right: 1px solid #373737; background-color: #272727;}
+.top .navs .nav2 a .wz { cursor: pointer;  height:30px; line-height: 30px;display: inline-block; vertical-align: 10px; padding: 0 5px; }
+.top .navs .nav2 a:hover ,.top .navs .nav2 .focus { background-color:#ff5f3b;}
+
+.change { width: 195px; height: 30px; position: absolute; left: 0; top: -31px;}
+.change .changes { display: block; cursor: pointer; width:72px; float:left; height: 30px; padding: 0 10px 0 15px; background-color:#c2c2ba; color: #fff;  }
+.change .changes.focus { background: #F2F2EA; color: #3d4144;}
+.change .changes .wz {  height:30px; line-height: 30px;display: inline-block; vertical-align: 10px; font-size: 15px; }
+.menu { padding: 0; width: 100%;  position: absolute; left: 0; top: 0; border-bottom: 0;}
+.menu dt { display:block; padding: 4px 8px ;margin-bottom:1px; height: 30px; line-height: 30px; background-color: #d4d4ca;color:#5d5d5c; cursor: pointer;}
+.menu dt .wz {  height:30px;  line-height: 30px;display: inline-block; vertical-align:10px;  font-size: 15px; }
+.menu dd a { display:block; height: 34px; line-height: 34px; text-decoration: none; text-indent: 48px; font-size: 14px; color: #4b4b4b; background:url(/static/themes/default/images/dian.png) no-repeat 35px center;  }
+.menu dd {display: none;padding-bottom: 10px; background-color:#f2f2ea; }
+.menu dd a:hover { background:#e5e5d9 url(/static/themes/default/images/dian.png) no-repeat 35px center; }
+
+.notice { padding: 0; width: 100%;  position: absolute; left: 0; top: 0;}
+.notice p { margin: 8px;  line-height: 20px;}
+
+.Aside .layout-panel-north .panel-body { height:10px !important;}
+.layout-panel-west { font-family: "Microsoft Yahei"; }
+
+.tabs ,.layout-expand .panel-body ,.tabs-tool ,.tabs-header ,.layout-expand{ background-color: #f7f6f2;}
+.tabs-header, .tabs-scroller-left, .tabs-scroller-right, .tabs-tool, .tabs, .tabs-panels, .tabs li a.tabs-inner, .tabs li.tabs-selected a.tabs-inner, .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner, .tabs-header-left .tabs li.tabs-selected a.tabs-inner, .tabs-header-right .tabs li.tabs-selected a.tabs-inner ,.panel-body ,.panel-header { border-color: #dedede;}
+
+.layout-expand-west .panel-tool {top:200px;}
+.layout-expand-west .panel-header {position: relative; z-index: 99;overflow: visible; }
+.layout-expand-west .panel-body {position: relative; z-index: 1;}
+
+.tabs li.tabs-selected a.tabs-inner { color: #757575; background: #fff; }
+
+.panel-body { background-color:#f2f2f0;}

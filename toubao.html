@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>整车保</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="keywords" content="聚保,物流保险,聚保物流,聚保物流保险,货运保险,员工保险" />
+    <meta name="description" content=" 聚保让您投保不上当,理赔有人帮！让物流人买到放心的保险，让物流平台放心卖保险！提供货运保险,员工保险,零担保，城配保等众多物流保险服务！" />
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
+    <link rel="stylesheet" type="text/css" href="static/style/css.css">
+    <script type="text/javascript" src="static/webjs/jquery.js"></script>
+    <script type="text/javascript" src="static/webjs/Base.js"></script>
+    <script type="text/javascript" src="static/webjs/respond.min.js"></script>
+    <script src="static/webjs/datetools.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=bbe65231dff3077e7a7a6cc336125c0c"></script>
+    <script type="text/javascript" src="static/js/district.js"></script>
+    <script src="static/js/vendor/jquery.ui.widget.js"></script>
+    <script src="static/js/jquery.iframe-transport.js"></script>
+    <script src="static/js/jquery.fileupload.js"></script>
+    <link rel="stylesheet" href="static/css/jquery.fileupload.css">
+    <link href="static/style/filluserinfo.css" rel="stylesheet" />
+    <style>
+        .tabs
+        {
+            height:32px;
+            list-style:none;
+            display:block;
+            margin-bottom:1px
+        }
+        .tabs li
+        {
+            width: 165px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid #c4c4c4;
+            font-family: "Microsoft yahei";
+            font-size: 14px;
+            color: #313b4b;
+            background: #fff;
+            float:left;
+            cursor:pointer;
+        }
+        td input
+        {
+            height:20px;
+            width:90%;
+            border:1px solid #808080;
+            border-radius:3px;
+        }
+
+        .progress {
+            height: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        }
+        .progress-bar {
+            float: left;
+            width: 0;
+            height: 100%;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+            text-align: center;
+            background-color: #428bca;
+            -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            -webkit-transition: width .6s ease;
+            -o-transition: width .6s ease;
+            transition: width .6s ease;
+        }
+        .progress-striped .progress-bar,
+        .progress-bar-striped {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            -webkit-background-size: 40px 40px;
+            background-size: 40px 40px;
+        }
+        .progress.active .progress-bar,
+        .progress-bar.active {
+            -webkit-animation: progress-bar-stripes 2s linear infinite;
+            -o-animation: progress-bar-stripes 2s linear infinite;
+            animation: progress-bar-stripes 2s linear infinite;
+        }
+        .progress-bar[aria-valuenow="1"],
+        .progress-bar[aria-valuenow="2"] {
+            min-width: 30px;
+        }
+        .progress-bar[aria-valuenow="0"] {
+            min-width: 30px;
+            color: #777;
+            background-color: transparent;
+            background-image: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .progress-bar-success {
+            background-color: #5cb85c;
+        }
+        .progress-striped .progress-bar-success {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-info {
+            background-color: #5bc0de;
+        }
+        .progress-striped .progress-bar-info {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-warning {
+            background-color: #f0ad4e;
+        }
+        .progress-striped .progress-bar-warning {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-danger {
+            background-color: #d9534f;
+        }
+        .progress-striped .progress-bar-danger {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+
+    </style>
+    <script>
+        $(function() {
+            $(".tabs>li").hover(function(){
+                $(this).css("border-color","#47a8ef");
+            },function(){
+                $(this).css("border-color","#c4c4c4");
+            }).mouseup(function(){
+                $(".tabs>li").each(function(){
+                    $(this).attr("checked",false).css("background-color","#fff");
+                });
+                if(!$(this).attr("checked"))
+                {
+                    $(this).attr("checked",true).css("background-color","#e2e2e2");
+                }
+
+                $(".all_table[data-title="+$(this).attr("data-title")+"]").show();
+            });
+
+            $(".tabs>li[data-title=2]").trigger("mouseup");
+        })
+    </script>
+</head>
+<body>
+<div class="topBox">
+    <div class="clearfix w top">
+        <div class="logo fl clearfix">
+            <a href="/" class="fl"><img src="static/images/logo.png" alt="logo" /></a>
+            <span class="top_tel fl"> <img src="static/images/laixnidxjsiosa.jpg" /> </span>
+        </div>
+        <div class="loginBox fr">
+            <a class="login" href="/dashboard">个人中心</a>
+            <a class="register" href="/dashboard/logout">安全退出</a>
+        </div>
+    </div>
+</div>
+<div class="navBox">
+    <div class="w clearfix">
+        <div class="searchS fr"><a href="/searchorder">保单查询</a></div>
+        <div class="navC">
+            <ul class="clearfix nav index">
+                <li class=""><a href="/zcb">整车保</a></li>
+                <li class=""><a href="/ygb">员工保</a></li>
+                <li class=""><a href="/article">老周解密</a></li>
+                <li class=""><a href="/claims">保险理赔</a></li>
+                <li class=""><a href="/timeline">新闻动态</a></li>
+                <li class=""><a href="/business">商务合作</a></li>
+                <li class=""><a href="/contact">联系我们</a></li>
+                <li class=""><a href="/about">关于我们</a></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+<div class="clearfix Inner_Box3 ">
+    <div class="allBox02">
+
+
+        <b class="tit">整车保</b>
+        <div class="title2">保单信息填写</div>
+        <div class="all_form">
+                <span class="who">
+                    投保人:&nbsp; 胡海物流&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    被保险人:&nbsp; 胡海物流
+                </span>
+
+            <ul class="a_fm">
+                <li class="clearfix">
+                    <em class="tt fl">运输线路 :</em>
+                        <span class="a_s">
+                            <select id="begin_province_sel" style="width: 100px;" class="dept_select" >
+                                <option value="-1">请选择</option>
+                            </select>
+
+                            <select id="begin_city_sel" style="width: 100px;" class="dept_select" >
+                                <option value="-1">请选择</option>
+                            </select>
+                        </span>
+                </li>
+                <li class="clearfix">
+                    <em class="tt fl">至 :</em>
+
+                        <span class="a_s">
+                            <select id="end_province_sel" style="width: 100px;" class="dept_select" >
+                                <option value="-1">请选择</option>
+                            </select>
+
+                            <select id="end_city_sel" style="width: 100px;" class="dept_select" >
+                                <option value="-1">请选择</option>
+                            </select>
+                        </span>
+                </li>
+                <li class="clearfix">
+                    <em class="tt fl">赔偿限额 :</em>
+                        <span class="a_s">
+                            <select id="comp_sel" style="width:100px;" class="dept_select" >
+                                <option value="1500000">150万</option>
+                            </select>
+                        </span>
+
+                        <span class="a_s">保费金额：<em id="span_price">--</em><em style="color:red;margin-left:20px"></em>
+                        </span>
+                </li>
+
+                <li class="clearfix">
+                    <em class="tt fl">车牌号码 :</em>
+                        <span class="c_n">
+                            <label for="top">头</label>
+                            <input type="text" id="goods_num1" value="" />
+                        </span>
+                        <span class="c_n">
+                            <label for="top">挂</label>
+                            <input type="text" id="goods_num2" value="" />
+                        </span>
+                </li>
+            </ul>
+
+            <div class="length">
+                里程<br />
+                <b id="search_distance">--</b> km
+            </div>
+        </div>
+
+        <div style="border-radius:3px;margin-bottom:50px">
+            <div class="allDown">
+                <div class="tt" style="float:right;margin-right:330px">
+                    <br/>
+                    <a href="static/装车清单模板.xlsx">下载装车清单模板</a>
+                </div>
+                <div ><span style="padding-left:10px;font-weight:bold;color:red;margin:5px;font-size:14px">请确认您的装车清单包含以下内容：</span><br/></div>
+                <div style="padding-left:10px;font-weight:bold;margin:5px;font-size:14px">运单号、始发地、目的地、货物名称、货物数量、计量单位</div>
+                <div><span>&nbsp;（完整的装车清单申报，有助于您在赔案发生时更好的获得理赔。）</span></div>
+                <span></span>
+            </div>
+        </div>
+
+        <span>温馨提示：您可以上传装车清单Excel表、照片，也可以手工录入。</span>
+        <div class="allDown" style="margin-top:5px;width:100%;height:32px;margin-bottom:10px">
+            <div class="tt" style="float:left">
+                <a href="javascript:void(0)" onclick="show_add()" id="addlist">手工添加</a>
+                <a href="javascript:void(0)" onclick="show_tip()">
+                        <span class="fileinput-button">
+                            <i class=""></i>
+                            <span id="uploadlist">上传装车清单</span>
+                            <input id="fileupload" type="file" name="Filedata" accept=".xls,.xlsx,.doc,.txt,.pdf,.jpg,.png,.jpeg" style="display:none"/>
+                        </span>
+                </a>
+            </div>
+        </div>
+        <div style="float:right;margin-top:-300px;font-size:16px;width:330px;font-family:'Microsoft YaHei'">
+            <p style="color: #ff0000; text-align: center;">不予承保货物提醒：</p>
+            <p style=" text-indent: 2em;">以下货物类型均不属于“整车保”承保范围，如您要申报的货物中包含下述货物的，保险人均不承担保险责任。</p>
+            <p>1、重大件机器设备（如超过12米长、2.5米宽或2.5米高的设备；任一部件包括包装超过50吨重等）</p>
+            <p>2、金银珠宝、古玩古画、艺术作品等；</p>
+            <p>3、旧品、二手品、展览后之展品和陈列品；</p>
+            <p>4、冷藏品、农产品、商品车、危险品；</p>
+            <p>5、煤炭、矿石/砂等大宗散货类。</p>
+            <br/>
+            <a href="/exclude" style="color: #ff0000;" target="_blank">点击查看所有不予承保货物清单</a>
+        </div>
+
+
+        <div style="float:left;width:100%;margin-bottom:30px">
+            <ul id="filelist" style="float:left;width:100%;">
+
+            </ul>
+        </div>
+        <br>
+
+        <span>温馨提示：手工录入或者上传符合模板格式的EXCEL表格，可以让您的保单分享广告效果增加一倍。</span>
+        <div class="all_table" style="margin-top:5px;">
+            <table width="978" border="0" cellspacing="0" id="inputlist">
+                <tr>
+                    <th style="width:110px">运单号</th>
+                    <th style="width:229px">始发地</th>
+                    <th style="width:229px">目的地</th>
+                    <th style="width:100px">货物名称</th>
+                    <th style="width:100px">货物数量</th>
+                    <th style="width:100px">计量单位</th>
+                    <th style="display:none">Uuid</th>
+                    <th style="width:120px">操作</th>
+                </tr>
+
+            </table>
+            <div class="allDown" style="margin-top:10px;width:100%;height:32px;margin-bottom:10px">
+                <div class="tt" style="float:right">
+                    <a href="javascript:void(0)" onclick="show_add()">手工添加</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="allDown">
+            <div class="goOn">
+                <a href="javascript:void(0)">
+
+                    <input type="button" style="cursor:pointer" value="确认继续" onclick="sub(this)" />
+
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function sub(obj) {
+        var attr = $(obj).attr("data-flag");
+        if (attr == 1) {
+            return false;
+        }
+
+        $(obj).attr("data-flag","1");
+
+        if (uploading_count > 0) {
+            alert("当前运单附件正在上传中，请稍后...");
+            $(obj).attr("data-flag","0");
+            return false;
+        }
+
+        var code1 = parseInt($("#begin_city_sel").val());
+        var code2 = parseInt($("#end_city_sel").val());
+        var code3 = parseInt($("#end_province_sel").val());
+        var code4 = parseInt($("#begin_province_sel").val());
+        if (code1 == -1 || code2 == -1 || code3 == -1 || code4 == -1) {
+            alert("对不起，请选择本次运输路线的始发地和目的地");
+            $(obj).attr("data-flag","0");
+            return false;
+        }
+
+        var start_province = $("#begin_province_sel").children(":selected").text();
+        var start_city = $("#begin_city_sel").children(":selected").text();
+        var end_province = $("#end_province_sel").children(":selected").text();
+        var end_city = $("#end_city_sel").children(":selected").text();
+        if (start_province == "" || start_city == "" || end_province == "" || end_city == "") {
+            alert("对不起，请选择本次运输路线的始发地和目的地");
+            $(obj).attr("data-flag","0");
+            return false;
+        }
+
+
+
+
+        var goods_num1=$("#goods_num1").val();
+        var goods_num2=$("#goods_num2").val();
+        if (!goods_num1 || goods_num1.length < 7) {
+            alert("请填写本次运输车辆的车牌号码！");
+            $(obj).attr("data-flag","0");
+            return false;
+        }
+
+        if ($("#filelist>li").size() == 0 && $("#inputlist tr").size() == 1) {
+            alert("请填写装车清单或上传装车清单扫描件！");
+            $(obj).attr("data-flag","0");
+            return;
+        }
+
+        var data = {};
+        data["uuid"] = order_uuid;
+        data["plate_no"] = $.trim(goods_num1);
+        data["plate_extra_no"] = $.trim(goods_num2);
+        data["coverage"] = 1500000;
+        data["start_province"] = start_province;
+        data["start_city"] = start_city;
+        data["end_province"] = end_province;
+        data["end_city"] = end_city;
+        data["distance"] = distance;
+        data["price"] = price;
+        data["pay_price"] = '';
+
+        var file_list = new Array();
+        $("#filelist .cfile").each(function(index) {
+            var file = {}
+            file["uuid"] = $.trim($(this).attr("uuid"));
+            file["path"] = $.trim($(this).attr("href"));
+            file["filename"] = $.trim($(this).attr("filename"));
+            if (file["path"] != "") {
+                file_list.push(file);
+            }
+        });
+        data["cargo_file"] = JSON.stringify(file_list)
+
+        var cargo_list = new Array();
+        $("#inputlist tr:gt(0)").each(function(index) {
+            if (!$(this).attr("id")) {
+                var cargo = {};
+                cargo["trackingNo"] = $.trim($(this).find("td:eq(0)").text());
+                cargo["beginning"] = $.trim($(this).find("td:eq(1)").text());
+                cargo["destination"] = $.trim($(this).find("td:eq(2)").text());
+                cargo["name"] = $.trim($(this).find("td:eq(3)").text());
+                cargo["quantity"] = $.trim($(this).find("td:eq(4)").text());
+                cargo["unit"] = $.trim($(this).find("td:eq(5)").text());
+                cargo["uuid"] = $.trim($(this).find("td:eq(6)").text());
+                cargo_list.push(cargo);
+            }
+        });
+        data["cargo_list"] = JSON.stringify(cargo_list);
+        data["is_trial"] =  false ;
+        $.ajax({
+            url: '/dashboard/truckorder/placeorder.json',
+            type: "POST",
+            data: data,
+            success: function(r) {
+                if (r.success) {
+
+                    location.href='/dashboard/truckorder/pay/' + r.uuid;
+
+                } else if (r.Message != ""){
+                    alert(r.Message);
+                    location.href='/login';
+                } else {
+                    alert("对不起，数据验证失败，请检查填写的数据是否符合要求！");
+                }
+            },
+            complete: function (x, r) {
+                $(obj).removeAttr("data-flag");
+            }
+        });
+    }
+</script>
+
+<script>
+    function deletefile(sender) {
+        $(sender).parents("li").remove();
+    }
+    $(function() {
+        $(".aa").click(function(){
+            $(this).parents(".FullPopUp").animate({ opacity: "hide" }, 100);
+            $(this).parents(".PopUp").animate({ opacity: "hide" }, 100);
+            $(".fullbg").hide();
+            locked = false
+        })
+    })
+    function updaterow(a) {
+        var tr=$(a).parents("tr");
+        tr.find("td").each(function(){
+            $(this).html("<input value=\""+$(this).text()+"\" />");
+        });
+        tr.find("td:last").html("<a href=\"javascript:void(0)\" onclick=\"okrow(this)\">保存</a>");
+    }
+    function okrow(a) {
+        var tr=$(a).parents("tr");
+        var i=0;
+        tr.find("td").each(function(){
+            $(this).text($(this).find("input").val());
+            if (i == 4) {
+                var texts = $(this).text();
+                if(isNaN(texts)||Number(texts)<=0){
+                    $(this).text("0");
+                    alert("请填写数字");
+                    i++;
+                    return;
+                }
+            }
+            i++;
+        });
+        tr.find("td:last").html("<a class=\"revise\" onclick=\"updaterow(this)\" href=\"javascript:void(0)\">编辑</a>/<a href=\"javascript:void(0)\" onclick=\"deleterow(this)\">删除</a>");
+    }
+    function deleterow(a) {
+        $(a).parents("tr").remove();
+    }
+</script>
+
+
+
+<div class="footerBox">
+    <div class=" w footer">
+        <div class="footer_nav">
+            <ul class="clearfix" style="height: 150px">
+                <li style="width: 148px;">
+                    <dl>
+                        <dt>保险业务介绍</dt>
+                        <dd><a href="/zcb">整车保</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 138px;">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="/guide">新手指南</a></dd>
+                        <dd><a href="/guide">常见问题</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 125px;">
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><a href="/business">合作伙伴</a></dd>
+                        <dd><a href="/business">广告合作</a></dd>
+                        <dd><a href="/business">保险公司</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 174px;">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="/about">关于聚保</a></dd>
+                        <dd><a href="/contact">加入聚保</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 409px;">
+                    <dl>
+                        <a href="/contact"><dt>联系我们</dt></a>
+                        <dd>
+                            <em>
+                                <p>服务热线：40080-59680</p><p>邮箱：info@jubao56.com</p><p>QQ：1379563155</p><p>联系方式：027-82203258</p><p>地址：湖北省武汉市江岸区解放南路融科天城二期T10-804室</p>
+                                <p style="height:10px;"></p>
+                                扫描右侧二维码,关注聚保物流保险服务平台官网微信
+                            </em>
+                                <span>
+                                    <img src="static/images/weixin.jpg" alt="聚保物流保险服务平台官网微信" style="width: 155px; height: 155px;"/></span>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="ft_cl_Box">
+        <div class="w clearfix ft_cl">
+
+
+            <div class="ft_copyRight">
+                    <span>货运险 | 物流责任险 | 聚保物流保险服务平台<br />
+                        Copyright©2015-2016 www.jubao56.com All Rights Reserved
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backtop"></div>
+
+
+<script type="text/javascript">
+    $(".index li").click(function () {
+        $(this).addClass("");
+    });
+    $(function(){
+
+        $(".backtop").click(function() {
+            $('html,body').animate({
+                'scrollTop' : 0
+            }, 600);
+        });
+        $(window).scroll(function ()
+        {
+            var st = $(this).scrollTop();
+            if(st>200){
+                $('.backtop').fadeIn();
+            }
+            else {
+                $('.backtop').fadeOut();
+            }
+        });
+    })
+</script>
+
+
+<script>
+    var id = 0;
+    var begin_province = '';
+    var begin_city = '';
+    var end_province = '';
+    var end_city = '';
+    var price = 0;
+    var distance = 0;
+    var order_uuid = '';
+
+
+    begin_province = '北京市';
+
+
+    begin_city = '北京市市辖区';
+
+
+    end_province = '吉林省';
+
+
+    end_city = '辽源市';
+
+    $(function () {
+
+
+
+        data = provinceJson;
+        $("#begin_province_sel").children(":gt(0)").remove();
+        $("#end_province_sel").children(":gt(0)").remove();
+
+        for (var i = 0; i < data.length; i++) {
+            if (begin_province == data[i].name) {
+                $("#begin_province_sel").append("<option selected='selected' value=" + data[i].name + ">" + data[i].name + "</option>");
+                city_bind($("#begin_province_sel"), $("#begin_city_sel"), data[i].name, begin_city)
+            } else {
+                $("#begin_province_sel").append("<option value=" + data[i].name + ">" + data[i].name + "</option>");
+            }
+
+            if (end_province == data[i].name) {
+                $("#end_province_sel").append("<option selected='selected' value=" + data[i].name + ">" + data[i].name + "</option>");
+                city_bind($("#end_province_sel"), $("#end_city_sel"), data[i].name, end_city);
+            } else {
+                $("#end_province_sel").append("<option value=" + data[i].name + ">" + data[i].name + "</option>");
+            }
+        }
+
+        $("#begin_province_sel").change(function () {
+            city_bind($("#begin_province_sel"), $("#begin_city_sel"), $(this).children(":selected").text(), '')
+        });
+
+        $("#end_province_sel").change(function () {
+            city_bind($("#end_province_sel"), $("#end_city_sel"), $(this).children(":selected").text(), '')
+        });
+
+        $("#begin_city_sel").change(function () {
+            get_dist();
+        });
+
+        $("#end_city_sel").change(function () {
+            get_dist();
+        });
+
+        $("#comp_sel").change(function () {
+            get_dist();
+        });
+    });
+
+    function city_bind(pobj, obj, province, selected_city) {
+        $(obj).children(":gt(0)").remove();
+        $("#search_distance").html("--");
+        $("#span_price").text("--");
+        var url = '/cities.json';
+        $.post(url, {province: province}, function (r) {
+            if (r.success) {
+                for (var i = 0; i < r.cities.length; i++) {
+                    var v = '[' + r.cities[i] + ']';
+                    if (r.cities[i] == selected_city) {
+                        $(obj).append("<option selected='selected' value=" + v + ">" + r.cities[i] + "</option>");
+                        get_dist();
+                    } else {
+                        $(obj).append("<option value=" + v + ">" + r.cities[i] + "</option>");
+                    }
+
+                }
+            }
+        }, "json");
+    }
+
+    function get_dist() {
+        var begin = $("#begin_city_sel").val();
+        var end = $("#end_city_sel").val();
+        if (begin == "-1" || end == "-1") {
+            $("#search_distance").html("--");
+            return
+        }
+        get_price();
+    }
+
+    function get_price() {
+        var type = $("#comp_sel").val();
+        var begin_province = $("#begin_province_sel").val();
+        var begin_city = $("#begin_city_sel").find("option:selected").text();
+        var end_province = $("#end_province_sel").val();
+        var end_city = $("#end_city_sel").find("option:selected").text();
+
+        var url = '/dashboard/truckorder/price.json';
+        $.post(url, {start_province: begin_province, start_city: begin_city, end_province: end_province, end_city: end_city, coverage: type}, function (r) {
+            if (r.success) {
+                distance = r.distance;
+                $("#search_distance").html(r.distance);
+                $("#span_price").text(r.price+" 元");
+                price = r.price;
+
+
+            }
+        }, "json");
+    }
+</script>
+
+<div class="fullbg"></div>
+
+
+<div class="FullPopUp" id="add_window">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <h5>手动录入装车清单</h5>
+            <div class="infor3">
+                    <span class="clearfix">
+                        <label for="txt_number">运单号</label>
+                        <input type="text" id="txt_number"/>
+                    </span>
+
+                    <span class="clearfix">
+                        <label for="txt_startaddress">始发地</label>
+                        <input type="text" id="txt_startaddress"/>
+                    </span>
+
+                    <span class="clearfix">
+                        <label for="txt_endaddress">目的地</label>
+                        <input type="text" id="txt_endaddress" />
+                    </span>
+
+                    <span class="clearfix">
+                        <label for="txt_type">货物名称</label>
+                        <input type="text" id="txt_type"/>
+                    </span>
+                    <span class="clearfix">
+                        <label for="txt_count">货物数量</label>
+                        <input type="text" id="txt_count"/>
+                    </span>
+                    <span class="clearfix">
+                        <label for="txt_count">计量单位</label>
+                        <input type="text" id="txt_unit"/>
+                    </span>
+                <span style="display: inline; color: #ff7300; margin-left: 0px; line-height: 20px;" id="add_error"></span>
+            </div>
+            <div class="pop_button">
+                <a href="javascript:void(0)" style="margin-left:30px;" onclick="add(0)" >继  续</a>
+                <a class="pop_go" href="javascript:void(0)"><input style="cursor:pointer" type="button" onclick="add(1)" value="完  成" /></a>
+            </div>
+
+
+            <span class="aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
+
+        </div>
+    </div>
+</div>
+
+<div class="PopUp" id="tip_window">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <h5 id="title">主要不保提示</h5>
+            <div id="body" class="pop_content">
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; color: rgb(56, 61, 72);">1、金银、珠宝、钻石、玉器、贵重金属、现钞、有价证券、票据、文件、档案、帐册、图纸；</span>
+                </p>
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; color: rgb(56, 61, 72);">2、古玩、古币、古书、古画、艺术作品、邮票；</span>
+                </p>
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; color: rgb(56, 61, 72);">3、汽车，船舶、重大件机械设备；</span>
+                </p>
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; color: rgb(56, 61, 72);">4、需冷藏或恒温运输的货物；</span>
+                </p>
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; color: rgb(56, 61, 72);">5、蔬菜、水果、易腐品、易蛀品、易变质品、活的动植物等；</span>
+                </p>
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; color: rgb(56, 61, 72);">6、易燃易爆及危险品（参照GB12268-2005《危险货物品名表》）；</span><a name="_GoBack"></a>
+                </p>
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; color: rgb(56, 61, 72);">7、原木、原棉、天然橡胶等、无任何包装且无法确定单件价值的大宗货物，例如：煤炭、矿粉等；</span>
+                </p>
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-family: 微软雅黑, &#39;Microsoft YaHei&#39;; font-size: 14px; color: rgb(56, 61, 72);">8、被保险人不具承运资质的标的货物；</span>
+                </p>
+                <p style="margin-bottom: 0px; line-height: 2.5em; text-indent: 2em;">
+                    <span style="font-size: 14px; color: red; font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;">详细不保货物以保险协议为准。</span>
+                </p>
+                <p>
+                    <br/>
+                </p>
+
+            </div>
+            <div class="pop_button">
+                <a class="pop_go" href="javascript:void(0)">
+                    <input type="button" onclick="close_tip()" value="确定" />
+                </a>
+            </div>
+        </div>
+    </div>
+        
+        <span class="aa">
+            <img src="static/images/aa.jpg" width="14" height="13" /></span>
+
+</div>
+
+<script>
+    var locked = false;
+    var tipshowed = false;
+    function show_tip() {
+        if (tipshowed) {
+            return;
+        }
+        tipshowed = true;
+
+        $("#tip_window").animate({ opacity: "show" }, 300).css("margin-top", -$("#tip_window").height() / 2 + "px").css("margin-left", -$("#tip_window").width() / 2 + "px");
+
+        $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "block" });
+        locked = true;
+
+        $("#fileupload").css("display", "inline");
+    }
+    function close_tip() {
+        $(".PopUp").animate({ opacity: "hide" }, 100);
+        $(".fullbg").hide();
+        locked = false;
+    }
+    function show_add() {
+        if (tipshowed == false) {
+            show_tip();
+            return;
+        }
+        $("#add_window").animate({opacity:"show"},300).css("margin-top",($(window).height()-$("#add_window").height())/2+"px").css("margin-left",($(window).width()-$("#add_window").width())/2+"px");
+        $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "block" });
+        locked = true;
+        $("#addlist").html("继续手动添加")
+    }
+    function add(complete) {
+        var num=$.trim($("#txt_number").val());
+        if(!num||num=="") {
+            $("#add_error").text("请填写运单号");
+            return;
+        }
+        var start=$.trim($("#txt_startaddress").val());
+        if(!start||start=="") {
+            $("#add_error").text("请填写始发地");
+            return;
+        }
+        var end=$.trim($("#txt_endaddress").val());
+        if(!end||end=="") {
+            $("#add_error").text("请填写目的地");
+            return;
+        }
+        var type=$.trim($("#txt_type").val());
+        if(!type||type=="") {
+            $("#add_error").text("请填写货物名称");
+            return;
+        }
+        var count=$.trim($("#txt_count").val());
+        if(!count||count=="") {
+            $("#add_error").text("请填写货物数量");
+            return;
+        }
+        if(isNaN(count)||Number(count)<=0) {
+            $("#add_error").text("请填写数字");
+            return;
+        }
+        var unit=$.trim($("#txt_unit").val());
+        if(!unit||unit=="") {
+            $("#add_error").text("请填写计量单位");
+            return;
+        }
+        $("#add_error").text("");
+        $("#inputlist tr:last").after('<tr></td><td>'+num+'</td> <td>'+start+'</td><td>'+end+'</td> <td>'+type+'</td> <td>'+count+'</td> <td>'+unit+'</td><td style="display:none"></td><td><a class="revise" onclick="updaterow(this)" href="javascript:void(0)">编辑</a>/<a href="javascript:void(0)" onclick="deleterow(this)">删除</a></td></tr>');
+        $("#txt_number").val("");
+        $("#txt_type").val("");
+        $("#txt_count").val("");
+        $("#txt_unit").val("");
+
+        if (complete == 1) {
+            $("#add_window").hide();
+            $(".fullbg").hide();
+        }
+    }
+</script>
+<script src="static/jszip.js"></script>
+<script src="static/xlsx.js"></script>
+<script src="static/dist/ods.js"></script>
+<script>
+    var X = XLSX;
+    var rABS = typeof FileReader !== "undefined" && typeof FileReader.prototype !== "undefined" && typeof FileReader.prototype.readAsBinaryString !== "undefined";
+    var use_worker = typeof Worker !== 'undefined';
+
+    function fixdata(data) {
+        var o = "", l = 0, w = 10240;
+        for(; l<data.byteLength/w; ++l) o+=String.fromCharCode.apply(null,new Uint8Array(data.slice(l*w,l*w+w)));
+        o+=String.fromCharCode.apply(null, new Uint8Array(data.slice(l*w)));
+        return o;
+    }
+
+    function to_json(workbook) {
+        var list = new Array();
+        workbook.SheetNames.forEach(function(sheetName) {
+            var roa = X.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+            for (var i = 0; i < roa.length; i++) {
+                list.push(roa[i]);
+            }
+        });
+        return list;
+    }
+
+    function replace_undefine(value) {
+        if (typeof(value) == "undefined") {
+            return ""
+        } else {
+            return value;
+        }
+    }
+
+    function process_wb(wb) {
+        var table=$("#inputlist");
+        var list=to_json(wb);
+        for (var i=0;i<list.length;i++) {
+            $("#inputlist tr:last").after('<tr><td>'+replace_undefine(list[i].运单号)+'</td> <td>'+replace_undefine(list[i].始发地)+'</td><td>'+replace_undefine(list[i].目的地)+'</td> <td>'+replace_undefine(typeof(list[i].货物名称)=="undefined"? list[i].货物种类:list[i].货物名称)+'</td> <td>'+replace_undefine(typeof(list[i].货物数量)=="undefined"? list[i].数量:list[i].货物数量)+'</td> <td>'+replace_undefine(typeof(list[i].计量单位)=="undefined"? list[i].单位:list[i].计量单位)+'</td><td style="display:none"></td><td><a class="revise" onclick="updaterow(this)" href="javascript:void(0)">编辑</a>/<a href="javascript:void(0)" onclick="deleterow(this)">删除</a></td></tr>');
+        }
+    }
+
+    var filemap = {};
+    var findex = 0;
+    var uploading_count = 0;
+
+    $(function () {
+        $('#fileupload').fileupload({
+            url: '/dashboard/truckorder/upload',
+            dataType: 'json',
+            done: function (e, data) {
+                uploading_count--;
+                var fid = data.files[0].lastModified + data.files[0].name;
+                var result = data.result;
+
+                $("#um" + filemap[fid]).css("display", "inline");
+                if (result.success) {
+                    $("#dw" + filemap[fid]).attr("href", result.extra);
+                    $("#dw" + filemap[fid]).css("display", "inline");
+                    $("#um" + filemap[fid]).css("display", "none");
+                }
+                var fname = data.files[0].name;
+                var ext = (fname.substr(fname.length -5)).substr((fname.substr(fname.length-5)).indexOf('.')+1).toLowerCase();
+                if (ext == "xls" || ext == "xlsx") {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var data = e.target.result;
+                        var arr = fixdata(data);
+                        var wb = X.read(btoa(arr), {type: 'base64'});
+                        process_wb(wb);
+                    };
+                    reader.readAsArrayBuffer(data.files[0]);
+                }
+            },
+            fail: function (e, data) {
+                uploading_count--;
+                var fid = data.files[0].lastModified + data.files[0].name;
+                var result = data.result;
+
+                $("#um" + filemap[fid]).css("display", "inline");
+            },
+            submit: function (e, data) {
+                uploading_count++;
+                var fid = data.files[0].lastModified + data.files[0].name;
+                filemap[fid] = findex;
+                findex++;
+                var html =
+                        '<li style="float:left;width:100%;height:30px">' +
+                        '    <div id="pg' + filemap[fid] + '" class="progress" style="margin-top:5px;margin-right:10px;float:left;width:200px;height:10px">' +
+                        '        <div class="progress-bar progress-bar-success"></div>' +
+                        '    </div>' +
+                        '    <span>' + data.files[0].name + '</span>&nbsp;&nbsp;&nbsp;' +
+                        '    <a id="dw' + filemap[fid] + '" class="cfile" href="" filename="' + data.files[0].name + '" target="_blank" style="display:none;">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;' +
+                        '    <span id="um' + filemap[fid] + '" style="display:none">上传失败   </span>' +
+                        '    <a href="javascript:void(0)" onclick="deletefile(this)">删除</a>' +
+                        '</li>';
+                $("#filelist").append(html);
+                $("#uploadlist").html("继续上传装车清单");
+            },
+            progress: function (e, data) {
+                var fid = data.files[0].lastModified + data.files[0].name;
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#pg' + filemap[fid] + ' .progress-bar').css(
+                        'width',
+                        progress + '%'
+                );
+            },
+            progressall: function (e, data) {
+            }
+        }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+    });
+</script>
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?8dcdc46116c07356465640ba5ff004fc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

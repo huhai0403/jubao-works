@@ -1,0 +1,102 @@
+/*通用*/
+html,body{ width: 10.8rem;box-sizing: border-box;overflow-x: hidden;}
+.fl{ float: left;}
+.fr{ float: right;}
+.dn{ display: none;}
+
+/*header*/
+.header{ height: 1.35rem; text-align: center; box-sizing: border-box;position: relative; border-bottom: 1px solid #272727; background: #3a495c;padding:0 0.54rem}
+.top_border{ height: 0.04rem;width: 10.8rem; background: #495768; border-width:0 0 0.04rem 0.04rem; position: absolute; top: 0;}
+.top_link{ width: 0.68rem; height: 0.68rem; display: block; margin-top: 0.47rem; overflow: hidden;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+.top_link img,.top_logo img{ width: 100%; height: 100%; display: block;}
+.top_logo{ width: 2.55rem;height: 0.9rem; display: inline-block;margin-top: 0.23rem;}
+
+/*main*/
+/*焦点图*/
+.focus{ margin:0 auto; position:relative; overflow:hidden;   }
+.focus .hd{ width:100%; height:11px;  position:absolute; z-index:1; bottom:5px; text-align:center;  }
+.focus .hd ul{ display:inline-block; padding:3px 5px; background-color:rgba(255,255,255,0.7); border-radius:5px; font-size:0; vertical-align:top; }
+.focus .hd ul li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#8C8C8C; margin:0 5px;  vertical-align:top; overflow:hidden;   }
+.focus .hd ul .on{ background:#FE6C9C;  }
+.focus .bd{ position:relative; z-index:0; }
+.focus .bd li img{ width:100%;display: block;}
+.focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */  }
+
+.tag_list{ background: #e8f4fe; padding:0.24rem 0.55rem 0.35rem;}
+.tag_list img{ width: 3rem; height: 2.18rem; display: block;}
+.tag_list .block01{ background: #a1d0f9;}
+.tag_list .block02{ background: #edd1ad;}
+.tag_list .block03{ background: #ebb1ba;}
+.tag_list .block04{ background: #a4efdd;}
+.tag_list .block06{ background: #c4d5fe;}
+.tag_list .mid{ width: 0.35rem;}
+.tag_list .bot{ height: 0.24rem;}
+
+/*form*/
+.formbox{ position: relative;}
+.formbox .mainpic{ width: 100%; height: 6.55rem; display: block;}
+.formbox .dot{ width: 0.68rem; height: 0.26rem; display: block; position: absolute; bottom: -0.26rem; left: 50%; margin-left: -0.34rem;z-index: 9;}
+/*content*/
+.content{ background: #f5f5f5; padding:1.2rem 0.3rem 0.3rem;}
+.content01{ padding-top: 0.4rem!important; padding-bottom: 0.6rem!important;}
+.content .title{ font-size: 0.48rem; color: #e98432; line-height: 0.54rem; text-align: center; font-weight: bold;}
+.mt_35{ margin-top: 0.35rem;}
+.content .text{ font-size: 0.3rem; line-height: 0.45rem; text-align: center; color: #f18b39; font-weight: bold;}
+.content .tip{ font-size: 0.36rem; line-height: 0.75rem;padding-top: 0.1rem; text-align: center; color: #f18b39; font-weight: bold;}
+.table_box{ background: #f7a25d; width: 100%; padding: 0.7rem 0.3rem 0.6rem}
+.table_box .tip{ font-size: 0.36rem; line-height: 0.75rem;padding-top: 0.1rem; text-align: center; color: #fff; font-weight: bold;}
+.table{width: 100%; font-size: 0.32rem;border:0.04rem solid #f18b39; border-radius: 0.25rem;color: #f18b39; margin-bottom: 0.08rem; background: #fff;}
+.table .h45{height: 0.45rem}
+.table .h60{height: 0.6rem}
+.table .h60 td{ line-height: 0.6rem}
+.table tr,.table td{text-align: center; vertical-align: middle}
+.table span{ color: #000}
+.table i{ color: #e72516}
+.bb01{ border-bottom: 0.03rem solid #f18b39;}
+.br01{ border-right: 0.03rem solid #f18b39;}
+.fwb{ font-weight: bold;}
+.tc{text-align: center;}
+.tl{text-align: left!important;}
+.co01{ color: #ea0f0f!important;}
+.co02{ color: #ea420f!important;}
+.content .h1{ height: 1.42rem;}
+.content .h2{ height: 1.82rem;}
+.btn01 a{background:#ef9535; background: linear-gradient(#ef9535,#f4b256); width: 4.74rem; text-align: center; display: block;box-shadow:-0.04rem 0 0.04rem #98a5ae,0.04rem 0 0.04rem #98a5ae,0 0 #fff,0 0.08rem 0.08rem #98a5ae; font-size: 0.36rem; line-height: 0.6rem; color: #fff; margin: 0.27rem auto 0;}
+.btn01 .bragra01{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef9535', endColorstr='#f4b256',GradientType=0 );}
+.btn01 a span{ display: block;}
+/*connect*/
+.connect{ padding: 0.6rem 0.3rem 0.4rem; background: #f7a25d; position: relative;}
+.connect .man{ position: absolute; display: block; width: 3.97rem; height: 3.2rem; right: 0.3rem; bottom: 1.35rem;}
+.connect .title{ font-size: 0.48rem; line-height: 0.55rem; color: #fff; text-align: center; font-weight: bolder;}
+.connect .text{ font-size: 0.3rem; color: #fff; line-height: 0.5rem; margin-left: 0.9rem; font-weight: 600;}
+/*plan*/
+.plan{ padding: 0.4rem 0 1.5rem; background: #e8f4fe;}
+.plan .title{ width: 5.48rem; height: 0.48rem; text-align: center; margin: 0 auto; position: relative;}
+.plan .title img{ width: 100%; height: 100%; display: block;}
+.plan .title p{ font-size: 0.48rem;line-height: 0.48rem; color: #e17f2f; font-weight: bold; position: absolute; top: 0; left: 50%; margin-left: -1rem;}
+.btn02{ margin: 0.6rem auto 0.4rem; text-align: center;}
+.btn02 .bragra02{filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb9753', endColorstr='#f1b585',GradientType=0 );}
+.btn02 a{ background: #eb9753; height: 0.84rem; width: 5.75rem; box-sizing: border-box; border-bottom: 0.06rem solid #e17f2f; background: linear-gradient(#eb9753,#f1b585); font-size: 0.3rem; line-height: 0.78rem; color: #fff; display: inline-block;text-align: center;box-shadow:-0.03rem 0 0.03rem #98a5ae,0.03rem 0 0.03rem #98a5ae,0 0 #fff,0 0.06rem 0.06rem #98a5ae;}
+.plan .phone{ font-size: 0.3rem; line-height: 0.3rem; color: #e17f2f; text-align: center;}
+/*footer*/
+.footer{ background: #4da2e1; height: 1.33rem; font-size: 0.28rem; line-height: 1.33rem; color: #fff; text-align: center;}
+/*6.13*/
+.top_box{ background: #f5f5f5; padding: 1rem 0.35rem 0.75rem; position: relative;}
+.top_box .title{ font-size: 0.42rem; font-weight: bold; color: #e98432; text-align: center; position: relative; }
+.top_box .title img{ height: 0.1rem; position: absolute; top: 50%; right: 50%; margin-right: -4.17rem;}
+.top_box .text{ font-size: 0.36rem; color: #cd6612; line-height: 0.45rem; font-weight: bold;}
+.top_box .cont{overflow: hidden;}
+.top_box .txt{ width: 70%; float: left; height: 100%; margin-top: 0.8rem;}
+.top_box .pic{ width: 30%; float: right; position: relative; min-height:3.2rem; }
+.top_box .pic img{ width: 3rem; position: absolute; bottom: 0;}
+
+.add_txt{ padding-top: 3rem; position: relative;}
+.add_txt .article{ margin-bottom: 0.3rem;}
+.add_txt .article h1{ font-size: 0.42rem; color: #e98432; font-weight: bolder; line-height: 0.6rem;}
+.add_txt .article p{ font-size: 0.36rem; color: #3d3d3d; font-weight: bold; padding-left: 0.2rem;}
+.w650{ width: 6.5rem;}
+.pic1{ width: 1.74rem; height: 2.53rem; position: absolute; top: 0.3rem; left: 0.4rem;}
+.pic2{ width: 3.25rem; height: 1.3rem; position: absolute; top: 1rem; left: 2.65rem;}
+.pic3{ width: 3.52rem; height: 5.3rem; position: absolute; top: 0.1rem; right: 0.3rem;}
+
+

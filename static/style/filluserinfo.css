@@ -1,0 +1,8 @@
+.infor3{width:90%; padding-left: 20px; padding-bottom:10px;margin-bottom:20px; border-bottom:1px solid #f5f5f5; text-align: center;}
+.infor3 span{position:relative; z-index:99; display: block; width:446px; margin-bottom: 20px; margin-left: auto; margin-right: auto;}
+.infor3 span.sel{z-index: 9999;}
+.infor3 span label{display: block; float:left; width:88px; height:30px; line-height: 30px; text-align: right; margin-right: 10px; font-family: "Microsoft yahei"; font-size:12px; color:#313b4b;}
+.infor3 span input{position:relative; z-index:99;display: block; float:left; width:274px; padding-left: 10px; height:30px; padding-top:5px; padding-bottom:5px; padding-left: 10px; line-height: 20px; font-family: "Microsoft yahei"; font-size:14px; color:#313b4b; border-radius: 5px; border:1px solid #d1d1d1; background: url(../images/s_inputBg.jpg) repeat-x center center;}
+.infor3 span input.phoneNumber{width:128px;}
+.infor3 span a.getYzm{ width:86px; height: 34px;line-height: 34px; text-align: center; font-family: "Microsoft yahei"; font-size: 12px; color: #fff; background: url(../images/getYzm1.jpg) no-repeat center center;display:block;float:left;margin-left:15px}
+.infor3 span a.getYzm:hover{background: url(../images/getYzm2.jpg) no-repeat center center;}

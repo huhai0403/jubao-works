@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工保</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
+    <link rel="stylesheet" type="text/css" href="static/style/css.css">
+    <script src="static/js/jquery.js"></script>
+</head>
+<body>
+<div class="topBox">
+    <div class="clearfix w top">
+        <div class="logo fl">
+            <a href="/">
+                <img src="static/images/logo.png" alt="logo" />
+            </a>
+			<span>
+                <img src="static/images/laixnidxjsiosa.jpg" width="280" />
+            </span>
+        </div>
+        <div class="loginBox fr">
+            <a class="login" href="javascript:;">登录</a>
+            <a class="register" href="/register">注册</a>
+        </div>
+    </div>
+</div>
+<div class="navBox">
+    <div class="w clearfix">
+        <div class="searchS fr"><a href="/searchorder">保单查询</a></div>
+        <div class="navC">
+            <ul class="clearfix nav index">
+                <li class=""><a href="/zcb">整车保</a></li>
+                <li class=""><a href="/ygb">员工保</a></li>
+                <li class=""><a href="/article">老周解密</a></li>
+                <li class=""><a href="/claims">保险理赔</a></li>
+                <li class=""><a href="/timeline">新闻动态</a></li>
+                <li class=""><a href="/business">商务合作</a></li>
+                <li class=""><a href="/contact">联系我们</a></li>
+                <li class=""><a href="/about">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="ygb_banner_box">
+    <div class="ygb_banner"></div>
+</div>
+<div class="ygb_index_side">
+    <ul>
+        <li>
+            <a class="bb1 br1" href="javascript:;">
+                <img src="static/images/ygb_index_side1.png"/>
+                <p>用户中心</p>
+            </a>
+        </li>
+        <li>
+            <a class="bt1 bb1" href="javascript:;">
+                <img src="static/images/ygb_index_side2.png"/>
+                <p>投保指南</p>
+            </a>
+        </li>
+        <li class=" ">
+            <a class="br2 bt1" href="javascript:;">
+                <img src="static/images/ygb_index_side3.png"/>
+                <p>回到首页</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="ygb_choose">
+    <div class="ygb_choose_box">
+        <table class="table">
+            <tr><td width="55" rowspan="3" class="br02 fs20">特<br/>惠<br/>版</td><td class="br01 bb01 fs20 " width="188">工作类型</td><td class="bb01 fs20 " colspan="2">项目</td></tr>
+            <tr><td class="bb01 br01 fs18">司机、搬运等</td><td width="100" class="bb01 br01 price priceOne">600</td><td rowspan="2" class="tl fs18"><span>60万死亡伤残+6万医疗+100元/天误工费+13种扩展保障</span></td></tr>
+            <tr><td class="br01 fs18">文员、调度等</td><td class="br01 price priceTwo" >300</td></tr>
+        </table>
+        <div class="ygb_choose_step">
+            <p>点击后方按钮下载员工信息模板。</p>
+            <p>按照表格信息指示依次填写员工姓名、性别、身份证号。</p>
+            <p>点击后方按钮，将填写完毕的excel模板上传。</p>
+            <p>确认<span>员工信息</span>及<span>投保类型</span>。</p>
+            <a class="download_file" href="javascript:;">下载员工信息模板</a>
+            <a class="upload_file" href="javascript:;">
+                上传员工信息模板
+                <input type="file" name="xlfile" accept="application/vnd.ms-excel,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="xlf1"/>
+            </a>
+        </div>
+        <div class="ygb_choose_list">
+            <table>
+                <tr class="h46"><td width="100">姓名</td><td width="70">性别</td><td width="220">身份证号</td><td width="320">工作类型</td><td width="80"><a class="addnew" href="javascript:;">新增</a></td></tr>
+                <!--<tr>
+                    <td><input placeholder="请输入姓名！" type="text"/></td>
+                    <td><select><option>男</option><option>女</option></select></td>
+                    <td><input placeholder="请输入身份证号！" type="text"/></td>
+                    <td><p class="fl ygb_work_check"><label><input class="workOne" type="radio"><span class="checked">司机、搬运等</span></label></p>
+                        <p class="fr ygb_work_check"><label><input class="workTne" type="radio"><span>文员、调度等</span></label></p>
+                    </td>
+                    <td><a class="delete" href="javascript:;">删除</a> </td>
+                </tr>-->
+            </table>
+            <p class="all">共计有 <span>0</span> 人，保费预计为 <i>0</i> 元。</p>
+        </div>
+        <div class="btn">
+            <a class="true fl trueInfo" href="javascript:;">确认并提交</a>
+            <a class="back fr" href="javascript:;">返回上一页</a>
+        </div>
+    </div>
+    <div class="ygb_choose_box dn">
+        <table class="table">
+            <tr><td width="55" rowspan="3" class="br02 fs20">经<br/>济<br/>版</td><td class="br01 bb01 fs20 " width="188">工作类型</td><td class="bb01 fs20 " colspan="2">项目</td></tr>
+            <tr><td class="bb01 br01 fs18">司机、搬运等</td><td width="100" class="bb01 br01 price priceOne">280</td><td rowspan="2" class="tl fs18"><span>20万死亡伤残+2万医疗+100元/天误工费+13种扩展保障+自费药保障。</span></td></tr>
+            <tr><td class="br01 fs18">文员、调度等</td><td class="br01 price priceTwo" >160</td></tr>
+        </table>
+        <div class="ygb_choose_step">
+            <p>点击后方按钮下载员工信息模板。</p>
+            <p>按照表格信息指示依次填写员工姓名、性别、身份证号。</p>
+            <p>点击后方按钮，将填写完毕的excel模板上传。</p>
+            <p>确认<span>员工信息</span>及<span>投保类型</span>。</p>
+            <a class="download_file" href="javascript:;">下载员工信息模板</a>
+            <a class="upload_file" href="javascript:;">
+                上传员工信息模板
+                <input type="file" name="xlfile" accept="application/vnd.ms-excel,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="xlf2"/>
+            </a>
+        </div>
+        <div class="ygb_choose_list">
+            <table>
+                <tr class="h46"><td width="100">姓名</td><td width="70">性别</td><td width="220">身份证号</td><td width="320">工作类型</td><td width="80"><a class="addnew" href="javascript:;">新增</a></td></tr>
+                <!--<tr>
+                    <td><input placeholder="请输入姓名！" type="text"/></td>
+                    <td><select><option>男</option><option>女</option></select></td>
+                    <td><input placeholder="请输入身份证号！" type="text"/></td>
+                    <td><p class="fl ygb_work_check"><label><input type="radio"><span class="checked">司机、搬运等</span></label></p>
+                        <p class="fr ygb_work_check"><label><input type="radio"><span>文员、调度等</span></label></p>
+                    </td>
+                    <td><a class="delete" href="javascript:;">删除</a> </td>
+                </tr>-->
+            </table>
+            <p class="all">共计有 <span>0</span> 人，保费预计为 <i>0</i> 元。</p>
+        </div>
+        <div class="btn">
+            <a class="true fl trueInfo" href="javascript:;">确认并提交</a>
+            <a class="back fr" href="javascript:;">返回上一页</a>
+        </div>
+    </div>
+    <div class="ygb_choose_box dn" >
+        <table class="table">
+            <tr><td width="55" rowspan="3" class="br02 fs20">标<br/>准<br/>版</td><td class="br01 bb01 fs20 " width="188">工作类型</td><td class="bb01 fs20 " colspan="2">项目</td></tr>
+            <tr><td class="bb01 br01 fs18">司机、搬运等</td><td width="100" class="bb01 br01 price priceOne">560</td><td rowspan="2" class="tl fs18"><span>40万死亡伤残+4万医疗+100元/天误工费+13种扩展保障+自费药保障+24小时意外。</span></td></tr>
+            <tr><td class="br01 fs18">文员、调度等</td><td class="br01 price priceTwo" >320</td></tr>
+        </table>
+        <div class="ygb_choose_step">
+            <p>点击后方按钮下载员工信息模板。</p>
+            <p>按照表格信息指示依次填写员工姓名、性别、身份证号。</p>
+            <p>点击后方按钮，将填写完毕的excel模板上传。</p>
+            <p>确认<span>员工信息</span>及<span>投保类型</span>。</p>
+            <a class="download_file" href="javascript:;">下载员工信息模板</a>
+            <a class="upload_file" href="javascript:;">
+                上传员工信息模板
+                <input type="file" name="xlfile" accept="application/vnd.ms-excel,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="xlf3"/>
+            </a>
+        </div>
+        <div class="ygb_choose_list">
+            <table>
+                <tr class="h46"><td width="100">姓名</td><td width="70">性别</td><td width="220">身份证号</td><td width="320">工作类型</td><td width="80"><a class="addnew" href="javascript:;">新增</a></td></tr>
+                <!--<tr>-->
+                    <!--<td><input placeholder="请输入姓名！" type="text"/></td>-->
+                    <!--<td><select><option>男</option><option>女</option></select></td>-->
+                    <!--<td><input placeholder="请输入身份证号！" type="text"/></td>-->
+                    <!--<td><p class="fl ygb_work_check"><label><input type="radio"><span class="checked">司机、搬运等</span></label></p>-->
+                        <!--<p class="fr ygb_work_check"><label><input type="radio"><span>文员、调度等</span></label></p>-->
+                    <!--</td>-->
+                    <!--<td><a class="delete" href="javascript:;">删除</a> </td>-->
+                <!--</tr>-->
+            </table>
+            <p class="all">共计有 <span>0</span> 人，保费预计为 <i>0</i> 元。</p>
+        </div>
+        <div class="btn">
+            <a class="true fl trueInfo" href="javascript:;">确认并提交</a>
+            <a class="back fr" href="javascript:;">返回上一页</a>
+        </div>
+    </div>
+    <div class="ygb_choose_box dn" >
+        <table class="table">
+            <tr><td width="55" rowspan="3" class="br02 fs20">特<br/>惠<br/>版</td><td class="br01 bb01 fs20 " width="188">工作类型</td><td class="bb01 fs20 " colspan="2">项目</td></tr>
+            <tr><td class="bb01 br01 fs18">司机、搬运等</td><td width="100" class="bb01 br01 price priceOne">840</td><td rowspan="2" class="tl fs18"><span>60万死亡伤残+6万医疗+100元/天误工费+13种扩展保障+自费药保障+24小时意外+100元/天住院津贴。</span></td></tr>
+            <tr><td class="br01 fs18">文员、调度等</td><td class="br01 price priceTwo" >480</td></tr>
+        </table>
+        <div class="ygb_choose_step">
+            <p>点击后方按钮下载员工信息模板。</p>
+            <p>按照表格信息指示依次填写员工姓名、性别、身份证号。</p>
+            <p>点击后方按钮，将填写完毕的excel模板上传。</p>
+            <p>确认<span>员工信息</span>及<span>投保类型</span>。</p>
+            <a class="download_file" href="javascript:;">下载员工信息模板</a>
+            <a class="upload_file" href="javascript:;">
+                上传员工信息模板
+                <input type="file" name="xlfile" accept="application/vnd.ms-excel,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="xlf4"/>
+            </a>
+        </div>
+        <div class="ygb_choose_list">
+            <table>
+                <tr class="h46"><td width="100">姓名</td><td width="70">性别</td><td width="220">身份证号</td><td width="320">工作类型</td><td width="80"><a class="addnew" href="javascript:;">新增</a></td></tr>
+
+            </table>
+            <p class="all">共计有 <span>0</span> 人，保费预计为 <i>0</i> 元。</p>
+        </div>
+        <div class="btn">
+            <a class="true fl trueInfo" href="javascript:;">确认并提交</a>
+            <a class="back fr" href="javascript:;">返回上一页</a>
+        </div>
+    </div>
+    <ul class="check_bot clearfix">
+        <li class="mr_20">
+            <img src="static/images/ygb_choose01.png"/>
+            <span>限时抢购</span>
+        </li>
+        <li class="mr_20">
+            <img src="static/images/ygb_choose02.png"/>
+            <span>经济版</span>
+        </li>
+        <li class="mr_20">
+            <img src="static/images/ygb_choose03.png"/>
+            <span>标准版</span>
+        </li>
+        <li>
+            <img src="static/images/ygb_choose04.png"/>
+            <span>尊享版</span>
+        </li>
+    </ul>
+    <ul class="check_top clearfix">
+        <li class="on mr_20">
+            <img src="static/images/ygb_choose05.png"/>
+            <span>限时抢购</span>
+        </li>
+        <li class="mr_20">
+            <img src="static/images/ygb_choose06.png"/>
+            <span>经济版</span>
+        </li>
+        <li class="mr_20">
+            <img src="static/images/ygb_choose07.png"/>
+            <span>标准版</span>
+        </li>
+        <li>
+            <img src="static/images/ygb_choose08.png"/>
+            <span>尊享版</span>
+        </li>
+    </ul>
+</div>
+<div class="ygb_confirm">
+    <p class="title">员工保保单信息确认</p>
+    <div class="tip">
+        <p><span>投保人 ：</span><i>武汉万达物流有限公司</i></p>
+        <p><span>被保险人 ：</span><i>武汉万达物流有限公司员工</i></p>
+    </div>
+    <div class="ygb_confirm_list">
+        <table>
+<!--
+            <tr class="h46"><td width="100">姓名</td><td width="70">性别</td><td width="250">身份证号</td><td width="190">工作类型</td></tr>
+-->
+        </table>
+        <p class="all">共计有 <span></span> 人，保费预计为 <i></i> 元。</p>
+    </div>
+    <p class="all_price">当前应支付：<span></span>元</p>
+    <div class="btn">
+        <a class="true fl toPay" href="javascript:;">确认并支付</a>
+        <a class="back fr backModify" href="javascript:;">返回修改</a>
+    </div>
+</div>
+<div class="paybox">
+    <div class="box">
+        <div class="title">请输入您的支付密码</div>
+        <input type="password"/>
+        <a href="#">支付</a>
+    </div>
+    <a class="close" href="javascript:;"><img src="static/images/ygb_login_clos.png"/> </a>
+</div>
+<div class="mask"></div>
+<div class="footerBox">
+    <div class=" w footer">
+        <div class="footer_nav">
+            <ul class="clearfix" style="height: 150px">
+                <li style="width: 148px;">
+                    <dl>
+                        <dt>保险业务介绍</dt>
+                        <dd><a href="/zcb">整车保</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 138px;">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="/guide">新手指南</a></dd>
+                        <dd><a href="/guide">常见问题</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 125px;">
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><a href="/business">合作伙伴</a></dd>
+                        <dd><a href="/business">广告合作</a></dd>
+                        <dd><a href="/business">保险公司</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 174px;">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="/about">关于聚保</a></dd>
+                        <dd><a href="/contact">加入聚保</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 409px;">
+                    <dl>
+                        <a href="/contact"><dt>联系我们</dt></a>
+                        <dd>
+                            <em>
+                                <p>服务热线：40080-59680</p><p>邮箱：info@jubao56.com</p><p>QQ：1379563155</p><p>联系方式：027-82203258</p><p>地址：湖北省武汉市江岸区解放南路融科天城二期T10-804室</p>
+                                <p style="height:10px;"></p>
+                                扫描右侧二维码,关注聚保物流保险服务平台官网微信
+                            </em>
+                                <span>
+                                    <img src="static/images/weixin.jpg" alt="聚保物流保险服务平台官网微信" style="width: 155px; height: 155px;"/></span>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="ft_cl_Box">
+        <div class="w clearfix ft_cl">
+            <div class="fl ft_link">
+                <a href="javascript:;">
+                    <img src="static/images/ft_01.png" alt=" " /></a>
+                <a href="javascript:;">
+                    <img src="static/images/ft_02.png" alt=" " /></a>
+                <a href="javascript:;">
+                    <img src="static/images/ft_03.png" alt=" " /></a>
+            </div>
+
+            <div class="fr ft_copyRight">
+                    <span>货运险 | 物流责任险 | 聚保物流保险服务平台<br />
+                        Copyright©2015 jubao.com All Rights Reserved
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--登陆-->
+<div class="ygb_login">
+    <div class="ygb_login_box">
+        <h1>登&nbsp&nbsp&nbsp&nbsp陆</h1>
+        <div class="box">
+            <h2>手机号</h2>
+            <input id="username" type="text"/>
+            <h2>密码</h2>
+            <input id="password" type="password"/>
+            <a class="forget" href="javascript:;">忘记密码</a>
+            <p class="error_tip">
+                <span id="no_name">请输入手机号！</span>
+                <span id="error_name">请输入正确手机号！</span>
+                <span id="no_password">请输入密码！</span>
+                <span id="login_error">用户名或密码错误！</span>
+            </p>
+        </div>
+        <div class="btn">
+            <a class="link" href="javascript:;">登&nbsp&nbsp&nbsp陆</a>
+            <a class="reg_link" href="javascript:;">立即注册</a>
+        </div>
+        <div class="other_login clearfix">
+            <a class="fl" onclick="qq()" href="javascript:;"><img src="static/images/lqq.jpg"/> </a>
+            <a class="fr" onclick="wechat()" href="javascript:;"><img src="static/images/lwx.jpg"/> </a>
+        </div>
+        <a class="close" href="javascript:;"><img src="static/images/ygb_login_clos.png"/> </a>
+    </div>
+</div>
+<!--微信登陆-->
+<div class="PopUp" style="width:340px;" id="wechat_show">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <a class="pop_go" href="#"  id="wechat_login" ></a>
+        </div>
+    </div>
+    <span class="aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
+</div>
+</body>
+<!--微信QQ登陆-->
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script>
+    function qq() {
+        location.href="https://graph.qq.com/oauth2.0/authorize?client_id=101261660&response_type=code&scope=get_user_info&redirect_uri=http%3A%2F%2Fwww.jubao56.com%2Fqqbind%3Fstate%3Dloginbind"
+    }
+    function wechat() {
+        show_we();
+    }
+    function show_we() {
+        $("#wechat_show").animate({ opacity: "show" }, 300).css("margin-top", -$("#wechat_show").height() / 0.2 + "px").css("margin-left", -$("#wechat_show").width() / 2 + "px");
+        var obj = new WxLogin({
+            id: "wechat_login",
+            appid: "wxdf6711be44a8af00",
+            scope: "snsapi_login",
+            redirect_uri: "http://www.jubao56.com/wxbind",
+            state: "loginbind",
+            style: "",
+            href: ""
+        });
+    }
+</script>
+<script src="static/jszip.js"></script>
+<script src="static/xlsx.js"></script>
+<script src="static/dist/ods.js"></script>
+<script>
+    $(function(){
+    /*登陆*/
+        $('.login').click(function(){
+            $('.mask').show();
+            $('.ygb_login').show();
+        });
+        $('.close').click(function(){
+            $('.mask,.ygb_login,.error_tip span').hide();
+        });
+        $('.aa').click(function(){
+            $(this).parents('.PopUp').hide();
+        });
+        /*登录验证*/
+        $('#username').blur(function(){
+            var log_ver = /^1\d{10}$/;
+            if($.trim($(this).val()) == ""){
+                $('.error_tip span').hide();
+                $('#no_name').show();
+            }
+            else if(!log_ver.test($(this).val())){
+                $('.error_tip span').hide();
+                $('#error_name').show();
+            }
+        });
+        $('#password').blur(function(){
+            if($.trim($(this).val()) == ""){
+                $('.error_tip span').hide();
+                $('#no_password').show();
+            }
+        });
+        /*登陆键盘事件*/
+        $('html').bind('keyup',function(){
+            if(event.keyCode==13){
+                $('.ygb_login .link').click();
+            }
+        });
+        /*侧边栏*/
+        $('.ygb_index_side li').hover(function(){
+            $(this).children('a').stop().animate({left:"-50"});
+        },function(){
+            $(this).children('a').stop().animate({left:"0"});
+        });
+
+    /*保费计算代码*/
+        var PriceOne;//搬运司机价格
+        var PriceTwo;//文员调度价格
+        var PeoNum;//总人数
+        var AllPrice;//总保费
+        var WorkOneNum;//搬运司机人数
+        var WorkTwoNum;//文员调度人数
+        var humanNameArray = [];//所有姓名
+        var IDCardArray = [];//所有身份证号
+        var sexArray = [];//所有性别
+        var workArray = [];//所有工种
+        var checkedProgram = $('.ygb_choose_box').not('.dn');
+        /*上传信息模板*/
+        var X = XLSX;
+        var e=e||window.event;
+        var wtf_mode = false;
+        function fixdata(data) {
+            var o = "", l = 0, w = 10240;
+            for(; l<data.byteLength/w; ++l) o+=String.fromCharCode.apply(null,new Uint8Array(data.slice(l*w,l*w+w)));
+            o+=String.fromCharCode.apply(null, new Uint8Array(data.slice(l*w)));
+            return o;
+        }
+
+        function to_json(workbook) {
+            list = new Array();
+            workbook.SheetNames.forEach(function(sheetName) {
+                var roa = X.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                for (var i = 0; i < roa.length; i++) {
+                    list.push(roa[i]);
+                }
+            });
+            return list;
+            /*console.log(list)*/
+        }
+
+        var xlf1 = document.getElementById('xlf1');
+        var xlf2 = document.getElementById('xlf2');
+        var xlf3 = document.getElementById('xlf3');
+        var xlf4= document.getElementById('xlf4');
+        //console.log(xlf+","+typeof xlf);
+        function handleFile(e) {
+            var files = e.target.files;
+            var f = files[0];
+            {   var reader = new FileReader();
+                var name = f.name;
+                reader.readAsArrayBuffer(f);
+
+                reader.onload = function(e) {
+                    //return ArrayBuffer{}
+                    var data = e.target.result;
+                    var arr = fixdata(data);
+                    var wb = X.read(btoa(arr), {type: 'base64'});
+                    to_json(wb);
+                    for (var i=0;i<list.length;i++) {
+                        $(".ygb_choose_list table").append('<tr><td>'+list[i].姓名+'</td> <td>'+list[i].性别+'</td><td>'+list[i].身份证号+'</td> <td>'+list[i].工作类型+'</td><td><a href="javascript:;" class="delete">'+'删除'+'</a></td></tr>');
+                    }
+                    //console.log(list[0].始发地)
+                };
+            }
+        }
+        if(xlf1.addEventListener) xlf1.addEventListener('change', handleFile, false);
+        if(xlf2.addEventListener) xlf2.addEventListener('change', handleFile, false);
+        if(xlf3.addEventListener) xlf3.addEventListener('change', handleFile, false);
+        if(xlf4.addEventListener) xlf4.addEventListener('change', handleFile, false);
+
+        /*选项卡*/
+        $('.check_top li').click(function(){
+            $(this).addClass('on');
+            $(this).siblings('li').removeClass('on');
+            var $this = $(this);
+            var $t = $this.index();
+            $('.ygb_choose_box').addClass('dn');
+            $('.ygb_choose_box').eq($t).removeClass('dn');
+            checkedProgram = $('.ygb_choose_box').eq($t);
+            /*初始化*/
+            var WorkOneNum = 0;
+            var WorkTwoNum = 0;
+            var AllPrice = 0;
+            $('.ygb_choose_list').find('tr:not(:first)').remove();
+            $('.all i').html('0');
+            $('.all span').html('0');
+        });
+
+        /*计算人数*/
+        function getPeopleNum(A){
+            PeoNum = checkedProgram.find('.ygb_choose_list').find('tr').length - 1;
+            $('.all span').html(PeoNum);
+            WorkOneNum = $(this).parents('.ygb_choose_box').find('.checked').parent().find('input:radio[name=workOne]').length;
+            WorkTwoNum = $(this).parents('.ygb_choose_box').find('.checked').parent().find('input:radio[name=workTwo]').length;
+            return PeoNum;
+        }
+        /*计算保费*/
+        function getAllPrice(){
+            AllPrice = WorkOneNum*PriceOne+WorkTwoNum*PriceTwo;
+            $('.all i').html(AllPrice);
+        }
+        /*新增人员信息*/
+        $('.addnew').click(function(){
+            $(this).parents('.ygb_choose_list table').append("<tr><td><input class='humanName' placeholder='请输入姓名！' type='text'/></td><td><select class='sex'><option>"+"男"+"</option><option>"+"女"+"</option></select></td> <td><input class='IDCard' placeholder='请输入身份证号！' type='text/'></td> <td><p class='fl ygb_work_check'><label><input checked name='workOne' type='radio'><span class='checked'>"+"司机"+"、"+"搬运等"+"</span></label></p><p class='fr ygb_work_check'><label><input name='workTwo' type='radio'><span>"+"文员"+"、"+"调度等"+"</span></label></p></td> <td><a class='delete' href='javascript:;'>"+"删除"+"</a></td></tr>")
+            PriceOne =$(this).parents('.ygb_choose_box').find('.priceOne').html();//当前司机搬运价格
+            PriceTwo =$(this).parents('.ygb_choose_box').find('.priceTwo').html();//当前文员调度价格
+            /*投保人数*/
+            getPeopleNum(this);
+            /*保费*/
+            WorkOneNum = $(this).parents('.ygb_choose_box').find('.checked').parent().find('input:radio[name=workOne]').length;
+            WorkTwoNum = $(this).parents('.ygb_choose_box').find('.checked').parent().find('input:radio[name=workTwo]').length;
+            chooseWordType();
+            getAllPrice();
+        });
+        /*选择工种*/
+        function chooseWordType(){
+            $('.ygb_work_check label span').click(function(){
+                $(this).addClass('checked');
+                $(this).parents('.ygb_work_check').siblings('.ygb_work_check').find('span').removeClass('checked');
+                var WorkOneNum = $(this).parents('.ygb_choose_box').find('.checked').parents('label').find('input:radio[name=workOne]').length;
+                var WorkTwoNum = $(this).parents('.ygb_choose_box').find('.checked').parents('label').find('input:radio[name=workTwo]').length;
+                getPeopleNum(this);
+                var AllPrice = WorkOneNum*PriceOne+WorkTwoNum*PriceTwo;
+                $('.all i').html(AllPrice);
+            });
+        }
+        chooseWordType();
+        /*删除人员信息*/
+        $(document).on('click','.delete',function(){
+            $(this).parents('.ygb_choose_list tr').remove();
+            var WorkOneNum = checkedProgram.find('.checked').parents('label').find('input:radio[name=workOne]').length;
+            var WorkTwoNum = checkedProgram.find('.checked').parents('label').find('input:radio[name=workTwo]').length;
+            var AllPrice = WorkOneNum*PriceOne+WorkTwoNum*PriceTwo;
+            $('.all i').html(WorkOneNum*PriceOne+WorkTwoNum*PriceTwo);
+            $('.all span').html(WorkOneNum+WorkTwoNum);
+            $('.all i').html(AllPrice);
+
+        });
+    /*确认并提交,检测信息*/
+        $(document).on('blur','.IDCard',function(){
+            var idcard=$(".IDCard").val();
+            var bo=/^(\d{6})(18|19|20)?(\d{2})([01]\d)([0123]\d)(\d{3})(\d|X)?$/.test(idcard);
+            var year = idcard. substr(6,4);
+            var month = idcard. substr(10,2);
+            var day = idcard. substr(12,2);
+            if(bo==false||month>12||day>31||year<1900){
+                alert('请输入正确的身份证号码！');
+                return false;
+            }
+        });
+        $(document).on('blur','.humanName',function(){
+            var humanName = $('.humanName').val();
+            if(humanName.length == 0){
+                alert('请输入姓名！');
+            }
+            else if(humanName.length > 5 || humanName.length <= 1){
+                alert('请输入正确姓名！')
+            }
+        });
+        $('.trueInfo').click(function(){
+            var WorkOneNum = checkedProgram.find('.checked').parents('label').find('input:radio[name=workOne]').length;
+            var WorkTwoNum = checkedProgram.find('.checked').parents('label').find('input:radio[name=workTwo]').length;
+            var AllPrice = WorkOneNum*PriceOne+WorkTwoNum*PriceTwo;
+            var PeoNum = WorkOneNum+WorkTwoNum;
+            if(checkedProgram.find('.humanName').val()==''||checkedProgram.find('.IDCard').val()==''){
+                alert('请将信息填写完整！')
+            }
+            else if(checkedProgram.find('.ygb_choose_list').find('tr').length == 1){
+                alert('请添加人员信息！')
+            }
+            else{
+                $('.ygb_choose').hide();
+                $('.ygb_confirm').show();
+                $('.all span').html(PeoNum);
+                $('.all i').html(AllPrice);
+                $('.all_price span').html(AllPrice);
+
+                $('.humanName').each(function(key,value){
+                    humanNameArray[key] = $(this).val();
+                    console.log($('.humanName').length)
+                });
+                $('.IDCard').each(function(key,value){
+                    IDCardArray[key] = $(this).val();
+                });
+                $('.sex option:selected').each(function(key,value){
+                    sexArray[key] = $(this).html();
+                });
+                $('span.checked').each(function(key,value){
+                    workArray[key] = $(this).html();
+                });
+
+                for(var i=0;i<humanNameArray.length;i++){
+                    $('.ygb_confirm_list table').append("<tr><td width='100'>"+humanNameArray[i]+"</td><td width='70'>"+sexArray[i]+"</td><td width='250'>"+IDCardArray[i]+"</td><td width='190'><p class='fl ygb_work_check'><label><input type='radio'><span class='checked'>"+workArray[i]+"</span></label></p></td></tr>")
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+        $('.toPay').click(function(){
+            $('.paybox').show();
+            $('.mask').show();
+        });
+        $('.paybox .close').click(function(){
+            $('.paybox').hide();
+        });
+
+        $('.backModify').click(function(){
+            $('.ygb_choose').show();
+            $('.ygb_confirm').hide();
+            /*初始化*/
+            $('.ygb_confirm_list table').empty();
+            humanNameArray = [];//所有姓名
+            IDCardArray = [];//所有身份证号
+            sexArray = [];//所有性别
+            workArray = [];//所有工种
+        });
+    });
+
+</script>
+
+</html>

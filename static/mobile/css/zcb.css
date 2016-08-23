@@ -1,0 +1,104 @@
+/*通用*/
+html,body{ width: 10.8rem;box-sizing: border-box;overflow-x: hidden;}
+.fl{ float: left;}
+.fr{ float: right;}
+.dn{ display: none;}
+
+/*header*/
+.header{ height: 1.35rem; text-align: center; box-sizing: border-box;position: relative; border-bottom: 1px solid #272727; background: #3a495c;padding:0 0.54rem}
+.top_border{ height: 0.04rem;width: 10.8rem; background: #495768; border-width:0 0 0.04rem 0.04rem; position: absolute; top: 0;}
+.top_link{ width: 0.68rem; height: 0.68rem; display: block; margin-top: 0.47rem; overflow: hidden;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}/*取消链接高亮*/
+.top_link img,.top_logo img{ width: 100%; height: 100%; display: block;}
+.top_logo{ width: 2.55rem;height: 0.9rem; display: inline-block;margin-top: 0.23rem;}
+
+/*main*/
+/*焦点图*/
+.focus{ margin:0 auto; position:relative; overflow:hidden;   }
+.focus .hd{ width:100%; height:11px;  position:absolute; z-index:1; bottom:5px; text-align:center;  }
+.focus .hd ul{ display:inline-block; padding:3px 5px; background-color:rgba(255,255,255,0.7); border-radius:5px; font-size:0; vertical-align:top; }
+.focus .hd ul li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#8C8C8C; margin:0 5px;  vertical-align:top; overflow:hidden;   }
+.focus .hd ul .on{ background:#FE6C9C;  }
+.focus .bd{ position:relative; z-index:0; }
+.focus .bd li img{ width:100%;display: block;}
+.focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */  }
+/*标签框*/
+.tag_list{ background: #e8f4fe; padding:0.24rem 0.55rem 0.35rem;}
+.tag_list img{ width: 3rem; height: 2.18rem; display: block;}
+.tag_list .block01{ background: #a1d0f9;}
+.tag_list .block02{ background: #edd1ad;}
+.tag_list .block03{ background: #ebb1ba;}
+.tag_list .block04{ background: #a4efdd;}
+.tag_list .block06{ background: #c4d5fe;}
+.tag_list .mid{ width: 0.35rem;}
+.tag_list .bot{ height: 0.24rem;}
+/*五个内容框*/
+.box01{ background: #f5f5f5;}
+.wrap01{ padding: 0.42rem 0.61rem 0.33rem;}
+.main_img01{ width: 2.3rem; height:3.2rem; float: left; display: block;}
+.wrap01 .content,.wrap02 .content{width: 6.8rem; margin-left: 0.4rem; float: left;}
+.wrap01 .content .title,.wrap02 .content .title{width: 3.48rem; height: 1.05rem; display:block; margin: 0 auto}
+.wrap02 .title01{width: 3.48rem; height: 1.05rem; display:block; margin-left: 1rem;}
+.wrap02 .title02{width: 3.48rem; height: 1.05rem; display:block; margin-left: 1.9rem;}
+.wrap02 .title03{width: 3.48rem; height: 1.05rem; display:block; margin-left: 1.7rem;}
+.wrap02 .title04{width: 5.04rem; height: 1.05rem;  margin-left: 0.9rem}
+.wrap01 .content .txt01,.wrap02 .content .txt01{ font-size: 0.33rem; color: #202124;text-align: left;line-height: 0.46rem}
+.wrap01 .content .money{ color: #ff0000;}
+.wrap01 .content .txt02{ font-size: 0.24rem; color: #202124;text-align: left;line-height: 0.46rem}
+.wrap01 .content .txt03,.txt04,.txt05{ font-size: 0.3rem; color: #47a8ef;line-height: 0.46rem}
+.tc{text-align: center;}
+.txt05{color: #fff!important;}
+.mt_45{margin-top: 0.45rem;}
+.mt_10{margin-top: 0.1rem;}
+.box_btn{ width: 4.77rem;height: 0.77rem;box-shadow:-0.04rem 0 0.04rem #98a5ae,0.04rem 0 0.04rem #98a5ae,0 0 #fff,0 0.08rem 0.08rem #98a5ae;  margin: 0.15rem 0 0}
+.box_btn a{display: block;}
+.box_btn img{ width: 4.77rem;height: 0.77rem;display: block;}
+.ml_330{ margin-left: 3.3rem;}
+
+.box02{ background: #69b7f0;}
+.wrap02{ padding: 0.42rem 0 0.32rem;}
+.main_img02{width: 2.55rem; height: 1.99rem;display: block; float: left; margin-left: 0.08rem; margin-top: 1.02rem}
+.wrap02 .content .txt03{ font-size: 0.3rem; color: #fff;line-height: 0.46rem}
+.main_img03{width: 2.99rem; height: 2.53rem;display: block; float: left; margin-left: 0.1rem; margin-top: 0.42rem}
+.main_img04{ width: 3.09rem; height: 2.06rem;display: block; float: left; margin-left: 0.1rem; margin-top: 0.85rem}
+.main_img05{ width: 2.72rem; height: 1.77rem;display: block; float: left; margin-left: 0.54rem; margin-top: 1.14rem}
+
+.box03{ background: #e8f4fe;}
+.box03 .main_img{ height: 6.49rem; width: 100%;}
+.box03 .main_img img{ height: 100%; width: 100%;display: block;}
+.box03 .content{ padding: 0.65rem 0.55rem 0.5rem}
+.box03 .title{ width: 9.17rem; height: 0.86rem; display: block; margin: 0 auto;}
+/*计算保费*/
+.calculate{  margin-top: 0.6rem;}
+.calculate span{ display: block; width: 2.5rem;font-size: 0.3rem; float: left; color: #2c95e1; line-height: 0.7rem; text-align: right;}
+.calculate select{width: 35%; height: 0.68rem; border: 1px solid #6abffd; border-radius: 0.02rem; float: left; font-size: 0.3rem;line-height: 0.68rem; margin-bottom: 0;}
+.mr_20{ margin-right: 0.2rem;}.ml_5{ margin-left: 0.05rem!important;}.ml_60{ margin-left:0.6rem!important;}.ml_30{ margin-left:0.3rem!important;}
+.mb_20{ margin-bottom: 0.2rem;}
+.result p{ line-height: 0.8rem; font-size: 0.3rem; width: 50%; float: left; color: #2c95e1;}
+.result p span{ display: inline-block; width: 2.5rem; text-align: right;}
+/*获取验证码*/
+.phone,.test_code{ font-size: 0.3rem;line-height: 0.78rem; margin: 0.1rem 0 0.2rem}
+.phone p,.phone input{width: 5.5rem; height: 0.78rem;line-height:0.78rem; border: 1px solid #2c95e1;text-align: center; color: #2c95e1; box-sizing: border-box; float: left; border-radius: 0.02rem; margin-left: 0.5rem;font-size: 0.3rem;}
+.phone p i,.test_code p i{ color: #ff0000; font-size: 0.4rem; font-weight: bold;}
+.phone .btn,.test_code .btn{display: block; width:2.43rem; height: 0.78rem; float: left; background: #f4101d; color: #fff; margin-left: 0.8rem; text-align: center; line-height: 0.78rem; font-weight: bold;}
+.test_code p,.test_code input{width:3.6rem;height:0.78rem; line-height:0.78rem;border: 1px solid #2c95e1; text-align: center; color: #2c95e1; box-sizing: border-box; float: left; border-radius: 0.02rem; margin-left:1.5rem;font-size: 0.3rem;}
+
+.inline{ height: 1px; background: #cee7fe; margin-top: 0.4rem; border-top: 1px solid #e0f0fe; border-bottom: 1px solid #e0f0fe;}
+.use_btn{padding: 0.2rem 0;}
+.use_btn p{ width: 50%; text-align: center; float: left;}
+.use_btn p a{ display: inline-block; width: 3.89rem; height: 0.89rem;  font-size: 0.42rem; line-height: 0.89rem; color: #fff;}
+.use_btn .test a{ background: #2c95e1; border-bottom:0.03rem solid #137ac4; border-radius: 0.02rem; }
+.use_btn .now a{ background: #f9811a; border-bottom:0.03rem solid #d6690c;border-radius: 0.02rem;}
+/*footer*/
+.footer{ background: #4da2e1; height: 1.33rem; font-size: 0.28rem; line-height: 1.33rem; color: #fff; text-align: center;}
+
+
+
+
+
+
+
+
+
+
+
+

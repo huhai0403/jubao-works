@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <style>
+        *{ margin: 0; padding: 0;font-family: "Microsoft yahei"}
+        body{ background: #f4f4f4}
+    </style>
+    <script>
+        $(function(){
+            $('input').click(function(){
+                $('#box').show();
+            });
+            $('#close').click(function(){
+                $('#box').hide();
+            });
+        })
+    </script>
+</head>
+<body>
+    <input style="margin: 50px 50px; padding: 10px 40px;" type="button" value="审核">
+    <div id="box" style=" display:none;width:780px; height: 370px; box-sizing: border-box;position: relative; background: #fff; padding: 40px 170px 60px; text-align: center; position: relative;">
+        <p style=" font-size: 16px; color: #000; font-weight: bold; margin-bottom: 40px;">审核增值税专用发票资质</p>
+        <div style="height: 60px;">
+            <p style="width: 220px; font-size: 14px; color: #000; text-align: left; float: left;">查看增值税开票信息扫描件</p>
+            <a href="#" style="margin-top:10px; font-size:14px;width: 108px; height: 25px; display: inline-block; float: right; box-sizing: border-box; line-height: 25px; border: 1px solid #9c9999; background: linear-gradient(#fff,#e9e8e8); color: #000; text-decoration: none; border-radius: 5px;">点击下载</a>
+        </div>
+        <div style="height: 60px;">
+            <p style="width: 220px;font-size: 14px; color: #000; text-align: left; float:left;">查看一般纳税认定书或三证合一的扫描件</p>
+            <a href="#" style=" margin-top:10px; font-size:14px;width: 108px; height: 25px; display: inline-block; float: right; box-sizing: border-box; line-height: 25px; border: 1px solid #9c9999; background: linear-gradient(#fff,#e9e8e8); color: #000; text-decoration: none; border-radius: 5px;">点击下载</a>
+        </div>
+        <div style="margin-top: 50px; height: 39px;">
+            <p style="width: 50%; float: left; text-align: center;"><a href="#" style="display: inline-block; width: 158px;height: 39px;background: url(img/sh_btn01.png) center no-repeat; line-height: 39px; color: #fff; text-decoration: none;">审核通过</a> </p>
+            <p style="width: 50%; float: left; text-align: center;"><a href="#" style="display: inline-block; width: 158px;height: 39px;background: url(img/sh_btn02.png) center no-repeat; line-height: 39px; color: #fff; text-decoration: none;">退回修改</a> </p>
+        </div>
+        <p style="display:none;height: 55px; position: absolute; width: 780px; left: 0; top: 260px; font-size: 14px; background: #d4f8d3; line-height: 55px; font-size: 14px; font-weight: bold; color: #000;">
+            审核已通过
+        </p>
+        <a id="close" style="width: 20px; height: 20px; display: inherit; background: url(img/close.png) center no-repeat; position: absolute; top:7px; right: 7px;" href="#"></a>
+    </div>
+</body>
+</html>

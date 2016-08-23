@@ -1,0 +1,27 @@
+/*通用*/
+html,body{ width: 8rem;box-sizing: border-box;overflow-x: hidden;}
+body{padding: 0 0.4rem; }
+.fl{ float: left;}
+.fr{ float: right;}
+.dn{ display: none;}
+
+
+.guide_title{ margin-top: 1.08rem;}
+.guide_title img{ display: block; width: 6.82rem; margin: 0 auto;}
+.guide_step{ margin-top: 0.6rem;}
+.guide_step .step{ width: 0.9rem; float: left;}
+.guide_step .title{ float: left; font-size: 0.36rem; line-height: 0.9rem; color: #f58543; font-weight: bolder; width: 6rem; border-bottom: 0.05rem solid #f7a35d; padding-left: 0.2rem; box-sizing: border-box;}
+.guide_txt{ font-size: 0.24rem; line-height: 0.4rem; font-weight: bold; color: #f58543; padding-left: 0.35rem;}
+
+.joint{ margin-top: 0.35rem; padding-left: 0.35rem;}
+.joint .title img{ width: 0.53rem; float: left;}
+.joint .title span{width: 6rem; float: left; line-height: 0.53rem; font-size:0.3rem; font-weight: bolder; color: #f7a35d; padding-left: 0.2rem;}
+.joint .pic{ width: 6.8rem;}
+.mt_15{ margin-top: 0.15rem;}
+.mt_40{ margin-top: 0.4rem;}
+.pb_1{ padding-bottom: 1rem}
+/*返回首页*/
+.top_back{ height: 0.75rem; width: 100%; padding: 0 2%; box-sizing: border-box; position: fixed; z-index: 100; top: 0; left: 0; background: #3a495c;}
+.top_back img{ height: 0.3rem; width: 0.2rem; vertical-align: middle;}
+.top_back a{ line-height: 0.75rem; font-size: 0.3rem; color: #fff;}
+.top_back a span{ line-height: 0.75rem; margin-right: 0.3rem;}

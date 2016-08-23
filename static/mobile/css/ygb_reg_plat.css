@@ -1,0 +1,23 @@
+/*通用*/
+html,body{ width: 7.5rem;box-sizing: border-box;overflow-x: hidden;}
+/*返回首页*/
+.top_back{ height: 0.75rem; width: 100%; padding: 0 2%; box-sizing: border-box; position: fixed; z-index: 100; top: 0; left: 0; background: #3a495c;}
+.top_back img{ height: 0.3rem; width: 0.2rem; vertical-align: middle;}
+.top_back a{ line-height: 0.75rem; font-size: 0.3rem; color: #fff;}
+.top_back a span{ line-height: 0.75rem; margin-right: 0.3rem;}
+/*main*/
+.plat_main{ width: 100%; height: 9.78rem; margin-top: 0.75rem; position: relative;  background: url("../images/ygb_reg_plat01.jpg") center no-repeat; background-size: cover;}
+.plat_main .title_img{ width: 7.3rem; height: 0.93rem; margin: 0 auto; padding-top: 0.24rem; display: block;}
+.plat_main .bg{ width: 6.8rem; height: 7.8rem; margin:0.4rem auto 0; background: #c7e2e9; opacity: 0.95; border-radius: 0.1rem;}
+.plat_main .content{position: absolute; color: #1a2937; width: 6.8rem; height: 7.8rem; top: 1.58rem; left: 50%; margin-left: -3.4rem;border-radius: 0.1rem; box-sizing: border-box; padding: 0.75rem 0.8rem 0;}
+.plat_main .content .item{ font-size: 0.3rem; margin-bottom: 0.4rem;}
+.plat_main .content .item span{ font-weight: bold; display: block; float: left; width: 1.4rem; text-align: left; line-height: 0.45rem;}
+.plat_main .content .item input{ height: 0.45rem; width: 3.8rem; border-radius: 0.05rem; padding: 0 0.1rem; box-sizing: border-box; border: 1px solid #d9d6d6; background: #fff;}
+.plat_main .content .option{ margin-bottom: 0.2rem;}
+.plat_main .content .option img{ width: 0.24rem ;height: 0.25rem; padding: 0.1rem 0.12rem 0.1rem 0.2rem; float: left;}
+.plat_main .content .option input{ float: left;height: 0.45rem; width: 1.5rem; padding: 0 0.1rem; border-radius: 0.05rem; margin: 0 0.2rem; box-sizing: border-box; border: 1px solid #d9d6d6; background: #fff;}
+.plat_main .content .option span{ float: left; line-height: 0.45rem; font-weight: bold;}
+.plat_main .content .btn{display: block; width: 2.5rem; height: 0.9rem; box-sizing: border-box; background: #85bde6; font-size: 0.36rem; line-height: 0.9rem; text-align: center; margin: 0.8rem auto 0; font-weight: bolder; color: #fff; border-radius: 0.06rem; box-shadow: 0  0.1rem 0 #4090e1;}
+.plat_foot{ padding: 0.5rem 0;}
+.plat_logo{ width: 2.35rem; margin: 0 auto; display: block;}
+.plat_word{ width: 6rem; margin: 0 auto; display: block; margin-top: 0.35rem;}

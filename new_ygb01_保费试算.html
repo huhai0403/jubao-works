@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>员工保</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content=" 聚保让您投保不上当，理赔有人帮！让物流人买到放心的保险，让物流平台放心卖保险！" />
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
+    <link rel="stylesheet" type="text/css" href="static/style/css.css">
+    <script type="text/javascript" src="static/webjs/jquery.js"></script>
+    <script type="text/javascript" src="static/webjs/Base.js"></script>
+    <script type="text/javascript" src="static/webjs/respond.min.js"></script>
+    <script src="static/webjs/datetools.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=bbe65231dff3077e7a7a6cc336125c0c"></script>
+    <script type="text/javascript" src="static/js/district.js"></script>
+    <link href="static/style/filluserinfo.css" rel="stylesheet" />
+</head>
+<body>
+<div class="topBox">
+    <div class="clearfix w top">
+        <div class="logo fl">
+            <a href="/">
+                <img src="static/images/logo.png" alt="logo" />
+            </a>
+			<span>
+                <img src="static/images/laixnidxjsiosa.jpg" width="280" />
+            </span>
+        </div>
+        <div class="loginBox fr">
+            <a class="login" href="/login">登录</a>
+            <a class="register" href="/register">注册</a>
+        </div>
+    </div>
+</div>
+<div class="navBox">
+    <div class="w clearfix">
+        <div class="searchS fr"><a href="/searchorder">保单查询</a></div>
+        <div class="navC">
+            <ul class="clearfix nav index">
+                <li class=""><a href="/zcb">整车保</a></li>
+                <li class=""><a href="/ygb">员工保</a></li>
+                <li class=""><a href="/article">老周解密</a></li>
+                <li class=""><a href="/claims">保险理赔</a></li>
+                <li class=""><a href="/timeline">新闻动态</a></li>
+                <li class=""><a href="/business">商务合作</a></li>
+                <li class=""><a href="/contact">联系我们</a></li>
+                <li class=""><a href="/about">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="allBox oh">
+    <div class="ygb_banner">
+        <img src="static/images/ygb_banner.jpg"/>
+    </div>
+    <div class="ygb_box01">
+        <div class="layout">
+            <img src="static/images/ygb_box01.png"/>
+        </div>
+        <a class="ygb_test_link" href="#ygb_box04">立即试算我的保费</a>
+        <img class="bot01" src="static/images/ygb_bot.png"/>
+    </div>
+    <div class="ygb_box02">
+        <div class="layout">
+            <img src="static/images/ygb_box02.png"/>
+        </div>
+        <img class="bot02" src="static/images/ygb_bot02.png"/>
+    </div>
+    <div class="ygb_box03">
+        <div class="layout">
+            <img src="static/images/ygb_box03.png"/>
+        </div>
+    </div>
+    <div class="ygb_box04" id="ygb_box04">
+        <div class="layout pr">
+            <p class="title">立即试算我的保费</p>
+            <p class="tip"><span>请输入现场操作人员投保人数：</span><input class="num01" type="text" /><strong>人</strong><i>*现场操作人员包括：司机、搬运等工作危险性高的人员</i></p>
+            <p class="tip "><span>非现场操作人员人数：</span><input class="num02" type="text" /><strong>人</strong><i>*非现场操作人员包括：文员、管理等工作危险性低的人员</i></p>
+            <table class="ygb_table">
+                <tr><td width="50px" rowspan="3" class="br02 tc fwb fs28">特惠版</td><td class="br01" width="175px" rowspan="3"><p class="tip01 fwb">保费共计：</p><p class="fwb tip02 allprice1">0元</p><a class="btn" href="#">立即投保</a> </td><td class="br01 bb01 fwb" width="165px" >工作类型</td><td class="bb01 fwb br01" >保费</td><td class="bb01 fwb br01" >项目</td></tr>
+                <tr><td class="bb01 br01">司机、搬运等</td><td width="90px" class="bb01 br01 fwb price01">600</td><td rowspan="2" class="tl br01" width="460px"><span class="black fwb">60万死亡伤残+6万医疗+100元/天误工费+13种扩展保障</span></td></tr>
+                <tr><td class="br01">文员、调度等</td><td class="br01 fwb price02" width="90px">300</td></tr>
+            </table>
+            <table class="ygb_table">
+                <tr><td width="50px" rowspan="3" class="br02 tc fwb fs28">经济版</td><td class="br01" width="175px" rowspan="3"><p class="tip01 fwb">保费共计：</p><p class="fwb tip02 allprice1">0元</p><a class="btn" href="#">立即投保</a> </td><td class="br01 bb01 fwb" width="165px" >工作类型</td><td class="bb01 fwb br01" >保费</td><td class="bb01 fwb br01" >项目</td></tr>
+                <tr><td class="bb01 br01">司机、搬运等</td><td width="90px" class="bb01 br01 fwb price01">280</td><td rowspan="2" class="tl br01" width="460px"><span class="black fwb">20万死亡伤残+2万医疗+100元/天误工费+13种扩展保障<span class="red">+自费药保障</span></td></tr>
+                <tr><td class="br01">文员、调度等</td><td class="br01 fwb price02" width="90px">160</td></tr>
+            </table>
+            <table class="ygb_table">
+                <tr><td width="50px" rowspan="3" class="br02 tc fwb fs28">标准版</td><td class="br01" width="175px" rowspan="3"><p class="tip01 fwb">保费共计：</p><p class="fwb tip02 allprice1">0元</p><a class="btn" href="#">立即投保</a> </td><td class="br01 bb01 fwb" width="165px" >工作类型</td><td class="bb01 fwb br01" >保费</td><td class="bb01 fwb br01" >项目</td></tr>
+                <tr><td class="bb01 br01">司机、搬运等</td><td width="90px" class="bb01 br01 fwb price01">560</td><td rowspan="2" class="tl br01" width="460px"><span class="black fwb"><span class="red">40</span>万死亡伤残+<span class="red">4</span>万医疗+100元/天误工费+13种扩展保障<span class="red">+自费药保障+24小时意外</span></span></td></tr>
+                <tr><td class="br01">文员、调度等</td><td class="br01 fwb price02" width="90px">320</td></tr>
+            </table>
+            <table class="ygb_table">
+                <tr><td width="50px" rowspan="3" class="br02 tc fwb fs28">尊享版</td><td class="br01" width="175px" rowspan="3"><p class="tip01 fwb">保费共计：</p><p class="fwb tip02 allprice1">0元</p><a class="btn" href="#">立即投保</a> </td><td class="br01 bb01 fwb" width="165px" >工作类型</td><td class="bb01 fwb br01" >保费</td><td class="bb01 fwb br01" >项目</td></tr>
+                <tr><td class="bb01 br01">司机、搬运等</td><td width="90px" class="bb01 br01 fwb price01">840</td><td rowspan="2" class="tl br01" width="460px"><span class="black fwb"><span class="red">60</span>万死亡伤残+<span class="red">6</span>万医疗+100元/天误工费+13种扩展保障<span class="red">+自费药保障+24小时意外+100元/天住院津贴</span></span></td></tr>
+                <tr><td class="br01">文员、调度等</td><td class="br01 fwb price02" width="90px">480</td></tr>
+            </table>
+            <img class="hot" src="static/images/ygb_test_hot.png"/>
+        </div>
+        <img class="bot02" src="static/images/ygb_bot02.png"/>
+        <img class="bot03" src="static/images/ygb_bot03.png"/>
+    </div>
+    <div class="ygb_box05">
+        <div class="layout">
+            <img src="static/images/ygb_box05.png"/>
+        </div>
+    </div>
+    <div class="ygb_box06">
+        <div class="layout">
+            <img src="static/images/ygb_box06.png"/>
+        </div>
+        <img class="bot03" src="static/images/ygb_bot04.png"/>
+    </div>
+</div>
+
+<div class="footerBox">
+    <div class=" w footer">
+        <div class="footer_nav">
+            <ul class="clearfix" style="height: 150px">
+                <li style="width: 148px;">
+                    <dl>
+                        <dt>保险业务介绍</dt>
+                        <dd><a href="/zcb">整车保</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 138px;">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="/guide">新手指南</a></dd>
+                        <dd><a href="/guide">常见问题</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 125px;">
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><a href="/business">合作伙伴</a></dd>
+                        <dd><a href="/business">广告合作</a></dd>
+                        <dd><a href="/business">保险公司</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 174px;">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="/about">关于聚保</a></dd>
+                        <dd><a href="/contact">加入聚保</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 409px;">
+                    <dl>
+                        <a href="/contact"><dt>联系我们</dt></a>
+                        <dd>
+                            <em>
+                                <p>服务热线：40080-59680</p><p>邮箱：info@jubao56.com</p><p>QQ：1379563155</p><p>联系方式：027-82203258</p><p>地址：湖北省武汉市江岸区解放南路融科天城二期T10-804室</p>
+                                <p style="height:10px;"></p>
+                                扫描右侧二维码,关注聚保物流保险服务平台官网微信
+                            </em>
+                                <span>
+                                    <img src="static/images/weixin.jpg" alt="聚保物流保险服务平台官网微信" style="width: 155px; height: 155px;"/></span>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="ft_cl_Box">
+        <div class="w clearfix ft_cl">
+            <div class="fl ft_link">
+                <a href="#">
+                    <img src="static/images/ft_01.png" alt=" " /></a>
+                <a href="#">
+                    <img src="static/images/ft_02.png" alt=" " /></a>
+                <a href="#">
+                    <img src="static/images/ft_03.png" alt=" " /></a>
+            </div>
+
+            <div class="fr ft_copyRight">
+                    <span>货运险 | 物流责任险 | 聚保物流保险服务平台<br />
+                        Copyright©2015 jubao.com All Rights Reserved
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--回到顶部-->
+<div class="backtop"></div>
+
+<script type="text/javascript">
+    $(".index li").click(function () {
+        $(this).addClass("");
+    });
+</script>
+
+
+
+<script>
+    $(function(){
+        <!--2016.8.8保费计算-->
+
+        $('.ygb_box04 input').bind('input propertychange', function() {
+            var Num01 = $('.num01').val();
+            var Num02 = $('.num02').val();
+            function allPrice(A){
+                $(A).html(Num01*$(A).parents('table').find('.price01').html()+Num02*$(A).parents('table').find('.price02').html()+'元')
+            };
+            allPrice('.allprice1');
+            allPrice('.allprice2');
+            allPrice('.allprice3');
+            allPrice('.allprice4');
+
+        });
+        var index_btn = 60;
+        $("#reg_password").focus(function () {
+            if ($(this).val() != $("#re_pwd").val()) {
+
+                $("#span_pwd_error").html("");
+                $("#span_re_pwd_error").html("密码不一致.");
+            }
+        });
+
+        $("#reg_password").blur(function () {
+            check_pwd($(this), $("#span_pwd_error"));
+        });
+
+        $("#re_pwd").blur(function () {
+            if ($(this).val() != $("#reg_password").val()) {
+                $("#span_re_pwd_error").html("密码不一致.");
+            } else {
+                $("#span_re_pwd_error").html("");
+                check_pwd($("#reg_password"), $("#span_pwd_error"));
+            }
+        });
+    });
+</script>
+<script>
+    var reg_phone = /^(0|86|17951)?(13[0-9]|15[012356789]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/;
+    var reg_pwd = /^(?=.*?[a-zA-Z])(?=.*?[0-6])[!"#$%&'()*+,\-./:;<=>?@@\[\\\]^_`{|}~A-Za-z0-9]{6,16}$/;
+    function check_pwd(obj, tip) {
+        if ($.trim($(obj).val()) == "") {
+            $(tip).html("必须输入项.");
+            return -1;
+        }
+        else if ($(obj).val().length<6) {
+            $(tip).html("至少6位.");
+            return -1;
+        }
+        $(tip).html("");
+        return 0;
+    }
+
+    function check_phone(obj, tip) {
+        if ($.trim($(obj).val()) == "") {
+            $(tip).html("必须输入项.");
+            return -1;
+        } else if (!reg_phone.test($(obj).val())) {
+            $(tip).html("格式不正确.");
+            return -2;
+        }
+        else{
+            $(tip).html("");
+            return 0;
+        }
+    }
+    $(window).bind("resize", resizewin);
+    function resizewin() {
+        var h = $(window).height();
+        var w = $(window).width();
+        if ($(".PopUp:visible").size() == 1) {
+
+            $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "blcok" });
+        }
+    }
+    function show(title, body,fn) {
+        $("#title").text(title);
+        $("#body").html(body);
+        $("#single_window").animate({opacity:"show"},300).css("margin-top",-$("#single_window").height()/2+"px").css("margin-left",-$("#single_window").width()/2+"px");
+        $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "block" });
+        $("#layerbtn").unbind("click").bind("click", fn);
+    }
+    function closedw() {
+        $("#double_window").animate({ opacity: "hide" }, 100);
+        $(".fullbg").hide();
+    }
+
+    function showdw(left_title,left_body,right_title,right_body,fn)
+    {
+        $("#left_title").text(left_title);
+        $("#left_body").html(left_body);
+        $("#right_title").text(right_title);
+        $("#right_body").html(right_body);
+        $("#left_agree_for").text("我已阅读并同意"+left_title);
+        $("#right_agree_for").text("我已阅读并同意"+right_title);
+        $("#double_window").animate({opacity:"show"},300).css("margin-top",-$("#double_window").height()/2+"px").css("margin-left",-$("#double_window").width()/2+"px");
+        $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "block" });
+        $("#double_next").unbind("click").bind("click", fn);
+    }
+    function closesw() {
+        $("#single_window").animate({ opacity: "hide" }, 100);
+        $(".fullbg").hide();
+    }
+    function showinfo()
+    {
+        $("#fillinfo").animate({opacity:"show"},300).css("margin-top",-$("#fillinfo").height()/2+"px").css("margin-left",-$("#fillinfo").width()/2+"px");
+        $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "block" });
+    }
+    function showprice()
+    {
+        $("#single_window").animate({opacity:"show"},300).css("margin-top",-$("#single_window").height()/2+"px").css("margin-left",-$("#single_window").width()/2+"px");
+        $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "block" });
+    }
+    function showprotect()
+    {
+        $("#double_window").animate({opacity:"show"},300).css("margin-top",-$("#double_window").height()/2+"px").css("margin-left",-$("#double_window").width()/2+"px");
+        $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "block" });
+    }
+    function closeinfo()
+    {
+        $("#fillinfo").animate({ opacity: "hide" }, 100);
+        $(".fullbg").hide();
+    }
+    $(function () {
+        $("#single_aa").click(function () {
+            $("#single_window").animate({ opacity: "hide" }, 100);
+            $(".fullbg").hide();
+        });
+        $("#double_aa").click(function () {
+            $("#double_window").animate({ opacity: "hide" }, 100);
+            $(".fullbg").hide();
+        });
+        $("#fillinfo_aa").click(function () {
+            $("#fillinfo").animate({ opacity: "hide" }, 100);
+            $(".fullbg").hide();
+        });
+
+        $("#phoneNumber").blur(function () {
+            check_phone($(this), $("#filluserinfo_error"))
+        });
+
+        $("#reg_password").focus(function () {
+            if ($(this).val() != $("#re_pwd").val()) {
+                $(this).val("");
+                $("#re_pwd").val("");
+                $("#filluserinfo_error").html("");
+            }
+        });
+
+        $("#reg_password").blur(function () {
+            check_pwd($(this), $("#filluserinfo_error"));
+        });
+
+        $("#re_pwd").blur(function () {
+            if ($(this).val() != $("#reg_password").val()) {
+                $("#filluserinfo_error").html("密码不一致.");
+            } else {
+                check_pwd($("#reg_password"), $("#filluserinfo_error"));
+            }
+        });
+    });
+
+
+
+    var begin_province = '';
+    var begin_city = '';
+    var end_province = '';
+    var end_city = '';
+    var price = 0;
+    var distance = 0;
+    $(function () {
+        data = provinceJson;
+        $("#begin_province_sel").children(":gt(0)").remove();
+        $("#end_province_sel").children(":gt(0)").remove();
+
+        for (var i = 0; i < data.length; i++) {
+            if (begin_province == data[i].name) {
+                $("#begin_province_sel").append("<option selected='selected' value=" + data[i].name + ">" + data[i].name + "</option>");
+                city_bind($("#begin_province_sel"), $("#begin_city_sel"), data[i].name, begin_city)
+            } else {
+                $("#begin_province_sel").append("<option value=" + data[i].name + ">" + data[i].name + "</option>");
+            }
+
+            if (end_province == data[i].name) {
+                $("#end_province_sel").append("<option selected='selected' value=" + data[i].name + ">" + data[i].name + "</option>");
+                city_bind($("#end_province_sel"), $("#end_city_sel"), data[i].name, end_city);
+            } else {
+                $("#end_province_sel").append("<option value=" + data[i].name + ">" + data[i].name + "</option>");
+            }
+        }
+
+        $("#begin_province_sel").change(function () {
+            city_bind($("#begin_province_sel"), $("#begin_city_sel"), $(this).children(":selected").text(), '')
+        });
+
+        $("#end_province_sel").change(function () {
+            city_bind($("#end_province_sel"), $("#end_city_sel"), $(this).children(":selected").text(), '')
+        });
+
+        $("#begin_city_sel").change(function () {
+            get_dist();
+        });
+
+        $("#end_city_sel").change(function () {
+            get_dist();
+        });
+
+        $("#comp_sel").change(function () {
+            get_dist();
+        });
+    });
+
+    function city_bind(pobj, obj, province, selected_city) {
+        $(obj).children(":gt(0)").remove();
+        $("#search_distance").html("--");
+        $("#span_price").text("--");
+        getCity(province, function(p, data) {
+            if (p == $(pobj).val()) {
+                for (var i = 0; i < data.length; i++) {
+                    var v = '[' + data[i].center.lng + ',' + data[i].center.lat + ']';
+                    if (data[i].name == selected_city) {
+                        $(obj).append("<option selected='selected' value=" + v + ">" + data[i].name + "</option>");
+                        get_dist()
+                    } else {
+                        $(obj).append("<option value=" + v + ">" + data[i].name + "</option>");
+                    }
+                }
+            }
+        });
+    }
+
+    function get_dist() {
+        var begin = $("#begin_city_sel").val();
+        var end = $("#end_city_sel").val();
+        if (begin == "-1" || end == "-1") {
+            $("#search_distance").html("--");
+            return
+        }
+
+        getDistance(eval(begin), eval(end), function (d) {
+            if (begin == end) {
+                d = 200;
+            }
+            $("#search_distance").html(d);
+            distance = d;
+            get_price(d);
+        });
+    }
+
+    function get_price(dist) {
+        var type = $("#comp_sel").val();
+
+        var url = '/dashboard/truckorder/price.json';
+        $.post(url, {coverage: type, distance: dist}, function (r) {
+            if (r.success) {
+                $("#span_price").text(r.price);
+                price = r.price;
+                $("#price_rate").text("");
+            }
+        }, "json");
+    }
+
+    function test() {
+        location.href = "/dashboard/truckorder/trial";
+    }
+
+    function buy() {
+        location.href = "/dashboard/truckorder/new";
+    }
+
+    $(function(){
+        $("#layer_goback").click(function(){
+            closedw();
+            index--;
+            if (index==0) {
+                $("#layer_goback").hide();
+
+            }
+            reg_pro();
+        });
+    });
+    function reg_pro()
+    {
+        if (index==1) {
+            $("#layer_goback").show();
+
+        }
+        if(index<product_protocol.length)
+        {
+            if(product_protocol[index].is_fullprotocol&&user_protocol!=null&&user_protocol.length>0)
+            {
+                showdw(product_protocol[index].title,product_protocol[index].body,user_protocol[0].title,user_protocol[0].body,function(){
+                    if($("#left_agree").prop("checked")&&$("#right_agree").prop("checked"))
+                    {
+                        closedw();
+                        index++;
+                        reg_pro();
+                    }
+                })
+            }
+            else
+            {
+                if(product_protocol[index].is_fullprotocol)
+                {
+                    $("#pop_read").css("visibility","visible");
+                    $("#layerbtn").val("下一步");
+                }
+                else
+                {
+                    $("#pop_read").css("visibility","hidden");
+                    $("#layerbtn").val("我已阅读并同意");
+                }
+                show(product_protocol[index].title,product_protocol[index].body,function(){
+                    if(!product_protocol[index].is_fullprotocol||$("#read").prop("checked"))
+                    {
+                        close();
+                        index++;
+                        reg_pro();
+                    }
+                })
+            }
+        }
+        else
+        {
+            if(product_protocol.length==0)
+            {
+                location.href='buy?ap='+$("#begin_province_sel").val()+'&ac='+$("#begin_city_sel").val()+"&bp="+$("#end_province_sel").val()+'&bc='+$("#end_city_sel").val();
+            }
+            else
+            {
+                var data={major:product_protocol[0].major_no,minor:product_protocol[0].minor_no};
+                if(user_protocol!=null&&user_protocol.length>0)
+                {
+                    data.pmajor=user_protocol[0].major_no;
+                }
+                $.post('reg_product_protocol',data,function(){
+                    location.href='buy?ap='+$("#begin_province_sel").val()+'&ac='+$("#begin_city_sel").val()+"&bp="+$("#end_province_sel").val()+'&bc='+$("#end_city_sel").val();
+                })
+            }
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?8dcdc46116c07356465640ba5ff004fc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    $(function(){
+        /*回到顶部*/
+        $(".backtop").click(function() {
+            $('html,body').animate({
+                'scrollTop' : 0
+            }, 600);
+        });
+        $(window).scroll(function ()
+        {
+            var st = $(this).scrollTop();
+            if(st>200){
+                $('.backtop').fadeIn();
+            }
+            else {
+                $('.backtop').fadeOut();
+            }
+        });
+    })
+</script>
+</body>
+</html>
