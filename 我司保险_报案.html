@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工保产品投保页</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
+    <link rel="stylesheet" type="text/css" href="static/style/css.css">
+    <link rel="stylesheet" type="text/css" href="static/style/jedate.css">
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/jedate.min.js"></script>
+</head>
+<body>
+<div class="topBox">
+    <div class="clearfix w top">
+        <div class="logo fl">
+            <a href="/">
+                <img src="static/images/logo.png" alt="logo" />
+            </a>
+			<span>
+                <img src="static/images/laixnidxjsiosa.jpg" width="280" />
+            </span>
+        </div>
+        <div class="loginBox fr">
+            <a class="login" href="javascript:;">登录</a>
+            <a class="register" href="/register">注册</a>
+        </div>
+    </div>
+</div>
+<div class="navBox">
+    <div class="w clearfix">
+        <div class="searchS fr"><a href="/searchorder">保单查询</a></div>
+        <div class="navC">
+            <ul class="clearfix nav index">
+                <li class=""><a href="/zcb">整车保</a></li>
+                <li class=""><a href="/ygb">员工保</a></li>
+                <li class=""><a href="/article">老周解密</a></li>
+                <li class=""><a href="/claims">保险理赔</a></li>
+                <li class=""><a href="/timeline">新闻动态</a></li>
+                <li class=""><a href="/business">商务合作</a></li>
+                <li class=""><a href="/contact">联系我们</a></li>
+                <li class=""><a href="/about">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="mid_link">
+    <span>当前页面：</span>
+    <a href="#">理赔系统</a>
+    <i>-></i>
+    <span>事故报案</span>
+</div>
+<div class="ygb_choose">
+    <div class="claims_choose_box pr clearfix">
+        <img class="img" src="static/images/claims_report01.jpg"/>
+        <div class="claims_main_box">
+            <div class="items clearfix">
+                <p class="title">出险时间：</p>
+                <div class="content clearfix">
+                    <input class="datainp fl" id="indate" type="text" placeholder="请选择出险时间" value=""  readonly>
+                    <p class="word fl">日</p>
+                    <div class="select_box01 fl">
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                        </select>
+                    </div>
+                    <p class="word fl">时</p>
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">模糊查询保单:</p>
+                <div class="blurry_search clearfix">
+                    <div class="select_box01 w210 fl">
+                        <select>
+                            <option>按公司名称查询</option>
+                            <option>按车牌号查询</option>
+                            <option>按照发车城市查询</option>
+                            <option>按目的地城市查询</option>
+                            <option>按保单号查询</option>
+                        </select>
+                    </div>
+                    <input class="fl" type="text">
+                    <a class="search_btn fl" href="#">查询</a>
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">保单详情：</p>
+                <div class="content clearfix">
+                    <div class="info fl">
+                        <p><span>被保险人:</span><i>武汉万达物流有限公司</i></p>
+                        <p><span>投保人:</span><i>武汉万达物流有限公司</i></p>
+                        <p><span>承运车辆:</span><i>鄂 A521X挂</i></p>
+                        <p><span>始发地:</span><i>湖北武汉</i></p>
+                        <p><span>目的地:</span><i>北京</i></p>
+                        <p><span>赔偿限额:</span><i>150万</i></p>
+                    </div>
+                    <div class="tip fl">
+                        <p>免赔限额:</p>
+                        <h6>1、每次事故免赔率为人民币5000元或损失金额的10%，两者以高者为准。</h6>
+                        <h6>2、火灾每次事故免赔率为人民币5000元或损失金额的20%，两者以高者为准。</h6>
+                        <h6>3、保险事故如发生在新疆、内蒙古、青海、甘肃四个行政区域内时，则该次事故的对应免赔额为：RMB5000元或损失金额的15%，两者以高者为准。</h6>
+                        <h6>4、玻璃制品、陶瓷制品、石膏制品等易碎品的免赔额为：RMB5000元或损失金额的15%，两者以高者为准</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">受损财产：</p>
+                <div class="content">
+                    <input type="text" placeholder="请输入受损财产">
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">受损财产：</p>
+                <div class="content">
+                    <div class="select_box01 w130">
+                        <select>
+                            <option>火灾</option>
+                            <option>爆炸</option>
+                            <option>交通事故</option>
+                            <option>货物挤压碰撞</option>
+                            <option>雨淋</option>
+                            <option>装卸意外</option>
+                            <option>盗窃</option>
+                            <option>抢劫</option>
+                            <option>整车失踪</option>
+                            <option>自然灾害</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">事故地点：</p>
+                <div class="content">
+                    <input  type="text" placeholder="请输入事故地点">
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">估损金额：</p>
+                <div class="content clearfix">
+                    <input class="fl" type="text" placeholder="请输入估损金额">
+                    <p class="word fl">万元</p>
+                    <p class="txt fl ml_55">*估损金额不代表最后理赔金额</p>
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">事故经过：</p>
+                <div class="content clearfix">
+                    <textarea></textarea>
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">联系人姓名：</p>
+                <div class="content clearfix">
+                    <input class="fl" type="text" placeholder="请输入联系人姓名">
+                    <p class="txt fl ml_55">*此选项为必填</p>
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">联系人电话：</p>
+                <div class="content clearfix">
+                    <input class="fl" type="text" placeholder="请输入联系人电话">
+                    <p class="txt fl ml_55">*此选项为必填</p>
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">备用联系人：</p>
+                <div class="content">
+                    <input  type="text" placeholder="请输入备用联系人姓名">
+                </div>
+            </div>
+            <div class="items clearfix">
+                <p class="title">备用联系人电话：</p>
+                <div class="content">
+                    <input  type="text" placeholder="请输入备用联系人电话">
+                </div>
+            </div>
+            <div class="claims_btn01">
+                <a href="#">确认生成报案</a>
+            </div>
+        </div>
+    </div>
+    <ul class="check_bot clearfix">
+        <li class="mr_20">
+            <span class="ml_30">整车保出险</span>
+        </li>
+    </ul>
+    <ul class="check_top clearfix">
+        <li class="on mr_20">
+            <span class="ml_30">整车保出险</span>
+        </li>
+    </ul>
+</div>
+<!--保单搜索弹框-->
+<div class="alert_box claims_num" style="display: block;">
+    <p class="text">您所登记的案件，系统已记录。</p>
+    <p class="text">报案号为ZCB201607040001 </p>
+    <div class="claims_btn01">
+        <a href="#">下一步</a>
+    </div>
+</div>
+<div class="mask" style="display: block"></div>
+<div class="footerBox">
+    <div class=" w footer">
+        <div class="footer_nav">
+            <ul class="clearfix" style="height: 150px">
+                <li style="width: 148px;">
+                    <dl>
+                        <dt>保险业务介绍</dt>
+                        <dd><a href="/zcb">整车保</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 138px;">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="/guide">新手指南</a></dd>
+                        <dd><a href="/guide">常见问题</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 125px;">
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><a href="/business">合作伙伴</a></dd>
+                        <dd><a href="/business">广告合作</a></dd>
+                        <dd><a href="/business">保险公司</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 174px;">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="/about">关于聚保</a></dd>
+                        <dd><a href="/contact">加入聚保</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 409px;">
+                    <dl>
+                        <a href="/contact"><dt>联系我们</dt></a>
+                        <dd>
+                            <em>
+                                <p>服务热线：40080-59680</p><p>邮箱：info@jubao56.com</p><p>QQ：1379563155</p><p>联系方式：027-82203258</p><p>地址：湖北省武汉市江岸区解放南路融科天城二期T10-804室</p>
+                                <p style="height:10px;"></p>
+                                扫描右侧二维码,关注聚保物流保险服务平台官网微信
+                            </em>
+                                <span>
+                                    <img src="static/images/weixin.jpg" alt="聚保物流保险服务平台官网微信" style="width: 155px; height: 155px;"/></span>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="ft_cl_Box">
+        <div class="w clearfix ft_cl">
+            <div class="fl ft_link">
+                <a href="javascript:;">
+                    <img src="static/images/ft_01.png" alt=" " /></a>
+                <a href="javascript:;">
+                    <img src="static/images/ft_02.png" alt=" " /></a>
+                <a href="javascript:;">
+                    <img src="static/images/ft_03.png" alt=" " /></a>
+            </div>
+
+            <div class="fr ft_copyRight">
+                    <span>货运险 | 物流责任险 | 聚保物流保险服务平台<br />
+                        Copyright©2015 jubao.com All Rights Reserved
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--微信登陆-->
+<div class="PopUp" style="width:340px;" id="wechat_show">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <a class="pop_go" href="#"  id="wechat_login" ></a>
+        </div>
+    </div>
+    <span class="aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
+</div>
+</body>
+<!--微信QQ登陆-->
+<!--<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script>
+    function qq() {
+        location.href="https://graph.qq.com/oauth2.0/authorize?client_id=101261660&response_type=code&scope=get_user_info&redirect_uri=http%3A%2F%2Fwww.jubao56.com%2Fqqbind%3Fstate%3Dloginbind"
+    }
+    function wechat() {
+        show_we();
+    }
+    function show_we() {
+        $("#wechat_show").animate({ opacity: "show" }, 300).css("margin-top", -$("#wechat_show").height() / 0.2 + "px").css("margin-left", -$("#wechat_show").width() / 2 + "px");
+        var obj = new WxLogin({
+            id: "wechat_login",
+            appid: "wxdf6711be44a8af00",
+            scope: "snsapi_login",
+            redirect_uri: "http://www.jubao56.com/wxbind",
+            state: "loginbind",
+            style: "",
+            href: ""
+        });
+    }
+</script>-->
+
+<script>
+    /*时间选择*/
+    window.onload=function(){
+        jeDate({
+            dateCell:"#indate",//isinitVal:true,
+            format:"YYYY-MM-DD",
+            isTime:false, //isClear:false,
+            minDate:"2015-10-19 00:00:00",
+            maxDate:"2016-11-8 00:00:00"
+        })
+        jeDate({
+            dateCell:"#dateinfo",
+            format:"YYYY年MM月DD日 hh:mm:ss",
+            isinitVal:true,
+            isTime:true, //isClear:false,
+            minDate:"2014-09-19 00:00:00",
+            okfun:function(val){alert(val)}
+        })
+    }
+    $(function(){
+        /*选项卡*/
+        $('.check_top li').click(function(){
+            $(this).addClass('on');
+            $(this).siblings('li').removeClass('on');
+            var $this = $(this);
+            var $t = $this.index();
+            $('.ygb_choose_box').addClass('dn');
+            $('.ygb_choose_box').eq($t).removeClass('dn');
+
+        });
+
+    })
+</script>
+</html>
