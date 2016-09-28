@@ -1,0 +1,32 @@
+/*通用*/
+html,body{ width: 7.5rem;box-sizing: border-box;overflow-x: hidden; font-family:"Microsoft Yahei";}
+.fl{ float: left;}
+.fr{ float: right;}
+.dn{ display: none;}
+.pr{ position: relative;}
+.pa{ position: absolute;}
+.oh{ overflow: hidden;}
+/*main*/
+.help_title01{ height: 0.85rem; font-size: 0.3rem; color: #666; line-height: 0.85rem; padding-left: 0.3rem; border-bottom: 1px solid #edebec;}
+.help_title01 span{ display: inline-block; float: left; font-weight: bolder;}
+.help_title01 img{ float: right; height: 0.3rem; width: 0.42rem; margin: 0.3rem 0.45rem 0 0; }
+
+.help_title01 i.on{ background: url("../images/help_title_tip.png") center -30px no-repeat;}
+.help_file_box .uploader_title { font-size: 0.3rem; color: #1a1a1a; padding: 0.4rem 0 0.3rem;}
+.help_file_box { padding: 0 0.3rem;}
+.help_file_box{ border-bottom: 1px solid #edebec;}
+.help_file_box .weui_uploader_files li{ width: 1.6rem; height: 1.6rem; border: 1px solid #a3a3a3; margin: 0 0.22rem 0.22rem 0;}
+.help_file_box .weui_uploader_files li img{width: 100%; height: 100%; display: block;}
+.help_file_box .weui_uploader_input_wrp{ width: 1.6rem; height: 1.6rem;border: 1px solid #a3a3a3; margin: 0 0.22rem 0.22rem 0;}
+.help_btn{ width: 90%; height: 0.88rem; line-height: 0.88rem; font-size: 0.36rem; margin: 0.5rem auto 0.3rem; border-radius: 0.1rem;}
+.help_code_box .weui_dialog_hd{ padding: 0; height: 0.8rem; line-height: 0.8rem; font-size: 0.36rem; font-weight: 400;}
+.help_code_box .weui_dialog input{ text-align: center; height: 0.8rem; width: 100%; line-height: 0.8rem; border: none; border-bottom: 1px solid #edebec; color: #acacac; font-size: 0.4rem; color: #333;}
+.help_code_box .true_code_btn{ width: 90%; height: 0.8rem ;line-height: 0.8rem; margin: 0.75rem auto 0.35rem;}
+.help_img_box .weui_dialog{ background: none; width: 100%; height: 100%; }
+.help_img_box .weui_dialog_hd{ padding: 0;}
+.help_img_box .weui_dialog_hd .weui_media_title{ color: #fff; line-height: 0.4rem; padding: 0 0.3rem ; font-size: 0.36rem; }
+.help_img_box .example .img{ margin: 0.3rem auto; width: 6rem; height: 6rem; border: 6px solid #fff; border-radius: 50%; background: url("../images/help_example_img.gif") center no-repeat; background-size: contain;}
+.help_img_box .example h4{ text-align: left; color: #fff; margin-left: 0.5rem;}
+.help_img_box .example .tip{ text-align: center; color: #f2fa0a;  font-size: 0.36rem;}
+.help_img_box .btn{ width: 90%; margin-top: 1rem;}
+.check_img_file input{display: block; width: 200%; height: 100%; opacity: 0; position: absolute; }

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户案件查询</title>
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
+    <link rel="stylesheet" type="text/css" href="static/style/css.css">
+    <link rel="stylesheet" type="text/css" href="static/style/jedate.css">
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/jedate.min.js"></script>
+</head>
+<body>
+<div class="topBox">
+    <div class="clearfix w top">
+        <div class="logo fl">
+            <a href="/">
+                <img src="static/images/logo.png" alt="logo" />
+            </a>
+			<span>
+                <img src="static/images/laixnidxjsiosa.jpg" width="280" />
+            </span>
+        </div>
+        <div class="loginBox fr">
+            <a class="login" href="javascript:;">登录</a>
+            <a class="register" href="/register">注册</a>
+        </div>
+    </div>
+</div>
+<div class="navBox">
+    <div class="w clearfix">
+        <div class="searchS fr"><a href="/searchorder">保单查询</a></div>
+        <div class="navC">
+            <ul class="clearfix nav index">
+                <li class=""><a href="/zcb">整车保</a></li>
+                <li class=""><a href="/ygb">员工保</a></li>
+                <li class=""><a href="/article">老周解密</a></li>
+                <li class=""><a href="/claims">保险理赔</a></li>
+                <li class=""><a href="/timeline">新闻动态</a></li>
+                <li class=""><a href="/business">商务合作</a></li>
+                <li class=""><a href="/contact">联系我们</a></li>
+                <li class=""><a href="/about">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="mid_link">
+    <span>当前页面：</span>
+    <a href="javascript:;">理赔系统</a>
+    <i>-></i>
+    <span>案件查询</span>
+</div>
+<div class="layout main_box01 bg_fff">
+    <p class="common_title01">正在处理赔案：</p>
+    <div class="schedule01">
+        <ul class="info clearfix">
+            <li><span>保险单号：</span><i>zcb20160720010</i></li>
+            <li><span>出险时间：</span><i>2016年7月28日</i></li>
+            <li><span>目前状态：</span><i class="red">资料审核阶段</i></li>
+        </ul>
+        <ul class="step clearfix">
+            <li class="plr_35">
+                <p>已录入</p>
+                <img class="db" src="static/images/ins_steped.png"/>
+                <img src="static/images/ins_steping.png"/>
+            </li>
+            <li class="plr_35">
+                <p>已完成</p>
+                <img class="db" src="static/images/ins_steped.png"/>
+                <img src="static/images/ins_steping.png"/>
+            </li>
+            <li class="plr_35">
+                <p>已完成</p>
+                <img class="db" src="static/images/ins_steped.png"/>
+                <img src="static/images/ins_steping.png"/>
+            </li>
+            <li class="plr_35">
+                <p>已完成</p>
+                <img class="db" src="static/images/ins_steped.png"/>
+                <img src="static/images/ins_steping.png"/>
+            </li>
+            <li class="plr_35">
+                <p>已完成</p>
+                <img class="db" src="static/images/ins_steped.png"/>
+                <img src="static/images/ins_steping.png"/>
+            </li>
+            <li class="plr_35">
+                <p>未评价</p>
+                <img src="static/images/ins_steped.png"/>
+                <img class="db" src="static/images/ins_steping.png"/>
+            </li>
+        </ul>
+        <div class="line_box">
+            <div class="line_wrap">
+                <div class="line_content"><div class="line_inner"><div class="line_right"></div></div></div>
+                <div class="line_light"></div>
+            </div>
+        </div>
+        <ul class="tipbox clearfix">
+            <li><p></p><a class="on" href="javascript:;">现场资料收集阶段</a></li>
+            <li><p></p><a class="on" href="javascript:;">其他资料收集阶段</a></li>
+            <li><p></p><a class="on" href="javascript:;">理赔材料审核阶段</a></li>
+            <li><p></p><a href="javascript:;">定损阶段</a></li>
+            <li><p></p><a href="javascript:;">评价阶段</a></li>
+        </ul>
+        <ul class="plan mt_25 clearfix c5a626f">
+            <li>预计完成时间：<i>1</i>天</li>
+            <li>预计完成时间：<i>2</i>天</li>
+            <li>预计完成时间：<i>3</i>天</li>
+            <li>预计完成时间：<i>4</i>天</li>
+            <li>预计完成时间：<i>5</i>天</li>
+        </ul>
+        <ul class="actual clearfix c313b4b">
+            <li>实际完成时间：<i>1</i>天</li>
+            <li>实际完成时间：<i class="cda6609">5</i>天</li>
+            <li>实际完成时间：<i>3</i>天</li>
+            <li>实际完成时间：<i>4</i>天</li>
+            <li>实际完成时间：<i>5</i>天</li>
+        </ul>
+        <div class="action clearfix">
+            <a class="claims_btn02" href="javascript:;">进入评价页面</a>
+        </div>
+    </div>
+    <p class="common_title01 mt_40">已处理完成赔案：</p>
+    <div class="client_complete_box">
+        <table class="client_complete">
+            <tr class="fwb"><td width="120">出险时间</td><td width="160">案件号</td><td width="140">赔偿金额</td><td>其他信息</td></tr>
+            <tr><td>2016-07-28</td><td>zcb20160728001</td><td>8000元</td><td><a class="add_link" href="javascript:;">车牌号：鄂A5X768  类型：火灾类型：火灾类型：火灾类型：火灾火灾类型：火灾火灾类型：火灾</a> </td></tr>
+            <tr><td>2016-07-28</td><td>zcb20160728001</td><td>8000元</td><td><a class="add_link" href="javascript:;">车牌号：鄂A5X768  类型：火灾类型：火灾类型：牌号：鄂A5X768牌号：鄂A5X768牌号：鄂A5X768类型：火灾</a> </td></tr>
+            <tr><td>2016-07-28</td><td>zcb20160728001</td><td>8000元</td><td><a class="add_link" href="javascript:;">车牌号：鄂A5X768  类型：火灾类型：火灾类型：火灾类型：火灾火灾类型：火灾火灾类型：火灾</a> </td></tr>
+            <tr><td>2016-07-28</td><td>zcb20160728001</td><td>8000元</td><td><a class="add_link" href="javascript:;">车牌号：鄂A5X768  类型：火灾类型：火牌号：鄂A5X768灾类牌号：鄂A5X768：火灾火灾类型：火灾</a> </td></tr>
+            <tr><td>2016-07-28</td><td>zcb20160728001</td><td>8000元</td><td><a class="add_link" href="javascript:;">车牌号：鄂A5X768  类型：火灾类型：火灾类型：火灾类型：火灾火灾类型：火灾火灾类型：火灾</a> </td></tr>
+            <tr><td>2016-07-28</td><td>zcb20160728001</td><td>8000元</td><td><a class="add_link" href="javascript:;">车牌号：鄂A5X768  类型：火灾类型：鄂A5X768  类型：火灾类型：灾火灾鄂A5X768  类型：火灾类型：型：火灾</a> </td></tr>
+        </table>
+    </div>
+    <div class="clearfix">
+        <a class="claims_btn02 print_excel mr_20" href="javascript:;">导出表格</a>
+    </div>
+</div>
+<div class="mask"></div>
+<div class="footerBox">
+    <div class=" w footer">
+        <div class="footer_nav">
+            <ul class="clearfix" style="height: 150px">
+                <li style="width: 148px;">
+                    <dl>
+                        <dt>保险业务介绍</dt>
+                        <dd><a href="/zcb">整车保</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 138px;">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="/guide">新手指南</a></dd>
+                        <dd><a href="/guide">常见问题</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 125px;">
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><a href="/business">合作伙伴</a></dd>
+                        <dd><a href="/business">广告合作</a></dd>
+                        <dd><a href="/business">保险公司</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 174px;">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="/about">关于聚保</a></dd>
+                        <dd><a href="/contact">加入聚保</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 409px;">
+                    <dl>
+                        <a href="/contact"><dt>联系我们</dt></a>
+                        <dd>
+                            <em>
+                                <p>服务热线：40080-59680</p><p>邮箱：info@jubao56.com</p><p>QQ：1379563155</p><p>联系方式：027-82203258</p><p>地址：湖北省武汉市江岸区解放南路融科天城二期T10-804室</p>
+                                <p style="height:10px;"></p>
+                                扫描右侧二维码,关注聚保物流保险服务平台官网微信
+                            </em>
+                                <span>
+                                    <img src="static/images/weixin.jpg" alt="聚保物流保险服务平台官网微信" style="width: 155px; height: 155px;"/></span>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="ft_cl_Box">
+        <div class="w clearfix ft_cl">
+            <div class="fl ft_link">
+                <a href="javascript:;">
+                    <img src="static/images/ft_01.png" alt=" " /></a>
+                <a href="javascript:;">
+                    <img src="static/images/ft_02.png" alt=" " /></a>
+                <a href="javascript:;">
+                    <img src="static/images/ft_03.png" alt=" " /></a>
+            </div>
+
+            <div class="fr ft_copyRight">
+                    <span>货运险 | 物流责任险 | 聚保物流保险服务平台<br />
+                        Copyright©2015 jubao.com All Rights Reserved
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--微信登陆-->
+<div class="PopUp" style="width:340px;" id="wechat_show">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <a class="pop_go" href="javascript:;"  id="wechat_login" ></a>
+        </div>
+    </div>
+    <span class="aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
+</div>
+</body>
+<!--微信QQ登陆-->
+<!--<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+<script>
+    function qq() {
+        location.href="https://graph.qq.com/oauth2.0/authorize?client_id=101261660&response_type=code&scope=get_user_info&redirect_uri=http%3A%2F%2Fwww.jubao56.com%2Fqqbind%3Fstate%3Dloginbind"
+    }
+    function wechat() {
+        show_we();
+    }
+    function show_we() {
+        $("#wechat_show").animate({ opacity: "show" }, 300).css("margin-top", -$("#wechat_show").height() / 0.2 + "px").css("margin-left", -$("#wechat_show").width() / 2 + "px");
+        var obj = new WxLogin({
+            id: "wechat_login",
+            appid: "wxdf6711be44a8af00",
+            scope: "snsapi_login",
+            redirect_uri: "http://www.jubao56.com/wxbind",
+            state: "loginbind",
+            style: "",
+            href: ""
+        });
+    }
+</script>-->
+
+</html>

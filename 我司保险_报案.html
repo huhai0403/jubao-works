@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>员工保产品投保页</title>
+    <title>我司保险报案</title>
     <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
     <link rel="stylesheet" type="text/css" href="static/style/css.css">
     <link rel="stylesheet" type="text/css" href="static/style/jedate.css">
@@ -45,7 +45,7 @@
 </div>
 <div class="mid_link">
     <span>当前页面：</span>
-    <a href="#">理赔系统</a>
+    <a href="javascript:;">理赔系统</a>
     <i>-></i>
     <span>事故报案</span>
 </div>
@@ -70,7 +70,7 @@
                             <option>9</option>
                             <option>10</option>
                             <option>11</option>
-                            <option>12</option>
+                            <option selected>12</option>
                             <option>13</option>
                             <option>14</option>
                             <option>15</option>
@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="items clearfix">
-                <p class="title">模糊查询保单:</p>
+                <p class="title">模糊查询保单：</p>
                 <div class="blurry_search clearfix">
                     <div class="select_box01 w210 fl">
                         <select>
@@ -101,7 +101,7 @@
                         </select>
                     </div>
                     <input class="fl" type="text">
-                    <a class="search_btn fl" href="#">查询</a>
+                    <a class="search_btn fl" href="javascript:;">查询</a>
                 </div>
             </div>
             <div class="items clearfix">
@@ -127,14 +127,14 @@
             <div class="items clearfix">
                 <p class="title">受损财产：</p>
                 <div class="content">
-                    <input type="text" placeholder="请输入受损财产">
+                    <input id="loss_thing" type="text" placeholder="请输入受损财产">
                 </div>
             </div>
             <div class="items clearfix">
-                <p class="title">受损财产：</p>
+                <p class="title">事故原因：</p>
                 <div class="content">
                     <div class="select_box01 w130">
-                        <select>
+                        <select id="accident_reason">
                             <option>火灾</option>
                             <option>爆炸</option>
                             <option>交通事故</option>
@@ -152,13 +152,18 @@
             <div class="items clearfix">
                 <p class="title">事故地点：</p>
                 <div class="content">
-                    <input  type="text" placeholder="请输入事故地点">
+                    <div class="select_box01 fl mr_20">
+                        <select id="accident_province">
+                            <option value="北京市">北京市</option><option value="天津市">天津市</option><option value="河北省">河北省</option><option value="山西省">山西省</option><option value="辽宁省">辽宁省</option><option value="吉林省">吉林省</option><option value="黑龙江省">黑龙江省</option><option value="上海市">上海市</option><option value="江苏省">江苏省</option><option value="浙江省">浙江省</option><option value="安徽省">安徽省</option><option value="福建省">福建省</option><option value="江西省">江西省</option><option value="山东省">山东省</option><option value="河南省">河南省</option><option value="湖北省">湖北省</option><option value="湖南省">湖南省</option><option value="广东省">广东省</option><option value="广西壮族自治区">广西壮族自治区</option><option value="海南省">海南省</option><option value="重庆市">重庆市</option><option value="四川省">四川省</option><option value="贵州省">贵州省</option><option value="云南省">云南省</option><option value="陕西省">陕西省</option><option value="宁夏回族自治区">宁夏回族自治区</option><option value="内蒙古自治区">内蒙古自治区</option><option value="青海省">青海省</option><option value="甘肃省">甘肃省</option><option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+                        </select>
+                    </div>
+                    <input class="fl" id="accident_place" type="text" placeholder="请输入事故地点">
                 </div>
             </div>
             <div class="items clearfix">
                 <p class="title">估损金额：</p>
                 <div class="content clearfix">
-                    <input class="fl" type="text" placeholder="请输入估损金额">
+                    <input class="fl" id="loss_money" type="text" placeholder="请输入估损金额">
                     <p class="word fl">万元</p>
                     <p class="txt fl ml_55">*估损金额不代表最后理赔金额</p>
                 </div>
@@ -166,23 +171,29 @@
             <div class="items clearfix">
                 <p class="title">事故经过：</p>
                 <div class="content clearfix">
-                    <textarea></textarea>
+                    <textarea id="accident_process"></textarea>
                 </div>
             </div>
             <div class="items clearfix">
                 <p class="title">联系人姓名：</p>
                 <div class="content clearfix">
-                    <input class="fl" type="text" placeholder="请输入联系人姓名">
+                    <input id="contacts_name" class="fl" type="text" placeholder="请输入联系人姓名">
                     <p class="txt fl ml_55">*此选项为必填</p>
                 </div>
             </div>
             <div class="items clearfix">
                 <p class="title">联系人电话：</p>
                 <div class="content clearfix">
-                    <input class="fl" type="text" placeholder="请输入联系人电话">
+                    <input id="contacts_phone" class="fl" type="text" placeholder="请输入联系人电话">
                     <p class="txt fl ml_55">*此选项为必填</p>
+                    <a class="fl add_phone" href="javascript:;">添加电话</a>
                 </div>
             </div>
+            <!--<div class="items clearfix">
+                <div class="content clearfix ml108">
+                    <input class="fl" type="text" placeholder="请输入联系人电话">
+                </div>
+            </div>-->
             <div class="items clearfix">
                 <p class="title">备用联系人：</p>
                 <div class="content">
@@ -195,8 +206,8 @@
                     <input  type="text" placeholder="请输入备用联系人电话">
                 </div>
             </div>
-            <div class="claims_btn01">
-                <a href="#">确认生成报案</a>
+            <div class="claims_btn01 jubao_get_claims">
+                <a href="javascript:;">确认生成报案</a>
             </div>
         </div>
     </div>
@@ -211,15 +222,73 @@
         </li>
     </ul>
 </div>
-<!--保单搜索弹框-->
-<div class="alert_box claims_num" style="display: block;">
+<!--报案号弹框-->
+<div class="alert_box claims_num">
     <p class="text">您所登记的案件，系统已记录。</p>
     <p class="text">报案号为ZCB201607040001 </p>
     <div class="claims_btn01">
-        <a href="#">下一步</a>
+        <a href="javascript:;">下一步</a>
     </div>
 </div>
-<div class="mask" style="display: block"></div>
+<!--模糊搜索结果-->
+<div class="alert_box search_ins_box pr">
+    <p class="title">搜索结果:</p>
+    <div class="content">
+        <div class="list">
+            <ul>
+                <li class="on">
+                    <span class="wb30">武汉韵达物流</span>
+                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">鄂A5x235</span>
+                    <span class="wb20">北京-太原</span>
+                </li>
+                <li>
+                    <span class="wb30">武汉韵达物流</span>
+                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">鄂A5x235</span>
+                    <span class="wb20">北京-太原</span>
+                </li>
+                <li>
+                    <span class="wb30">武汉韵达物流</span>
+                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">鄂A5x235</span>
+                    <span class="wb20">北京-太原</span>
+                </li>
+                <li>
+                    <span class="wb30">武汉韵达物流</span>
+                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">鄂A5x235</span>
+                    <span class="wb20">北京-太原</span>
+                </li>
+                <li>
+                    <span class="wb30">武汉韵达物流</span>
+                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">鄂A5x235</span>
+                    <span class="wb20">北京-太原</span>
+                </li>
+                <li>
+                    <span class="wb30">武汉韵达物流</span>
+                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">鄂A5x235</span>
+                    <span class="wb20">北京-太原</span>
+                </li>
+                <li>
+                    <span class="wb30">武汉韵达物流</span>
+                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">鄂A5x235</span>
+                    <span class="wb20">北京-太原</span>
+                </li>
+                <li>
+                    <span class="wb30">武汉韵达物流</span>
+                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">鄂A5x235</span>
+                    <span class="wb20">北京-太原</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="mask"></div>
 <div class="footerBox">
     <div class=" w footer">
         <div class="footer_nav">
@@ -298,7 +367,7 @@
 <div class="PopUp" style="width:340px;" id="wechat_show">
     <div class="PopUp_box">
         <div class="pop_conditionBox">
-            <a class="pop_go" href="#"  id="wechat_login" ></a>
+            <a class="pop_go" href="javascript:;"  id="wechat_login" ></a>
         </div>
     </div>
     <span class="aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
@@ -355,9 +424,73 @@
             var $t = $this.index();
             $('.ygb_choose_box').addClass('dn');
             $('.ygb_choose_box').eq($t).removeClass('dn');
-
         });
-
+        /*选择保单*/
+        $('.search_ins_box .list li').click(function(){
+            $(this).siblings().removeClass('on');
+            $(this).addClass('on');
+        });
+        $('.search_ins_box .list li').dblclick(function(){
+            $('.search_ins_box,.mask').hide();
+        });
+        /*生成事故经过*/
+        $('#accident_process').focus(function(){
+            $(this).empty();
+            if(!$('.datainp').val()){
+                alert('请填写出险时间!');
+                $('.datainp').click()
+            }
+            else if(!$('#loss_thing').val()){
+                alert('请填写受损财产！');
+                $('#loss_thing').focus();
+            }
+            else if(!$('#accident_place').val()){
+                alert('请填写具体事故地点!');
+                $('#accident_place').focus();
+            }
+            else if(!$('#loss_money').val()){
+                alert('请填写估损金额!');
+                $('#loss_money').focus();
+            }
+            else {
+                $(this).append($('.datainp').val()+'被保险人xxxxxx在'+$('#accident_province').val()+$('#accident_place').val()+'由于'+$('#accident_reason').val()+',造成'+$('#loss_thing').val()+'损失,估损金额'+$('#loss_money').val()+'万元。')
+            }
+        });
+        /*确认生成保单*/
+        $('.jubao_get_claims').click(function(){
+            var companyTel=$("#contacts_phone").val();
+            var Tel=/^(0|86|17951)?(13[0-9]|15[012356789]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/.test(companyTel);
+            if(!$('#accident_process').val()){
+                alert('请填写事故经过！')
+            }
+            else if(!$('#contacts_name').val()){
+                alert('请填写联系人姓名！');
+                $('#contacts_name').focus();
+            }
+            else if(!$('#contacts_phone').val()){
+                alert('请填写联系人电话！');
+                $('#contacts_phone').focus();
+            }
+            else if(Tel==false){
+                alert('请输入正确手机号！');
+                $('#contacts_phone').focus();
+            }
+            else {
+                $('.claims_num,.mask').show()
+            }
+        });
+        /*添加号码*/
+        /*
+        * <div class="items clearfix">
+         <div class="content clearfix ml108">
+         <input class="fl" type="text" placeholder="请输入联系人电话">
+         </div>
+         </div>
+        * */
+        $('.add_phone').click(function(){
+            var html = "<div class='content w50 mt_25 ml108'><input type='text' placeholder='请填写联系人电话'></div>"
+            $('.claims_main_box .items').eq(9).append(html);
+        })
     })
 </script>
 </html>
