@@ -455,6 +455,7 @@
     </div>
     <div class="content">
         <p class="tip">当多项资料协助发给同一人时可勾选多项。</p>
+        <a class="add_new" href="javascript:;">新增资料选项</a>
         <ul class="clear">
             <li class="checkbox01">
                 <span class="on"></span>
@@ -508,29 +509,7 @@
     </div>
     <p class="close"></p>
 </div>
-<!--需要其他资料-->
-<div class="alert_box need_other">
-    <p class="common_title01 tc">该案件需要上传其他资料</p>
-    <p class="common_title02 mb_25">勾选需要的资料：</p>
-    <div class="content">
-        <ul class="clear">
-            <li><p class="checkbox01"><span></span></p><i>1、索赔申请</i></li>
-            <li><p class="checkbox01"><span></span></p><i>2、损失清单</i></li>
-            <li><p class="checkbox01"><span></span></p><i>3、事故认定书</i></li>
-            <li><p class="checkbox01"><span></span></p><i>4、赔偿凭证</i></li>
-            <li><p class="checkbox01"><span></span></p><i>5、货物运输单或运输合同</i></li>
-            <li><p class="checkbox01"><span></span></p><i>6、承运工具证照</i></li>
-            <li><p class="checkbox01"><span></span></p><i>7、赔款账户信息</i></li>
-            <li><p class="checkbox01"><span></span></p><i>8、事故证明</i></li>
-            <li><p class="checkbox01"><span></span></p><i>9、事故原因、损失程度有关证明</i></li>
-            <li class="w100"><p class="checkbox01"><span></span></p><i>10、有关的法律文书(裁定书、裁决书、调解书、判决书等)或和解协议</i></li>
-        </ul>
-    </div>
-    <div class="claims_btn04">
-        <a class="true_send_btn" href="javascript:;">确认发给客户</a>
-    </div>
-    <p class="close"></p>
-</div>
+
 <div class="mask"></div>
 <div class="footerBox">
     <div class=" w footer">
@@ -606,44 +585,13 @@
         </div>
     </div>
 </div>
-<!--微信登陆-->
-<!--<div class="PopUp" style="width:340px;" id="wechat_show">
-    <div class="PopUp_box">
-        <div class="pop_conditionBox">
-            <a class="pop_go" href="javascript:;"  id="wechat_login" ></a>
-        </div>
-    </div>
-    <span class="aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
-</div>-->
 </body>
-<!--微信QQ登陆-->
-<!--<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
-<script>
-    function qq() {
-        location.href="https://graph.qq.com/oauth2.0/authorize?client_id=101261660&response_type=code&scope=get_user_info&redirect_uri=http%3A%2F%2Fwww.jubao56.com%2Fqqbind%3Fstate%3Dloginbind"
-    }
-    function wechat() {
-        show_we();
-    }
-    function show_we() {
-        $("#wechat_show").animate({ opacity: "show" }, 300).css("margin-top", -$("#wechat_show").height() / 0.2 + "px").css("margin-left", -$("#wechat_show").width() / 2 + "px");
-        var obj = new WxLogin({
-            id: "wechat_login",
-            appid: "wxdf6711be44a8af00",
-            scope: "snsapi_login",
-            redirect_uri: "http://www.jubao56.com/wxbind",
-            state: "loginbind",
-            style: "",
-            href: ""
-        });
-    }
-</script>-->
 <script>
     $(function(){
         /*图片查看器*/
         $('.viewer-images').viewer();
         /*仿checkbox*/
-        $('.alert_box .checkbox01 span').click(function(){
+        $(document).on('click','.alert_box .checkbox01 span',function(){
             $(this).toggleClass('un');
         });
         /*弹框关闭*/
@@ -677,6 +625,22 @@
             $(this).html('收起').removeClass('on').siblings('p').hide().parents('.toggle').siblings('.data_box').slideDown();
         },function(){
             $(this).html('展开').addClass('on').siblings('p').show().parents('.toggle').siblings('.data_box').slideUp();
+        });
+        /*新增所需资料选项*/
+        $('.add_new').click(function(){
+            $(this).parents('.content').find('ul').append('<li class="checkbox01 w100 add_new_option"><span></span><input type="text"><a class="yes" href="javascript:;">确定</a><a class="no" href="javascript:;">取消</a><i></i></li>')
+        });
+        $(document).on('click','.add_new_option .yes',function(){
+            if($(this).siblings('input').val() == ""){
+                alert('请输入资料名称！');
+                return false;
+            }
+            var option = $(this).siblings('input').val();
+            $(this).parents('ul').append('<li class="checkbox01 w100 clear"><span></span><i>'+option+'</i></li>');
+            $(this).parents('li').remove();
+        });
+        $(document).on('click','.add_new_option .no',function(){
+            $(this).parents('li').remove();
         });
     })
 

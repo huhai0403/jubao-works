@@ -7321,13 +7321,19 @@ input[type=text]::-webkit-focus-inner {
 .claims_btn03 a{ display: block; width: 250px; height: 58px; line-height: 58px; font-size: 24px; text-align: center; color: #fff; box-sizing: border-box; float: left; background: #6ebcf5; box-shadow: 0 6px 0 #3371a1; margin-right: 105px; border-radius: 5px;}
 .help_box .common_title01,.need_other .common_title01{ font-size: 24px; padding: 25px 0;}
 .help_box,.need_other{ padding: 0 25px;}
+.help_box .add_new{display: block; margin-left: 20px; height: 30px; line-height: 30px; width: 120px; color: #fff; font-size: 16px; font-weight: bold; text-align: center; background:#6ebcf5; border-radius: 5px; }
+.help_box .add_new_option input{ height: 20px; width: 200px; box-sizing: border-box; margin-left: 10px;}
+.help_box .add_new_option a { margin: 0 5px; display: inline-block; width: 45px; height: 20px; background: #106eb2; color: #fff; border-radius: 3px; line-height: 20px; text-align: center;}
 .help_box .common_title02,.need_other .common_title02{ background: #e8f1ff; padding:0 10px; margin: 0 auto;}
 .help_box .tip{ color: #babbbc; line-height: 40px; font-size: 16px; font-weight: bold; padding-left: 20px;}
 .help_box .info{ font-size: 16px; line-height: 40px; color: #313b4b; font-weight: bold; padding-left: 20px;}
 .help_box .info p{ float: left; margin-right: 40px;}
 .help_box .info p i{ font-weight: inherit;}
 .help_box .content,.need_other .content{background: #e8f1ff; padding-bottom: 40px; }
+/*
 .help_box .content li{ float: left; width: 30%; box-sizing: border-box; height: 20px; padding: 15px 0; margin-left: 20px;}
+*/
+.help_box .content li{ float: left; width: 30%; box-sizing: border-box; height: 20px; margin: 5px 0; margin-left: 20px;}
 .help_box .content li span{ float: left;}
 .help_box .content li i{ float: left; font-size: 14px; line-height: 20px; font-weight: bold; margin-left: 10px;}
 .help_box .wrap{ background: #fff; width: 90%; margin: 30px auto 0; box-sizing: border-box; padding: 10px 25px;}
