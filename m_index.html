@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content=" 聚保让您投保不上当，理赔有人帮！让物流人买到放心的保险，让物流平台放心卖保险！" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <title>聚保整车保-第一款为城市间大车运输风险量身定制的物流保险</title>
+    <link href="static/mobile/css/base.css" rel="stylesheet" type="text/css">
+    <link href="static/mobile/css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="static/mobile/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="static/mobile/js/myjquery.js"></script>
+    <script type="text/javascript" src="static/mobile/js/jquery.touchSlider.js"></script>
+    <script type="text/javascript" src="static/mobile/js/common.js"></script>
+    <script src="static/mobile/js/regular_expression.js"></script>
+    <script src="static/mobile/js/regular_expression.js"></script>
+    <style text="css/text">
+        .action{
+            padding: 1em 2em;
+            outline: none;
+            font-weight: 600;
+            border: none;
+            color: #fff;
+            background: #c94e50;
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+<header class="header">
+    <div class="h_top">
+        <div class="h_left fl">
+            <a class="a_left" href="javascript:void(0);">
+                <img src="static/mobile/images/user.png">
+            </a>
+        </div>
+        <div class="logo">
+            <a href="/m">
+                <img src="static/mobile/images/logo.png">
+            </a>
+        </div>
+        <div class="h_right fr">
+            <a class="phone" href="tel:4008059680">
+                <img src="static/mobile/images/phone.png">
+            </a>
+        </div>
+        <div class="gray">
+            <div class="side_box">
+                <div class="login">
+                    <div class="head_box">
+                        <div class="head">
+                            <a href="javascript:void(0);">
+                                <img src="static/mobile/images/login_head.png">
+                            </a>
+                            <p>未登录</p>
+                        </div>
+
+                    </div>
+                    <div class="login_con">
+
+                        <div class="text_list">
+                            <ul>
+                                <li>
+                                    <input id="username" value="" maxlength="30" type="text" placeholder="手机号码/用户名">
+                                </li>
+                                <li>
+                                    <input id="password" type="password" value="" maxlength="30" placeholder="密码">
+                                </li>
+                            </ul>
+                            <div style="height: 2rem;">
+                                <span id="span_tip" style="color: red; background: url('static/mobile/images/L_tips.png') no-repeat; padding-left: 2rem; display: none">&nbsp;</span>
+                            </div>
+                            <input class="dl_but" type="submit" value="登录" onclick="login()">
+                            <input class="zc_but" name="" type="button" onclick="to_reg()" value="注册">
+                            <p class="forget"><a href="/m/recovery">忘记密码</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="banner">
+    <div class="picshow main_visual">
+        <div class="flicking_con">
+            <div class="flicking_inner">
+                <div class="xslide">
+                    <a href="#" class="on">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="main_image">
+            <ul>
+                <li>
+                    <a href="http://www.jubao56.com/m/article/detail/6a4a1944-4255-11e6-a1a9-00163e0008c2">
+                        <img class="img_banner" src="static/mobile/images/banner_4m.jpg" alt="聚保物流保险" />
+                    </a>
+                </li>
+                <li>
+                    <a href="/m/ygb">
+                        <img class="img_banner" src="static/mobile/images/banner_ygb.png" alt="聚保员工保" />
+                    </a>
+                </li>
+                <li>
+                    <a href="/m/guide">
+                        <img class="img_banner" src="static/mobile/images/banner_guide.jpg" alt="聚保投保指南" />
+                    </a>
+                </li>
+                <li>
+                    <a href="/m/zcb">
+                        <img class="img_banner" src="static/mobile/images/banner.jpg" alt="聚保物流保险" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img class="img_banner" src="static/mobile/images/banner_m.jpg" alt="聚保物流保险" />
+                    </a>
+                </li>
+            </ul>
+            <a href="javascript:;" id="btn_prev"></a><a href="javascript:;" id="btn_next"></a>
+        </div>
+
+    </div>
+</div>
+<article class="artic">
+    <div class="mainBox">
+
+        <div class="part m_p1">
+            <div class="w01">
+                <div class="title title01"></div>
+                <div class="d_list">
+                    <ul class="clearfix">
+                        <li>
+                            <img src="static/mobile/images/d_l1.png" alt="">
+                        </li>
+                        <li>
+                            <img src="static/mobile/images/d_l2.png" alt="">
+                        </li>
+                        <li class="last"-->
+                            <img src="static/mobile/images/d_l3.png" alt="">
+                        </li>
+                        <li>
+                            <img src="static/mobile/images/d_l4.png" alt="">
+                        </li>
+                        <li>
+                            <img src="static/mobile/images/d_l5.png" alt="">
+                        </li>
+                        <li class="last">
+                            <img src="static/mobile/images/d_l6.png" alt="">
+                        </li>
+                    </ul>
+                    <div class="button">
+                        <a href="/m/zcb">点击见证奇迹</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="part m_p2">
+            <div class="w01">
+                <div class="title title02"></div>
+                <div class="m_p2Form">
+                    <div class="main" style="padding-top: 0.25rem;padding-bottom: 1rem;">
+                        <div class="baofei">
+                            <div class="b_con tj_con">
+                                <div class="b_list">
+                                    <div class="b_left">运输路线</div>
+                                    <div class="b_right">
+                                        <div class="selects">
+                                            <select class="sel_1" id="begin_province_sel">
+                                                <option value="-1">请选择</option>
+                                            </select>
+                                        </div>
+                                        <div class="selects">
+                                            <select class="sel_1" id="begin_city_sel">
+                                                <option value="-1">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="b_list">
+                                    <div class="b_left">至</div>
+                                    <div class="b_right">
+                                        <div class="selects">
+                                            <select class="sel_1" id="end_province_sel">
+                                                <option value="-1">请选择</option>
+                                            </select>
+                                        </div>
+                                        <div class="selects">
+                                            <select class="sel_1" id="end_city_sel">
+                                                <option value="-1">请选择</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="b_list">
+                                    <div class="b_left">里程</div>
+                                    <div class="b_right">
+                                        <strong class="blue" id="distance">--</strong>公里
+                                    </div>
+                                    <div id="container" style="display:none;"></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="b_list">
+                                    <div class="b_left">赔偿限额</div>
+                                    <div class="b_right check_bg clearfix">
+
+                                        <label>
+                                            <input value="1500000" checked="checked" name="comp_sel" type="radio"/>
+                                            <span class="on"></span><strong>150万</strong>
+                                        </label>
+                                        <label>
+                                            <input value="500000" type="radio" name="comp_sel"/>
+                                            <span></span><strong>50万</strong>
+                                        </label>
+
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="b_list">
+                                        <div class="b_left">保费金额</div>
+                                        <div class="b_right">
+                                            <strong class="yellow" id="price">--</strong>元
+                                            <span style="color:#ff7300;" id="price_rate"></span>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div>&nbsp;</div>
+
+                                <div class="clearfix p_bt">
+                                    <a class="bt01" href="javascript:void(0);" onclick="buy_test()">立 即 试 用</a>
+                                    <a class="bt02" href="javascript:void(0);" onclick="buy()">马 上 投 保</a>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="part m_p3">
+            <div class="w01">
+                <div class="title title03"></div>
+                <div class="md_03">
+                    <div class="tt">中国物流保险第一自媒体</div>
+                    <div class="md_box">
+                        <div class="md_info">
+                            <em>老周解密物流保险:</em>
+                            <span>致力于让物流企业</span>
+                            <i>投保不上当 理赔有人帮</i>
+                        </div>
+
+                        <div class="md_br">
+                            <div class="mb">
+                                22期节目,已经帮助<em>60万</em>物流人
+                                次获得物流保险知识
+                            </div>
+                            <div class="clearfix mb_2">
+                                <p>投保之前查一查从此放心买保险</p>
+                                <a class="check-more" href="/m/article">查一查</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="part m_p4">
+            <div class="w01">
+                <div class="title"><img src="static/mobile/images/t_b4.png" alt=""></div>
+                <div class="md_04">
+                    <div class="tt">永远免费的物流保险投保、理赔咨询中心</div>
+                    <div class="xd_box">
+                        <div class="xd_info">
+                            <i><span>投保怕被忽悠</span> 请致电我们</i>
+                            <i><span>理赔怕被欺负</span> 请致电我们</i>
+                        </div>
+
+                        <div class="xd_br">
+                            <div class="xb">
+                                我们承诺，无论您是不是我们的会员，都耐心解答您的一切物流保险问题。<br /><span>会员企业更可享受包打官司的保险理赔服务。</span>
+
+                            </div>
+                            <div class="clearfix xb_2">
+                                <a class="check-more" href="/m/claims">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p_bt4">
+                <em>免费咨询热线：</em>40080-59680
+            </div>
+        </div>
+
+
+        <div class="part m_p5">
+            <div class="w01">
+                <div class="title title05"></div>
+                <div class="wd_05">
+                    <div class="tt">聚保物流 最懂物流的保险服务机构</div>
+                    <div class="wd_box">
+                        <div class="wd_info">
+                            <i>站在物流行业立场的保险专家</i>
+                            <em>中国最好的物流保险第三方服务机构</em>
+                        </div>
+
+                        <div class="clearfix wd_br">
+                            <div class="fl wb">
+                                <ul>
+                                    <li>
+                                        <em><img src="static/mobile/images/pic0.png" alt=""></em>
+                                        <i>14年</i>
+                                        <span>保险从业经历</span>
+                                    </li>
+                                    <li>
+                                        <em><img src="static/mobile/images/pic0.png" alt=""></em>
+                                        <i>7年</i>
+                                        <span>物流行业保险服务经验</span>
+                                    </li>
+                                    <li>
+                                        <em><img src="static/mobile/images/pic0.png" alt=""></em>
+                                        <i>1000家+</i>
+                                        <span>物流企业享受过我们的服务</span>
+                                    </li>
+                                    <li>
+                                        <em><img src="static/mobile/images/pic0.png" alt=""></em>
+                                        <i>1000件+</i>
+                                        <span>物流保险索赔经验</span>
+                                    </li>
+                                    <li>
+                                        <em><img src="static/mobile/images/pic0.png" alt=""></em>
+                                        <i>60万+</i>
+                                        <span>物流人获得我们的保险知识</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr more">
+                                <a class="logo" href="#"><img src="static/mobile/images/oi_part5.jpg" alt=""></a>
+                                <div class="clearfix xb_2">
+                                    <a class="check-more" href="/m/about">点击了解</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p_bt4">
+                <em>免费咨询热线：</em>40080-59680
+            </div>
+        </div>
+
+
+        <div class="part m_p6">
+            <div class="w01">
+                <div class="title title06"></div>
+                <div class="pd_06">
+                    <div class="tt">
+                        30场全国物流论坛、峰会演讲<br>
+                        把物流保险知识带到物流企业身边
+                    </div>
+                    <div class="pd_box">
+                        <img src="static/mobile/images/activity_photo.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="part m_p7">
+            <div class="w01">
+                <div class="title title07"></div>
+                <div class="pd_07">
+                    <ul class="clearfix">
+                        <li><a href="javascript:;"><img src="static/mobile/images/link_01.jpg" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="static/mobile/images/link_02.jpg" alt=""></a></li>
+                        <li class="last"><a href="javascript:;"><img src="static/mobile/images/link_03.jpg" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="static/mobile/images/link_04.jpg" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="static/mobile/images/link_05.jpg" alt=""></a></li>
+                        <li class="last"><a href="javascript:;"><img src="static/mobile/images/link_06.jpg" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="static/mobile/images/link_07.jpg" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="static/mobile/images/link_08.jpg" alt=""></a></li>
+                        <li class="last"><a href="javascript:;"><img src="static/mobile/images/link_09.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="part m_p8">
+            <div class="w01">
+                <div class="title title08"></div>
+                <div class="pd_08">
+                    <div class="tt">三十多家物流合作伙伴一起致力于让物流企业买到放心的保险</div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</article>
+<div class="fullbg" style="display: block;">
+
+</div>
+
+
+
+
+
+<script>
+    alert('“整车保”临时维护通知：因太平财险计划今晚11月25日20:00时进行停库维护，将会导致此期间聚保“整车保”业务（包括出单、电子保单下载、保单查询等）无法投保。我们建议您尽量提前办理投保事宜。预计恢复时间在今晚22时之后。诸多不便还请见谅！聚保24小时为您服务！有任何问题请联系：4008059680。')
+
+    $(function(){
+        $('.check_bg label').click(function(){
+            $('.check_bg label span').removeClass('on');
+            $(this).children('span').addClass('on');
+        });
+
+    });
+    $(function () {
+
+        $(".a_left").click(function () {
+
+            location.href = "/m/dashboard/home";
+
+        });
+
+
+    });
+    function to_reg() {
+        location.href = '/m/register';
+    }
+</script>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#username").focus(function () {
+            $("#span_tip").html("").hide();
+        });
+        $("#password").focus(function () {
+            $("#span_tip").html("").hide();
+        });
+        $("#username").blur(function () {
+            if ($.trim($(this).val()) == "") {
+                $("#span_tip").html("请输入手机号.").show();
+                return -1;
+            }
+            else if (!reg_name.test($(this).val())) {
+                $("#span_tip").html("含有非法字符.").show();
+                return -2;
+            }
+            else {
+                $("#span_tip").html("").hide();
+                return 0;
+            }
+        });
+    });
+
+    function login() {
+        $("#btn_login").attr("disabled", true);
+
+        if (check_username($("#username"), $("#span_tip")) != 0) {
+            $("#btn_login").attr("disabled", false);
+            return;
+        }
+
+        if ($("#password").val() == "") {
+            $("#span_tip").html("请输入密码.").show();
+            $("#btn_login").attr("disabled", false);
+            return;
+        }
+
+        $("#span_tip").html("");
+        $.ajax({
+            url: "/login.json",
+            type: "POST",
+            data: { mobile: $("#username").val(), password: $("#password").val() },
+            success: function (result) {
+                if (result.success) {
+                    location.href = "/m/dashboard/home";
+                } else {
+                    $("#span_tip").html(result.message).show();
+                }
+            },
+            complete: function (x, r) {
+                $("#btn_login").attr("disabled", false);
+            }
+        });
+    }
+    var reg_name = /^[\u4e00-\u9fa5a-zA-Z0-9]{6,}$/;
+    function check_username(obj, tip) {
+        if ($.trim($(obj).val()) == "") {
+            $(tip).html("请输入用户名.").show();
+            return -1;
+        }
+        else if (!reg_name.test($(obj).val())) {
+            $(tip).html("含有非法字符.").show();
+            return -2;
+        }
+        $(tip).html("").hide();
+        return 0;
+    }
+    function register() {
+        location.href = 'register';
+    }
+</script>
+
+
+<script type="text/javascript"
+        src="http://webapi.amap.com/maps?v=1.3&key=57e27d3f9664f133b397a3d8e9824846"></script>
+<script type="text/javascript" src="static/js/district.js"></script>
+<script>
+
+
+    var begin_province = '';
+    var begin_city = '';
+    var end_province = '';
+    var end_city = '';
+    var price = 0;
+    var distance = 0;
+    $(function () {
+        data = provinceJson;
+        $("#begin_province_sel").children(":gt(0)").remove();
+        $("#end_province_sel").children(":gt(0)").remove();
+
+        for (var i = 0; i < data.length; i++) {
+            if (begin_province == data[i].name) {
+                $("#begin_province_sel").append("<option selected='selected' value=" + data[i].name + ">" + data[i].name + "</option>");
+                city_bind($("#begin_province_sel"), $("#begin_city_sel"), data[i].name, begin_city)
+            } else {
+                $("#begin_province_sel").append("<option value=" + data[i].name + ">" + data[i].name + "</option>");
+            }
+
+            if (end_province == data[i].name) {
+                $("#end_province_sel").append("<option selected='selected' value=" + data[i].name + ">" + data[i].name + "</option>");
+                city_bind($("#end_province_sel"), $("#end_city_sel"), data[i].name, end_city);
+            } else {
+                $("#end_province_sel").append("<option value=" + data[i].name + ">" + data[i].name + "</option>");
+            }
+        }
+
+        $("#begin_province_sel").change(function () {
+            city_bind($("#begin_province_sel"), $("#begin_city_sel"), $(this).children(":selected").text(), '')
+        });
+
+        $("#end_province_sel").change(function () {
+            city_bind($("#end_province_sel"), $("#end_city_sel"), $(this).children(":selected").text(), '')
+        });
+
+        $("#begin_city_sel").change(function () {
+            get_dist();
+        });
+
+        $("#end_city_sel").change(function () {
+            get_dist();
+        });
+
+        $('input[name="comp_sel"]').change(function () {
+            get_dist();
+        });
+    });
+
+    function city_bind(pobj, obj, province, selected_city) {
+        $(obj).children(":gt(0)").remove();
+        $("#distance").html("--");
+        $("#price").text("--");
+        var url = '/cities.json';
+        $.post(url, {province: province}, function (r) {
+            if (r.success) {
+                for (var i = 0; i < r.cities.length; i++) {
+                    var v = '[' + r.cities[i] + ']';
+                    if (r.cities[i] == selected_city) {
+                        $(obj).append("<option selected='selected' value=" + v + ">" + r.cities[i] + "</option>");
+                        get_dist();
+                    } else {
+                        $(obj).append("<option value=" + v + ">" + r.cities[i] + "</option>");
+                    }
+
+                }
+            }
+        }, "json");
+    }
+
+    function get_dist() {
+        var begin = $("#begin_city_sel").val();
+        var end = $("#end_city_sel").val();
+        if (begin == "-1" || end == "-1") {
+            $("#distance").html("--");
+            return
+        }
+        get_price();
+    }
+
+    function get_price() {
+        var type = $('input[name="comp_sel"]:checked').val();
+        var begin_province = $("#begin_province_sel").val();
+        var begin_city = $("#begin_city_sel").find("option:selected").text();
+        var end_province = $("#end_province_sel").val();
+        var end_city = $("#end_city_sel").find("option:selected").text();
+
+        var url = '/dashboard/truckorder/price.json';
+        $.post(url, {start_province: begin_province, start_city: begin_city, end_province: end_province, end_city: end_city, coverage: type}, function (r) {
+            if (r.success) {
+                $("#price").text(r.price);
+                price = r.price;
+                distance = r.distance;
+                $("#distance").html(r.distance);
+                $("#price_rate").text("");
+            }
+        }, "json");
+    }
+
+    function buy_test() {
+        location.href = "/m/dashboard/truckorder/trial";
+    }
+
+    function buy() {
+        location.href = "/m/dashboard/signprotocol";
+    }
+
+
+
+</script>
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?8dcdc46116c07356465640ba5ff004fc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

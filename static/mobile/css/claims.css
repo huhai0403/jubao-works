@@ -6,27 +6,89 @@ html,body{ width: 7.5rem;box-sizing: border-box;overflow-x: hidden; font-family:
 .pr{ position: relative;}
 .pa{ position: absolute;}
 .oh{ overflow: hidden;}
-/*main*/
-.help_title01{ height: 0.85rem; font-size: 0.3rem; color: #666; line-height: 0.85rem; padding-left: 0.3rem; border-bottom: 1px solid #edebec;}
-.help_title01 span{ display: inline-block; float: left; font-weight: bolder;}
-.help_title01 img{ float: right; height: 0.3rem; width: 0.42rem; margin: 0.3rem 0.45rem 0 0; }
+.red{ color: #ff0000;}
+.c3285ff{ color: #3285ff;}
+.tc{ text-align: center;}
+/*协助理赔*/
+.weui-dialog .title01{ font-size: 0.36rem; text-align: center; line-height: 0.6rem; margin-bottom: 0.4rem;}
+.weui-dialog .help_code_input{ border-bottom: 1px solid #edebec; height: 0.6rem; line-height: 0.6rem; font-size: 0.36rem; width: 100%; text-align: center;}
+.gallery_btn{ width: 50%;}
+.example_help_box .title01{ font-weight: bold; color: #fff;}
+.example_help_box .weui-dialog__btn{ background:#04be01; color: #fff;}
+.example_help_box{ max-width: 100%; height: 100%; background: none; padding-top: 1rem;}
+.example_help_box .weui-dialog__bd{ padding: 0; border:none;}
+.example_help_box .img{ width: 6rem; height: 6rem; margin: auto; border: 2px solid #fff; border-radius: 50%;  ;background-image: url("../images/help_example_img.gif"); background-position: center; background-repeat: no-repeat; background-size: contain;}
+.example_help_box .tip{ font-size: 0.36rem; color: #f2fa0a; line-height: 1rem;}
+/*理赔系统手机端*/
+.top_bar{ height: 1.2rem; background: #3285ff; color: #fff; line-height: 1.2rem; padding: 0 0.2rem; font-size: 0.36rem;}
+.top_bar .return{ display: block; float: right; text-align: center; width: 1rem; height: 0.55rem; line-height: 0.55rem; color: #fff; margin-top: 0.35rem; background: linear-gradient(#2073e8,#5297fe);box-shadow:0 0 10px rgba(0, 204, 204, .5); border-radius: 5px;}
+.main_bar{ padding-bottom: 2rem;}
+.claims_items{font-size: 0.3rem; color: #000; line-height: 1rem;}
+.claims_items a{font-size: 0.3rem; color: #000; line-height: 1rem;}
+.claims_name{ height: 1rem;  border-bottom: 1px solid #ebebeb;}
+.claims_items .weui-cell__bd{ box-sizing: border-box;}
+.claims_name .weui-cell__ft{ height: 100%; padding-right: 0.2rem;}
+.claims_name .weui-cell__ft span{ display: inline-block; height: 0.4rem; line-height: 0.4rem; margin-top: 0.1rem; float: left;}
+.claims_name .weui-cell__ft img{ width: 0.35rem; margin-top: 0.15rem; float: left}
+.weui-cells{ margin-top: 0;}
+.claims_items .weui-check__label .weui-cell__bd{ width: 5.6rem; overflow: hidden;}
+.report_btn{ position: fixed; z-index: 10; bottom: 0; width: 100%; background: #bed8ff; color: #0a60de;}
+.claims_items .weui-uploader__file img { width: 100%; height: 100%;}
+.weui-gallery__del{ color: #fff; font-size: 0.4rem;}
+.weui-cells_radio{font-size: 0.3rem; color: #333;}
+.weui-cells_radio label{ height: 1rem;}
+.weui-cells_form{font-size: 0.3rem; color: #333; line-height: 0.6rem;}
+.add_contacts_btn,.recheck_claims_btn{ width: 48%; margin-top: 1rem; box-sizing: border-box;}
+.weui-dialog .weui-dialog__hd{ height: 0.8rem; padding: 0; text-align: center; line-height: 0.8rem; background: #bfd8ff; color: #0a5ddd; font-size: 0.36rem;}
+.search_claims_list{ width: 6.5rem; max-width: 6.5rem;}
+.search_claims_list .weui-dialog__bd{ font-size: 0.26rem; padding: 0; text-align: left; line-height: 0.5rem; color: #333;}
+.search_claims_list .weui-dialog__bd span{padding: 0 0.02rem;}
+.search_claims_list .weui-dialog__bd p{ padding:0.05rem 0.1rem; box-sizing: border-box;border-top: 1px solid #e6e6e6; border-bottom: 1px solid #fff;}
+.search_claims_list .weui-dialog__bd p.on{ background: #e4eefd; border-top: 1px solid #226ee4; border-bottom: 1px solid #226ee4;}
+.search_claims_list .weui-dialog__bd strong{ font-size: 0.34rem; color: #0a5ddd; margin:0.5rem 0 0 0.2rem; }
+.search_claims_list .weui-dialog__bd input{ width: 100%; margin: 0 auto; height: 0.6rem; line-height: 0.6rem; padding: 0 0.2rem; display: inline-block; border: 1px solid #ebebeb; background: #f6f6f6;}
+/*现场资料*/
+.site_img_box{ padding: 0 0.3rem;}
+.site_img_box .weui-uploader__file img{ width: 100%;}
+.weui-cells__tips{ word-wrap: break-word; word-break: break-all;}
+/*赔案意见书*/
+.claims_opinion_btn a{ margin-top: 0.1rem!important;}
+.claims_opinion_btn .agree_btn{ background: #ead4d9; color: #ff0000;}
+.claims_opinion_btn .disagree_btn{ background: #bed8ff; color: #0a60de;}
+.claims_opinion_disagree_box input{ border: 1px solid #e6e6e6; height: 0.6rem; line-height: 0.6rem; margin-top: 0.2rem; padding: 0 0.2rem;}
+/*评分*/
+.star_box p{ font-size: 0.3rem; line-height: 0.6rem; margin-right: 0.2rem;}
+.mobile_star li{ float: left; width: 0.6rem; height: 0.6rem; background-image: url("../images/starky.png"); background-position: center; background-size: contain; background-repeat: no-repeat; margin: 0 0.1rem;}
+.mobile_star li.star{ background-image: url("../images/starsy.png")}
+.impression_box{ margin:0.3rem 0 0.2rem; }
+.impression_box h1{ font-size: 0.3rem; color: #737373;}
+.impression_box .weui-flex a{ font-size: 0.24rem; display: block; width: 2rem; height: 0.45rem; box-sizing: border-box; border-radius: 0.05rem; border: 1px solid #ebebeb; text-align: center; margin: 0.1rem 0; color: #a3a3a3;}
+.impression_box .weui-flex a.on{ background: #f9edbb; border: 1px solid #ffd11b; color: #ee9e05;}
 
-.help_title01 i.on{ background: url("../images/help_title_tip.png") center -30px no-repeat;}
-.help_file_box .uploader_title { font-size: 0.3rem; color: #1a1a1a; padding: 0.4rem 0 0.3rem;}
-.help_file_box { padding: 0 0.3rem;}
-.help_file_box{ border-bottom: 1px solid #edebec;}
-.help_file_box .weui_uploader_files li{ width: 1.6rem; height: 1.6rem; border: 1px solid #a3a3a3; margin: 0 0.22rem 0.22rem 0;}
-.help_file_box .weui_uploader_files li img{width: 100%; height: 100%; display: block;}
-.help_file_box .weui_uploader_input_wrp{ width: 1.6rem; height: 1.6rem;border: 1px solid #a3a3a3; margin: 0 0.22rem 0.22rem 0;}
-.help_btn{ width: 90%; height: 0.88rem; line-height: 0.88rem; font-size: 0.36rem; margin: 0.5rem auto 0.3rem; border-radius: 0.1rem;}
-.help_code_box .weui_dialog_hd{ padding: 0; height: 0.8rem; line-height: 0.8rem; font-size: 0.36rem; font-weight: 400;}
-.help_code_box .weui_dialog input{ text-align: center; height: 0.8rem; width: 100%; line-height: 0.8rem; border: none; border-bottom: 1px solid #edebec; color: #acacac; font-size: 0.4rem; color: #333;}
-.help_code_box .true_code_btn{ width: 90%; height: 0.8rem ;line-height: 0.8rem; margin: 0.75rem auto 0.35rem;}
-.help_img_box .weui_dialog{ background: none; width: 100%; height: 100%; }
-.help_img_box .weui_dialog_hd{ padding: 0;}
-.help_img_box .weui_dialog_hd .weui_media_title{ color: #fff; line-height: 0.4rem; padding: 0 0.3rem ; font-size: 0.36rem; }
-.help_img_box .example .img{ margin: 0.3rem auto; width: 6rem; height: 6rem; border: 6px solid #fff; border-radius: 50%; background: url("../images/help_example_img.gif") center no-repeat; background-size: contain;}
-.help_img_box .example h4{ text-align: left; color: #fff; margin-left: 0.5rem;}
-.help_img_box .example .tip{ text-align: center; color: #f2fa0a;  font-size: 0.36rem;}
-.help_img_box .btn{ width: 90%; margin-top: 1rem;}
-.check_img_file input{display: block; width: 200%; height: 100%; opacity: 0; position: absolute; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

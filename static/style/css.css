@@ -4244,13 +4244,13 @@ input[type=text]::-webkit-focus-inner {
 .b_c dd ul.c_cList li a.on {
     background: #e7e7e7 url("../images/hover_pic2.png") no-repeat 216px center
 }
-
+.ygb_nav_list .list_box{ overflow: hidden;}
 .ygb_nav_list .list_box a {
-    background: none !important;
+    background: none!important;
     padding-left: 75px !important;
     color: #000 !important;
 }
-
+.ygb_nav_list .list_box a.now{background: #49a9ef!important;}
 .ygb_nav_list .list_box li:hover {
     background: #49a9ef;
     transition: 0.3s;
@@ -6157,7 +6157,7 @@ input[type=text]::-webkit-focus-inner {
 .ygb_all_price {
     font-size: 24px;
     line-height: 40px;
-    margin: 40px 0 20px;
+    margin: 40px 0 -25px;
     font-weight: bold;
 }
 
@@ -6380,7 +6380,10 @@ input[type=text]::-webkit-focus-inner {
 .ygb_work_check input {
     display: none;
 }
-
+.ygb_work_check input:checked + .ygb_work_check_span{
+    background: url("../images/ygb_choose_checked.png") left center no-repeat;
+    color: #333
+}
 .ygb_work_check span {
     display: inline-block;
     background: url("../images/ygb_choose_checkimg.png") left center no-repeat;
@@ -6739,7 +6742,7 @@ input[type=text]::-webkit-focus-inner {
 }
 
 .ygb_actived table {
-    border: 3px solid #6ebcf5;
+    border: 1px solid #6ebcf5;
     border-radius: 5px;
     border-spacing: 0;
     color: #333;
@@ -6748,7 +6751,7 @@ input[type=text]::-webkit-focus-inner {
 }
 
 .ygb_actived table tr, .ygb_actived table td {
-    border: 2px solid #6ebcf5;
+    border: 1px solid #6ebcf5;
     height: 22px;
     text-align: center;
 }
@@ -6845,7 +6848,23 @@ input[type=text]::-webkit-focus-inner {
     border: 2px solid #4d9ed8;
     border-radius: 10px;
 }
+.ygb_change_wrap table{
+    border-collapse: collapse;
+}
+.ygb_change_wrap .top td{
+    border-right:2px solid #4d9ed8;
+    border-left:2px solid #4d9ed8;
+}
+.ygb_change_wrap .top tr td:nth-child(4),.ygb_change_wrap .content tr td:nth-child(3){
+    border-right: 4px solid #4d9ed8;
+}
+.ygb_change_wrap .content td{
+    border:2px solid #4d9ed8;
 
+}
+.ygb_change_wrap .content tr:nth-child(1) td{
+    border-top:none;
+}
 .ygb_change_wrap .top td {
     text-align: center;
     font-size: 16px;
@@ -6920,7 +6939,7 @@ input[type=text]::-webkit-focus-inner {
 }
 
 .ygb_change_wrap .content .IDCard {
-    width: 145px;
+    width: 155px;
     border: 1px solid #d9d9d9;
     border-radius: 2px;
     box-sizing: border-box;
@@ -7181,11 +7200,12 @@ input[type=text]::-webkit-focus-inner {
 .claims_main_box .items{ margin-bottom: 28px;}
 .claims_main_box .title{ font-size: 18px; line-height: 30px; font-weight: bold; float: left;color: #212940; }
 .claims_main_box .content{ float: left;color: #212940;}
-.claims_main_box .content input{ border-radius: 5px; border: 1px solid #b5b5b5; height: 30px; padding: 0 5px; box-sizing: border-box; font-size: 18px;}
+.claims_main_box .content input{ border-radius: 5px; border: 1px solid #b5b5b5; height: 30px; padding: 0 5px; box-sizing: border-box; font-size: 18px; width: 260px;}
 .datainp{ width:160px; height:30px; font-size: 16px; color: #a1a4a4; line-height: 30px; border:1px #b5b5b5 solid; background: #eee;border-radius: 5px; padding: 0 5px; box-sizing: border-box;}
 .claims_main_box .info{ width: 360px; box-sizing: border-box; border:1px #b5b5b5 solid; border-radius: 5px; padding: 5px 10px; line-height: 26px; font-size: 14px; color: #212940; font-weight: 600;}
 .claims_main_box .info i{ margin-left: 10px;}
 .claims_main_box .tip{ width: 330px; margin-left: 10px; color: #ee080e; line-height: 18px; word-break: break-all; word-wrap: break-word;}
+.claims_main_box .rechoose_btn{ height: 30px; line-height: 30px; padding: 0 10px; display: inline-block; background: #6ebcf5;  border-radius: 5px; color: #fff; margin-left: 30px; margin-left: 90px;}
 .claims_main_box .tip p{ font-size: 14px;}
 .claims_main_box .tip h6{ font-size: 12px;}
 .select_box01{ height: 30px; padding:2px 5px;border-radius: 5px; border: 1px solid #b5b5b5; box-sizing: border-box;}
@@ -7201,12 +7221,14 @@ input[type=text]::-webkit-focus-inner {
 .search_ins_box{padding: 30px 0 30px 40px; }
 .search_ins_box .title{ position: absolute; font-size: 18px; font-weight: bold;}
 .search_ins_box .content{ padding-left: 130px;}
-.search_ins_box .list{ border: 1px solid #b5b5b5;width: 425px;}
-.search_ins_box .list li{ box-sizing: border-box; width: 100%; margin-right: -20px; cursor: pointer;}
+.search_ins_box .list{ border: 1px solid #b5b5b5;width: 550px;}
+.search_ins_box .list li{ box-sizing: border-box; width: 100%; margin-right: -20px; cursor: pointer; height: 22px;}
 .search_ins_box .list li.on{ background: #d5f1fc}
-.search_ins_box .list li span{ display: inline-block;overflow: hidden; text-align: center; box-sizing: border-box; line-height: 22px;}
+.search_ins_box .list li span{ float: left; display: inline-block;overflow: hidden; text-align: center; box-sizing: border-box; line-height: 22px;}
+.search_ins_box .list li a{ line-height: 22px; color: #ff0000; display: inline-block; float: left; text-align: center; text-decoration: underline;}
 .wb30{ width:30%; }
 .wb20{ width:18%;}
+.wb10{ width:10%;}
 .search_ins_box .text{ color: #ff0000; font-size: 14px ;line-height: 40px; font-weight: bold;}
 .w210{ width: 210px;}
 .w130{ width: 130px;}
@@ -7298,6 +7320,7 @@ input[type=text]::-webkit-focus-inner {
 .table_action03 a{ color: inherit; font-weight: bolder; font-size: 14px;}
 /*现场资料*/
 .data_item_title{ font-size: 16px; line-height: 32px; font-weight: bold; padding-left: 32px;}
+.data_item_title input{ margin-left: 5px; border: 1px solid #b5b5b5; background: #e6e6e6; height: 24px; box-sizing: border-box; line-height: 24px; padding: 0 2px;}
 .data_box{ padding: 0 20px; }
 .data_box .items{ height: 145px; margin-bottom: 15px;}
 .data_box .items .all{  margin-top: 60px;}
@@ -7321,9 +7344,9 @@ input[type=text]::-webkit-focus-inner {
 .claims_btn03 a{ display: block; width: 250px; height: 58px; line-height: 58px; font-size: 24px; text-align: center; color: #fff; box-sizing: border-box; float: left; background: #6ebcf5; box-shadow: 0 6px 0 #3371a1; margin-right: 105px; border-radius: 5px;}
 .help_box .common_title01,.need_other .common_title01{ font-size: 24px; padding: 25px 0;}
 .help_box,.need_other{ padding: 0 25px;}
-.help_box .add_new{display: block; margin-left: 20px; height: 30px; line-height: 30px; width: 120px; color: #fff; font-size: 16px; font-weight: bold; text-align: center; background:#6ebcf5; border-radius: 5px; }
-.help_box .add_new_option input{ height: 20px; width: 200px; box-sizing: border-box; margin-left: 10px;}
-.help_box .add_new_option a { margin: 0 5px; display: inline-block; width: 45px; height: 20px; background: #106eb2; color: #fff; border-radius: 3px; line-height: 20px; text-align: center;}
+.help_box .add_new,.need_other .add_new{display: block; margin-left: 20px; height: 30px; line-height: 30px; width: 120px; color: #fff; font-size: 16px; font-weight: bold; text-align: center; background:#6ebcf5; border-radius: 5px; }
+.help_box .add_new_option input,.need_other .add_new_option input{ height: 20px; width: 200px; box-sizing: border-box; margin-left: 10px;}
+.help_box .add_new_option a,.need_other .add_new_option a { margin: 0 5px; display: inline-block; width: 45px; height: 20px; background: #106eb2; color: #fff; border-radius: 3px; line-height: 20px; text-align: center;}
 .help_box .common_title02,.need_other .common_title02{ background: #e8f1ff; padding:0 10px; margin: 0 auto;}
 .help_box .tip{ color: #babbbc; line-height: 40px; font-size: 16px; font-weight: bold; padding-left: 20px;}
 .help_box .info{ font-size: 16px; line-height: 40px; color: #313b4b; font-weight: bold; padding-left: 20px;}
@@ -7414,3 +7437,22 @@ input[type=text]::-webkit-focus-inner {
 .pic_box .list li{display: inline-block; position: relative; height: 95px; width: 95px; background: #fff; box-sizing: border-box; padding: 5px; margin: 0 10px; border-radius:5px;}
 .pic_box .list li img{ max-width: 100%; max-height: 100%;}
 .complete_info_word p,.complete_info_word strong{font-weight: bold; font-size: 14px; line-height: 30px;}
+/*2016.10.26未生效保单列表*/
+.ygb_claims_item {  border-bottom: 2px dashed #e5e5e5;}
+.ygb_claims_item:nth-child(2n){ background: #eff7fc}
+.ygb_claims_item .list li{ float: left; height: 40px; padding: 20px 0; margin: 0 17px; text-align: center;}
+.ygb_claims_item .list li span{ line-height: 40px;}
+.ygb_claims_item .list li p{ line-height: 20px;}
+.ygb_claims_item .list li .pay{ display: block; width: 70px; height: 18px; line-height: 18px; text-align: center; background: #b1dcfc; box-shadow: 0 3px 0 #7bb3dc; border-radius: 3px; margin-bottom: 6px; color: #1b6194;}
+.ygb_claims_item .list li .info_btn{ line-height: 18px; text-decoration: underline; color: #1b6194;}
+.ygb_claims_item .list li.tip a{ width: 17px; height: 17px; display: block; background: url("../images/ygb_claims_item_tip.png") center 0px no-repeat; margin-top: 5px;}
+.ygb_claims_item .list li.tip a.on{background: url("../images/ygb_claims_item_tip.png") center -17px no-repeat;}
+.ygb_claims_item .list li.tip{ margin: 0;}
+.ygb_claims_item .info ul{ width: 500px; margin-bottom: 5px;}
+.ygb_claims_item .info li{ float: left; width: 220px; margin-left: 10px; height: 20px; line-height: 20px;}
+.ygb_claims_item .info p{ width: 120px; padding-left: 17px; line-height: 20px;}
+/*11.9员工保保障信息弹框*/
+.ygb_pro_info{ border:1px solid #000; border-collapse: collapse; }
+.ygb_pro_info tr,.ygb_pro_info td{ border: 1px solid #000;}
+.ygb_pro_info tr td:nth-child(1){ text-align: center;}
+.ygb_pro_text{ cursor: pointer;}

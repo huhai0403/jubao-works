@@ -5,7 +5,7 @@
     <title>客户报案</title>
     <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
     <link rel="stylesheet" type="text/css" href="static/style/css.css">
-    <link rel="stylesheet" type="text/css" href="static/style/jedate.css">
+    <link rel="stylesheet" type="text/css" href="static/style/jedate2.css">
     <script src="static/js/jquery.js"></script>
     <script src="static/js/jedate.min.js"></script>
 </head>
@@ -107,6 +107,7 @@
                         <h6>4、玻璃制品、陶瓷制品、石膏制品等易碎品的免赔额为：RMB5000元或损失金额的15%，两者以高者为准</h6>
                     </div>
                 </div>
+                <a class="rechoose_btn" href="javascript:;">重新选择保单</a>
             </div>
             <div class="items clearfix">
                 <p class="title">受损财产：</p>
@@ -207,53 +208,47 @@
     <div class="content">
         <div class="list">
             <ul>
-                <li class="on">
+                <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
-                </li>
-                <li>
-                    <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
-                    <span class="wb20">鄂A5x235</span>
-                    <span class="wb20">北京-太原</span>
-                </li>
-                <li>
-                    <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
-                    <span class="wb20">鄂A5x235</span>
-                    <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
             </ul>
         </div>
@@ -376,23 +371,14 @@
 
 <script>
     /*时间选择*/
-    window.onload=function(){
-        jeDate({
-            dateCell:"#indate",//isinitVal:true,
-            format:"YYYY年MM月DD日",
-            isTime:false, //isClear:false,
-            minDate:"2000-01-01 00:00:00",
-            maxDate:"2050-12-31 00:00:00"
-        });
-        jeDate({
-            dateCell:"#dateinfo",
-            format:"YYYY年MM月DD日 hh:mm:ss",
-            isinitVal:true,
-            isTime:true, //isClear:false,
-            minDate:"2014-09-19 00:00:00",
-            okfun:function(val){alert(val)}
-        })
-    };
+    jeDate({
+        dateCell:".datainp",//isinitVal:true,
+        format: 'YYYY-MM-DD',
+        //isTime:false, //isClear:false,
+        minDate:"1999-01-01 00:00:00",
+        maxDate:"2050-12-31 00:00:00"
+
+    });
     $(function(){
         /*选项卡*/
         $('.check_top li').click(function(){
@@ -404,12 +390,12 @@
             $('.ygb_choose_box').eq($t).removeClass('dn');
         });
         /*选择保单*/
-        $('.search_ins_box .list li').click(function(){
-            $(this).siblings().removeClass('on');
-            $(this).addClass('on');
-        });
-        $('.search_ins_box .list li').dblclick(function(){
+        $(document).on('click','.search_ins_box .list li a',function(){
             $('.search_ins_box,.mask').hide();
+        });
+        /*重新选择保单*/
+        $('.rechoose_btn').click(function(){
+           $('.search_ins_box,.mask').show();
         });
         /*生成事故经过*/
         function getAccidentCourse(){
@@ -417,7 +403,7 @@
                 $(this).empty();
                 if(!$('.datainp').val()){
                     alert('请填写出险时间!');
-                    $('.datainp').click()
+                    $('.datainp').click();
                 }
                 else if(!$('#loss_thing').val()){
                     alert('请填写受损财产！');

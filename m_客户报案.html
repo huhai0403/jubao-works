@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>保险理赔——报案</title>
+    <link href="static/mobile/css/rest.css" rel="stylesheet" type="text/css"/>
+    <link href="static/mobile/css/weui.1.0.1.css" rel="stylesheet" type="text/css"/>
+    <link href="static/mobile/css/claims.css" rel="stylesheet" type="text/css"/>
+    <script src="static/mobile/js/zepto_1.1.3.js"></script>
+    <script>
+        /*计算网页根元素大小*/
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+</head>
+<body>
+<div class="top_bar">
+    <span>保险理赔</span>
+    <span>></span>
+    <span>报案页面</span>
+    <a class="return" href="javascript:;">返回</a>
+</div>
+<div class="main_bar">
+    <div class="claims_items">
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__hd"><label class="weui-label">出险时间：</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" placeholder="请选择出险时间！" id="data" type="date" value="">
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__bd"><span>被保险人：</span><span id="insured">湖北万达物流有限公司</span></div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__bd"><span>承运车辆牌号：</span><span>鄂A542c3</span></div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__bd"><span>运输路线：</span><span>湖北武汉 至 江西九江</span></div>
+        </div>
+        <div class="claims_items">
+            <div class="weui-cell claims_name">
+                <div class="weui-cell__bd fl">
+                    <p>事故原因：</p>
+                </div>
+                <div class="weui-cell__ft fr">
+                    <img src="static/mobile/images/m_claims_list_tip01.png"/>
+                    <img class="dn" src="static/mobile/images/m_claims_list_tip02.png"/>
+                </div>
+            </div>
+            <div class="weui-cells accident_reason weui-cells_radio dn">
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>火灾</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1" checked="checked">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>爆炸</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>交通事故</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>货物挤压碰撞</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>雨淋</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>装卸意外</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>盗窃</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>抢劫</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>整车失踪</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>自然灾害</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label">
+                    <div class="weui-cell__bd">
+                        <span>其他</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__hd"><label class="weui-label">受损财产：</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="loss_thing" type="text" placeholder="请输入受损财产">
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__hd"><label class="weui-label">事故地点：</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="accident_place" type="text" placeholder="请输入事故地点">
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__hd"><label class="weui-label">估损金额：</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="loss_money" type="text" placeholder="请输入估损金额（万元）">
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__bd"><span>事故经过：</span></div>
+        </div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" id="accident_process" placeholder="请输入事故经过" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__hd"><label class="weui-label">联系人姓名：</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="contacts_name" type="text" placeholder="请输入联系人姓名">
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__hd"><label class="weui-label">联系人电话：</label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" id="contacts_phone" type="text" placeholder="请输入联系人电话">
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__hd">备用联系人姓名：</div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="选填">
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__hd">备用联系人电话：</div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="选填">
+            </div>
+        </div>
+    </div>
+    <a href="javascript:;" class="weui-btn weui-btn_plain-primary add_contacts_btn">添加备用联系人</a>
+    <a href="javascript:;" class="weui-btn weui-btn_plain-primary recheck_claims_btn">重新选择保单</a>
+
+</div>
+<a href="javascript:;" class="weui-btn weui-btn_primary report_btn">确认报案</a>
+<!--图片查看-->
+<div class="weui-gallery">
+    <span class="weui-gallery__img" id="galleryImg" style="background-image:url(static/mobile/images/titles.png)"></span>
+    <div class="weui-gallery__opr">
+        <a href="javascript:" class="weui-gallery__del">返回</a>
+    </div>
+</div>
+<!--查询表单弹框-->
+<div class="weui-dialog weui-skin_android search_claims_list">
+    <div class="weui-dialog__hd"><strong class="weui-dialog__title">公司最近保单：</strong></div>
+    <div class="weui-dialog__bd">
+        <p class="on"><span>2016-07-03</span><span>整车保</span><span>湖北武汉-江西南昌</span><span>鄂A8350</span></p>
+        <p><span>2016-07-03</span><span>员工保</span><span>汪涵等12人</span><span>尊享版</span></p>
+        <p><span>2016-07-03</span><span>整车保</span><span>湖北武汉-北京</span><span>鄂A8350</span></p>
+        <p><span>2016-07-03</span><span>整车保</span><span>湖北武汉-北京</span><span>鄂A8350</span></p>
+        <p><span>2016-07-03</span><span>整车保</span><span>湖北武汉-江西南昌</span><span>鄂A4350</span></p>
+        <p><span>2016-07-03</span><span>整车保</span><span>湖北武汉-江西南昌</span><span>鄂A4350</span></p>
+        <p><span>2016-07-03</span><span>整车保</span><span>湖北武汉-江西南昌</span><span>鄂A8350</span></p>
+        <p><span>2016-07-03</span><span>员工保</span><span>汪涵等12人</span><span>尊享版</span></p>
+        <strong>模糊查询保单：</strong>
+        <input class="weui-input" type="text" placeholder="请输入查询条件">
+    </div>
+    <div class="weui-dialog__ft">
+        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_default">搜索</a>
+        <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确认</a>
+    </div>
+</div>
+<div class="weui-mask"></div>
+</body>
+<script>
+    $(function(){
+        /*图片查看*/
+        $('.weui-uploader__bd li').click(function(){
+            $('.weui-gallery').show();
+        });
+        $('.weui-gallery__del').click(function(){
+            $('.weui-gallery').hide();
+        });
+
+        $(function(){
+            $('.claims_name').click(function(){
+                $(this).find('img').toggleClass('dn');
+                $(this).siblings('.weui-cells_radio').toggleClass('dn');
+            })
+        });
+
+        /*添加联系人*/
+        $('.add_contacts_btn').click(function(){
+            $('.claims_items').append('<div class="weui-cell claims_name"> <div class="weui-cell__hd">备用联系人姓名：</div> <div class="weui-cell__bd"> <input class="weui-input" type="text" placeholder="选填"> </div> </div><div class="weui-cell claims_name"> <div class="weui-cell__hd">备用联系人电话：</div> <div class="weui-cell__bd"> <input class="weui-input" type="text" placeholder="选填"> </div> </div>')
+        });
+        /*选择保单*/
+        $('.search_claims_list .weui-dialog__bd p').click(function(){
+            $(this).siblings('p').removeClass('on');
+            $(this).addClass('on');
+        });
+        $('.search_claims_list .weui-dialog__btn_default,.search_claims_list .weui-dialog__btn_primary').click(function(){
+            $('.search_claims_list,.weui-mask').hide();
+        });
+        $('.recheck_claims_btn').click(function(){
+            $('.search_claims_list,.weui-mask').show();
+        });
+        /*生成事故经过*/
+        function getAccidentCourse(){
+            $('#accident_process').focus(function(){
+                $(this).empty();
+                if(!$('#data').val()){
+                    alert('请填写出险时间!');
+                    $('#data').focus();
+                }
+                else if(!$('#loss_thing').val()){
+                    alert('请填写受损财产！');
+                    $('#loss_thing').focus();
+                }
+                else if(!$('#accident_place').val()){
+                    alert('请填写具体事故地点!');
+                    $('#accident_place').focus();
+                }
+                else if(!$('#loss_money').val()){
+                    alert('请填写估损金额!');
+                    $('#loss_money').focus();
+                }
+                else {
+                    $(this).val($('#data').val()+'被保险人'+$('#insured').text()+'在'+$('#accident_place').val()+'由于'+$('.weui-check:checked').parents('.weui-check__label').find('.weui-cell__bd span').html()+',造成'+$('#loss_thing').val()+'损失,估损金额'+$('#loss_money').val()+'万元。')
+                }
+            });
+        }
+        getAccidentCourse();
+
+        /*确认报案*/
+        $('.report_btn').click(function(){
+            var companyTel=$("#contacts_phone").val();
+            var Tel=/^(0|86|17951)?(13[0-9]|15[012356789]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/.test(companyTel);
+            if(!$('#accident_process').val()){
+                alert('请填写事故经过！');
+            }
+            else if(!$('#contacts_name').val()){
+                alert('请填写联系人姓名！');
+                $('#contacts_name').focus();
+            }
+            else if(!$('#contacts_phone').val()){
+                alert('请填写联系人电话！');
+                $('#contacts_phone').focus();
+            }
+            else if(Tel==false){
+                alert('请输入正确手机号！');
+                $('#contacts_phone').focus();
+            }
+        })
+    })
+</script>
+</html>

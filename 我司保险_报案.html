@@ -225,7 +225,7 @@
 <!--报案号弹框-->
 <div class="alert_box claims_num">
     <p class="text">您所登记的案件，系统已记录。</p>
-    <p class="text">报案号为ZCB201607040001 </p>
+    <p class="text">聚保赔案号为ZCB201607040001 </p>
     <div class="claims_btn01">
         <a href="javascript:;">下一步</a>
     </div>
@@ -236,53 +236,47 @@
     <div class="content">
         <div class="list">
             <ul>
-                <li class="on">
+                <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
                 <li>
                     <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
+                    <span class="wb20">2016年5月8日</span>
                     <span class="wb20">鄂A5x235</span>
                     <span class="wb20">北京-太原</span>
-                </li>
-                <li>
-                    <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
-                    <span class="wb20">鄂A5x235</span>
-                    <span class="wb20">北京-太原</span>
-                </li>
-                <li>
-                    <span class="wb30">武汉韵达物流</span>
-                    <span class="wb30">2016年5月8日</span>
-                    <span class="wb20">鄂A5x235</span>
-                    <span class="wb20">北京-太原</span>
+                    <a class="wb10" href="javascript:;">确定</a>
                 </li>
             </ul>
         </div>
@@ -354,11 +348,8 @@
                 <a href="javascript:;">
                     <img src="static/images/ft_03.png" alt=" " /></a>
             </div>
-
             <div class="fr ft_copyRight">
-                    <span>货运险 | 物流责任险 | 聚保物流保险服务平台<br />
-                        Copyright©2015 jubao.com All Rights Reserved
-                    </span>
+            <span>货运险 | 物流责任险 | 聚保物流保险服务平台<br />Copyright©2015 jubao.com All Rights Reserved</span>
             </div>
         </div>
     </div>
@@ -394,13 +385,10 @@
             $('.ygb_choose_box').eq($t).removeClass('dn');
         });
         /*选择保单*/
-        $('.search_ins_box .list li').click(function(){
-            $(this).siblings().removeClass('on');
-            $(this).addClass('on');
-        });
-        $('.search_ins_box .list li').dblclick(function(){
+        $(document).on('click','.search_ins_box .list li a',function(){
             $('.search_ins_box,.mask').hide();
         });
+
         /*生成事故经过*/
         $('#accident_process').focus(function(){
             $(this).empty();
@@ -448,16 +436,13 @@
             }
         });
         /*添加号码*/
-        /*
-        * <div class="items clearfix">
-         <div class="content clearfix ml108">
-         <input class="fl" type="text" placeholder="请输入联系人电话">
-         </div>
-         </div>
-        * */
         $('.add_phone').click(function(){
             var html = "<div class='content w50 mt_25 ml108'><input type='text' placeholder='请填写联系人电话'></div>"
-            $('.claims_main_box .items').eq(9).append(html);
+            $('.claims_main_box .items').eq( 9).append(html);
+        });
+        /*模糊搜索查询*/
+        $('.search_btn').click(function(){
+            $('.search_ins_box,.mask').show();
         })
     })
 </script>

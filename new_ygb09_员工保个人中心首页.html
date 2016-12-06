@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>个人中心</title>
+    <meta name="keywords" content="聚保,物流保险,聚保物流,聚保物流保险,货运保险,员工保险" />
+    <meta name="description" content="聚保让您投保不上当,理赔有人帮！让物流人买到放心的保险，让物流平台放心卖保险！提供货运保险,员工保险,零担保，城配保等众多物流保险服务！" />
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
+    <link rel="stylesheet" type="text/css" href="static/style/css.css">
+    <script type="text/javascript" src="static/webjs/jquery.js"></script>
+    <script type="text/javascript" src="static/webjs/Base.js"></script>
+    <script type="text/javascript" src="static/webjs/respond.min.js"></script>
+    <script src="static/webjs/datetools.js"></script>
+    <script src="static/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="static/js/jquery.showLoading.min.js"></script>
+    <link href="static/style/filluserinfo.css" rel="stylesheet" />
+    <link href="static/style/showLoading.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="topBox">
+    <div class="clearfix w top">
+        <div class="logo fl">
+            <a href="/">
+                <img src="static/images/logo.png" alt="logo"/>
+            </a>
+                <span>
+                    <img src="static/images/laixnidxjsiosa.jpg" width="280"/>
+                </span>
+        </div>
+        <div class="loginBox fr">
+            <a class="login" href="/login">登录</a>
+            <a class="register" href="/register">注册</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="navBox">
+    <div class="w clearfix">
+        <div class="searchS fr"><a href="/searchorder">保单查询</a></div>
+        <div class="navC">
+            <ul class="clearfix nav index">
+                <li class=""><a href="/zcb">整车保</a></li>
+                <li class=""><a href="/ygb">员工保</a></li>
+                <li class=""><a href="/article">老周解密</a></li>
+                <li class=""><a href="/claims">保险理赔</a></li>
+                <li class=""><a href="/timeline">新闻动态</a></li>
+                <li class=""><a href="/business">商务合作</a></li>
+                <li class="mid_nav_top">
+                    <a class="" href="/guide">新手指南</a>
+                    <ul class="mid_nav">
+                        <li><a href="/guide">投保流程</a></li>
+                        <li><a href="/guide">充值流程</a></li>
+                        <li><a href="/guide">分享功能</a></li>
+                        <li><a href="/guide">个人中心</a></li>
+                    </ul>
+                </li>
+                <li class="mid_nav_top">
+                    <a class="" href="/contact">联系我们</a>
+                    <ul class="mid_nav">
+                        <li><a href="/contact">联系我们</a></li>
+                        <li><a href="/about">关于我们</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+<div class="clearfix Inner_Box4 w">
+    <div  id="introJsStep1" style="position:fixed;top:20%;left:43%"></div>
+
+    <div class="clearfix personCenterBox">
+
+        <div class="fl pc_left">
+            <dl class="b_c">
+                <dt>个人中心</dt>
+                <dd>
+                    <ul class="c_cList">
+                        <li class="current"> <a href="/dashboard/home">个人中心</a></li>
+                        <li class="ygb_nav_list">
+                            <a href="javascript:;">员工保</a>
+                            <ul class="list_box" style="display: none">
+                                <li><a href="/dashboard/ygb/ineffective" class="on">未生效保单</a></li>
+                                <li><a href="/dashboard/ygb/order">已生效保单</a></li>
+                                <li><a href="/dashboard/ygb/add">我要加人</a></li>
+                                <li><a href="/dashboard/ygb/change">我要换人</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/dashboard/coupon">优惠券</a></li>
+                        <li><a href="/dashboard/transaction">资金流水</a></li>
+                        <li><a href="/dashboard/zcb">保单查询</a></li>
+
+                        <li><a href="/dashboard/invoicereceipt">协议和发票</a></li>
+                        <li><a href="/dashboard/message">站内信</a></li>
+                        <li><a href="/dashboard/setting">设置</a></li>
+                        <li><a href="/dashboard/agreement">我的协议</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+<!--员工保个人中心开始-->
+        <div class="fr pc_content">
+            <div class="clearfix pc_info">
+                <div class="fl pc_rt">
+                    <table class="pc_checking" style="table-layout: auto; width: 412px; border-collapse: collapse; border: none; height: 142px; font-size: 12px; font-family: 'Microsoft YaHei'; color: #313b4b; line-height: 28px; margin: auto; margin-top: 19px; margin-left: 15px; border-radius: 5px; background-color: #f4f4f4; float: left">
+                        <tbody>
+                        <tr style="height: 10px">
+                            <td style="width: 30px"></td>
+                            <td>公司名称:</td>
+                            <td id="company_tdname"></td>
+                            <td style="width: 140px"></td>
+                        </tr>
+                        <tr style="height: 10px">
+                            <td style="width: 30px"></td>
+                            <td>公司电话:</td>
+                            <td>13012121212</td>
+                            <td style="width: 140px"></td>
+                        </tr>
+                        <tr style="height: 10px">
+                            <td style="width: 30px"></td>
+                            <td>公司地址:</td>
+                            <td>武汉市江岸区江岸区</td>
+                            <td style="width: 140px"></td>
+                        </tr>
+                        <tr style="height: 10px">
+                            <td></td>
+                            <td>完善信息</td>
+
+                            <td></td>
+                            <td   id="introJsStep2">
+                                <div class="recharge"><a class="rechar introJsOut2" style="height: 24px; line-height: 24px" href="javascript:void(0)" onclick="showinfo()">录入公司名称</a></div>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="pc_listBox" style="width: 282px; height: 142px; margin-top: 19px; float: right;">
+                        <ul class="pc_list">
+                            <li>
+                                <dl class="clearfix pc_top">
+                                    <dd class="fr">
+                                        <a href="zcb"><b class="pc_b">员工保</b></a>
+                                        <span class="pc_b" style="height: 65px;">挑战中小物流企业员工保险极限</span>
+                                    </dd>
+                                </dl>
+
+                                <div class="buttons">
+                                    <a class="bt2 ygb_quick_btn" style="margin-top: 55px;" href="javascript:void(0)" id="introJsStep3">马上投保</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>&nbsp;</div>
+            <div class="pc_checking" style="height: auto;">
+                <div class="tit">未付款订单</div>
+                <div class="chcekList" style="padding-bottom: 30px">
+                    <table width="700" border="0" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th style="width: 90px">投保时间</th>
+                            <th style="width: 100px">保单号</th>
+                            <th style="width: 140px">参保人数</th>
+                            <th style="width: 60px">保费金额</th>
+                            <th style="width: 60px; ">状态</th>
+                            <th style="width: 80px">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="order_body">
+                        <tr >
+                            <td>2015-07-01</td>
+                            <td>YGB123123123</td>
+                            <td>
+                                <p>现场操作人员5人</p>
+                                <p>非现场操作人员5人</p>
+                            </td>
+                            <td>5600</td>
+                            <td><span style="text-decoration: underline; color: #ff0000">未付款</span></td>
+                            <td>
+                                <a href="javascript:void(0)" >查看详情</a>
+                            </td>
+
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <div class="asppage24">
+                    <div class="pager order_pager"></div>
+                </div>
+            </div>
+            <div>&nbsp;</div>
+        </div>
+<!--员工保个人中心结束-->
+        <div class="fullbg"></div>
+        <div class="PopUp" id="safe_window">
+            <div class="PopUp_box">
+                <div class="pop_conditionBox" id="content_div">
+
+                    <div id="child_div" class="Inner_loginBox" style="height: 200px;">
+                        <div class="tabcon" style="border: none; width: 300px">
+
+                            <div class="clearfix l_box2" style="margin-left: -200px; width: 200px">
+                                <div class="design" style="border-right-style: none;">
+                                    <div class="infor2" style="border-bottom-style: none; text-indent: 2em;">
+                                            <span>
+                                                <h4>尊敬的用户您好，为了保障您的账户资产安全，余额充值前，请您开启支付密码。
+                                                    支付密码开启后，使用账户中余额、优惠券时，需要输入支付密码，为您的账户资金加把锁。</h4>
+                                            </span>
+                                    </div>
+
+                                    <div class="l_go2" style="border: none;">
+                                        <a class="Lsmit" href="safe">
+                                            <input type="button" value="前往开启支付密码" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                
+                <span class="aa">
+                    <img src="static/images/aa.jpg" width="14" height="13" /></span>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="fillinfo" class="PopUp" style="width: 650px">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <h5>请务必输入公司全称，否则可能导致保险公司拒赔</h5>
+            <div class="infor3">
+                <span class="clearfix">
+                    <label id="company_name">公司名称</label>
+                    <input type="text" id="reg_company" maxlength="128" style="width: 250px" />
+                    <span style="display:inline;width:140px; color: #ff7300; line-height: 30px;" id="span_com_error"></span>
+                </span>
+                <span class="clearfix">
+                    <label >公司地址</label>
+                    <input id="company_add" type="text"  maxlength="128" style="width: 250px" />
+                    <span style="display:inline;width:140px; color: #ff7300; line-height: 30px;" id="span_add_error"></span>
+                </span>
+            </div>
+            <div class="pop_button">
+                <a id="true_com" class="pop_go" style="right:272px;" href="javascript:void(0)">
+                    <input type="button" style="cursor:pointer" value="保  存" /></a>
+            </div>
+        </div>
+    </div>
+    <span class="aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
+</div>
+
+
+
+<div class="footerBox">
+    <div class=" w footer">
+        <div class="footer_nav">
+            <ul class="clearfix" style="height: 150px">
+                <li style="width: 148px;">
+                    <dl>
+                        <dt>保险业务介绍</dt>
+                        <dd><a href="/zcb">整车保</a></dd>
+                        <dd><a href="javascript:;" onclick="zcb_show()">整车保理赔流程</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 138px;">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="/guide">新手指南</a></dd>
+                        <dd><a href="/guide">常见问题</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 125px;">
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><a href="/business">合作伙伴</a></dd>
+                        <dd><a href="/business">广告合作</a></dd>
+                        <dd><a href="/business">保险公司</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 174px;">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="/about">关于聚保</a></dd>
+                        <dd><a href="/contact">加入聚保</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 409px;">
+                    <dl>
+                        <a href="/contact"><dt>联系我们</dt></a>
+                        <dd>
+                            <em>
+                                <p>服务热线：40080-59680</p><p>邮箱：info@jubao56.com</p><p>QQ：1379563155</p><p>联系方式：027-82203258</p><p>地址：湖北省武汉市江岸区解放南路融科天城二期T10-804室</p>
+                                <p style="height:10px;"></p>
+                                扫描右侧二维码,关注聚保物流保险服务平台官网微信
+                            </em>
+                                <span>
+                                    <img src="static/images/weixin.jpg" alt="聚保物流保险服务平台官网微信" style="width: 155px; height: 155px;"/></span>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="ft_cl_Box">
+        <div class="w clearfix ft_cl">
+
+
+            <div class="ft_copyRight">
+                    <span>货运险 | 物流责任险 | 聚保物流保险服务平台 | <a style="color:#747980" href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">鄂ICP备15011270号</a><br />
+                        Copyright©2015-2016 www.jubao56.com All Rights Reserved
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backtop"></div>
+
+<div class="PopUp" id="liuc_window">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <h5>整车保投保理赔流程</h5>
+            <div class="pop_content">
+                <p >投保及承保流程：</p>
+                <img src="static/images/tan.png" width="695px" height="65px" >
+                <p >理赔流程：</p>
+                <img src="static/images/tan2.png" >
+                <p>两种报案方式可供选择：</p>
+                <p>电话报案：全国客户服务热线95589，24小时为您提供热诚的服务。</p>
+                <p>上门报案：到本公司各网点的客户服务柜面办理理赔报案；</p>
+            </div>
+            <div class="pop_button">
+                <a class="pop_go" href="#" >
+                    <input type="button" id="double_next" value="知道了" /></a>
+            </div>
+        </div>
+    </div>
+    <span class="aa" id="double_aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
+</div>
+<script type="text/javascript">
+
+    function zcb_show(){
+        $("#liuc_window").animate({opacity:"show"},300).css("margin-top",-$("#liuc_window").height()/2+"px").css("margin-left",-$("#liuc_window").width()/2+"px");
+    }
+    $("#double_next ,#double_aa").unbind("click").bind("click", function () {
+        $("#liuc_window").animate({ opacity: "hide" }, 100);
+
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(".index li").click(function () {
+        $(this).addClass("");
+    });
+    $(function(){
+
+        $('.ygb_nav_list a').click(function(){
+            $(this).siblings('.list_box').slideToggle();
+        });
+
+        $(".backtop").click(function() {
+            $('html,body').animate({
+                'scrollTop' : 0
+            }, 600);
+        });
+
+        $('.mid_nav_top').hover(function(){
+            $(this).children('ul').stop().slideDown();
+        },function(){
+            $(this).children('ul').stop().slideUp();
+        });
+        $(window).scroll(function ()
+        {
+            var st = $(this).scrollTop();
+            if(st>200){
+                $('.backtop').fadeIn();
+            }
+            else {
+                $('.backtop').fadeOut();
+            }
+        });
+    });
+</script>
+<script>
+
+    $(function(){
+        $('.introJsOut2').click(function(){
+            $("#fillinfo").animate({opacity:"show"},300).css("margin-top",-$("#fillinfo").height()/2+"px").css("margin-left",-$("#fillinfo").width()/2+"px");
+            $(".fullbg").css({ "width": $(window).width() + "px", "height": $(window).height() + "px", display: "block" });
+        });
+
+        $('#true_com').click(function(){
+            if ($("#reg_company").val() == "") {
+                alert("请填写公司全名");
+                return false;
+            }
+            if ($("#company_add").val() == "") {
+                alert("请填写公司地址");
+                return false;
+            }
+            $("#span_com_error").html("");
+            $('.fullbg,#fillinfo').hide();
+        });
+        $('.aa').click(function(){
+            $(this).parents('.PopUp').hide();
+            $('.fullbg').hide();
+        });
+        $('.ygb_quick_btn').click(function(){
+            if($('#company_tdname').html() == ""){
+                $('.introJsOut2').click();
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>

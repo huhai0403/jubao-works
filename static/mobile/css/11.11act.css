@@ -1,0 +1,24 @@
+/*通用*/
+html,body{ width: 7.5rem;box-sizing: border-box;overflow-x: hidden;}
+.fl{ float: left;}
+.fr{ float: right;}
+.dn{ display: none;}
+
+.reserve{ width: 100%; height: 13.3rem; background-image: url("../images/11bg01.gif"); background-repeat: no-repeat; background-size: cover;}
+.reserve .text{ text-align: center; font-size: 0.32rem; line-height: 0.44rem; color: #fff; padding-top: 6rem;}
+.reserve .btn{ display: block; width: 2.9rem; height: 1rem; background-image: url("../images/11btn01.gif"); background-size: contain; background-repeat: no-repeat; margin: 2.8rem auto 0;}
+.write{ width: 100%; height: 13.3rem; background-image: url("../images/11bg02.gif"); background-repeat: no-repeat; background-size: cover;}
+.write .box,.write .wrap{  width: 90%; padding: 0.8rem 0.4rem 0.5rem; position: absolute; top: 4.2rem; left: 5%; box-sizing: border-box;}
+.write .wrap{ z-index: 99;}
+.write .box{ z-index: 9; background: #fff; opacity: 0.5; height: 5.8rem;}
+.write .wrap p{ font-size: 0.42rem; line-height: 0.8rem; color: #571f1d; margin-bottom: 0.6rem;}
+.write .wrap p input{ height: 0.8rem; width: 3.6rem; border: 0.03rem solid #b5b5b5; box-sizing: border-box; border-radius: 0.1rem; padding: 0 0.2rem; line-height: 0.8rem; font-size: 0.4rem;}
+.write .wrap p span{ width: 2.2rem; display: inline-block;}
+.write .btn{ display: block; width: 2.9rem; height: 1rem; background-image: url("../images/11btn01.gif"); background-size: contain; background-repeat: no-repeat; position: absolute; top:11rem; left: 50%; margin-left: -1.45rem; }
+.pop_box{ display: none; width: 90%; border-radius: 0.4rem; padding: 0.6rem 0; text-align: center; background: #fff; position: fixed; top: 3.8rem; left: 5%; z-index: 9999;}
+.pop_box h4{ font-size: 0.48rem; line-height: 0.5rem; margin-bottom: 0.5rem;}
+.pop_box p{ font-size: 0.32rem; line-height: 0.5rem;}
+.pop_box .pop_btn{display: block; width: 2.9rem; height: 1rem; background-image: url("../images/11btn02.gif"); background-size: contain; background-repeat: no-repeat; margin: 0.7rem auto 0.3rem;}
+.mask{ display: none; width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: #000; opacity: 0.4; z-index: 999;}
+
+

@@ -423,6 +423,10 @@
         });
         /*确认发起协助*/
         $('.true_help_btn').click(function(){
+            if($(this).parents('.help_box').find('.checkbox01 span.un').length == $(this).parents('.help_box').find('.checkbox01 span').length){
+                alert('请至少选择一项协助资料！');
+                return false
+            }
             if($('.help_name input').val() == ''){
                 alert('请输入协助人姓名！');
                 return false

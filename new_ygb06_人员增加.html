@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>保险定损</title>
+    <title>员工保人员增加</title>
     <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
     <link rel="stylesheet" type="text/css" href="static/style/css.css">
-    <link rel="stylesheet" type="text/css" href="static/style/jedate.css">
     <script src="static/js/jquery.js"></script>
 </head>
 <body>
@@ -42,40 +41,36 @@
         </div>
     </div>
 </div>
-<div class="mid_link">
-    <span>当前页面：</span>
-    <a href="javascript:;">理赔系统</a>
-    <i>-></i>
-    <span>定损</span>
-</div>
-<div class="layout main_box01">
-    <div class="loss_box">
-        <p class="common_title01 tc mb_25">定损（理赔计算书）</p>
-        <p class="title">详细信息</p>
-        <div class="wrap">
-            <ul class="list01 clear">
-                <li><span>投保账号：</span><i>山西运通物流有限公司</i></li>
-                <li><span>保单号：</span><i>Hx1230000045686</i></li>
-                <li><span>保单类型：</span><i>正式</i></li>
-                <li><span>出发省市：</span><i>陕西省宝鸡市</i></li>
-                <li><span>目的地省市：</span><i>山西省太原市</i></li>
-                <li><span>车牌号：</span><i>陕A125x4</i></li>
-                <li><span>保障额度：</span><i>150万</i></li>
-                <li><span>保险责任：</span><i>火灾</i></li>
-                <li><span>报案号：</span><i>A001025522</i></li>
-            </ul>
-            <div class="content">
-                <p><span>报损金额：</span><i>9000元</i></p>
-                <div class="clear">
-                    <p class="fl mr_20"><span>定损金额：</span><input class="fix_loss" type="text"><span>元</span></p>
-                    <p class="fl mr_20"><span>赔付金额：</span><input class="rep_loss" type="text"><span>元</span></p>
-                    <p class="fl"><span>免赔金额：</span><input type="text"><span>元</span></p>
-                </div>
-                <p><span>定损说明：</span><textarea></textarea></p>
-            </div>
-            <div class="upload clear"><span class="fl">上传说明资料：</span><a class="pr clear" href="javascript:;">上传相关资料<input type="file"></a> </div>
+<div class="ygb_change_box">
+    <div class="ygb_change">
+        <p class="title mt_40">人员增加:</p>
+        <div class="ygb_choose_list">
+            <table>
+                <tr class="h46"><td width="100">姓名</td><td width="70">性别</td><td width="220">身份证号</td><td width="320">工作类型</td><td width="80"><a class="addnew" href="javascript:;">新增</a></td></tr>
+                <tr>
+                    <td><input class="humanName" placeholder="请输入姓名！" type="text"/></td>
+                    <td><select class="sex"><option>男</option><option>女</option></select></td>
+                    <td><input class="IDCard" placeholder="请输入身份证号！" type="text"/></td>
+                    <td><p class="fl ygb_work_check"><label><input class="ygb_work_check_radio" checked type="radio" name="items0"><span class="ygb_work_check_span">司机、搬运等</span></label></p>
+                        <p class="fr ygb_work_check"><label><input name="items0" type="radio"><span class="ygb_work_check_span">文员、调度等</span></label></p>
+                    </td>
+                    <td><a class="delete" href="javascript:;">删除</a> </td>
+                </tr>
+            </table>
         </div>
-        <div class="btn tc submit_loss"><a href="javascript:;">提交定损</a> </div>
+        <div class="btn">
+            <a class="btn01" style="margin: 0 auto;" href="#">确认增加</a>
+        </div>
+    </div>
+</div>
+<div class="mask"></div>
+<div class="ygb_change_pop">
+    <p class="text">系统检测到您增加现场操作人员<span class="red">5</span>人，非现场操作人员<span class="red">2</span>人。</p>
+    <p class="text">此次人员增加会增加保险费用：<span class="red">3600</span>元</p>
+    <p class="text">请您确认是否进行此次人员增加</p>
+    <div class="btn">
+        <a href="#" class="true">确认增加</a>
+        <a href="#" class="back">返回修改</a>
     </div>
 </div>
 <div class="footerBox">
@@ -133,6 +128,7 @@
             </ul>
         </div>
     </div>
+
     <div class="ft_cl_Box">
         <div class="w clearfix ft_cl">
             <div class="fl ft_link">
@@ -153,14 +149,68 @@
     </div>
 </div>
 </body>
+
 <script>
     $(function(){
-        $('.submit_loss').click(function(){
-            if($('.rep_loss').val() > $('.fix_loss').val()){
-                alert('赔付金额不能大于定损金额！');
-                return false
+        /*新增*/
+        var InfoItems = 0;
+        function addNew(){
+            $(document).on('click','.addnew',function(){
+                InfoItems++;
+                $('.ygb_choose_list table').append('<tr><td><input class="humanName" placeholder="请输入姓名！" type="text"></td><td><select class="sex"><option>男</option><option>女</option></select></td> <td><input class="IDCard" placeholder="请输入身份证号！" type="text"/></td> <td><p class="fl ygb_work_check"><label><input class="ygb_work_check_radio" checked type="radio" name="items'+InfoItems+'"><span class="ygb_work_check_span">司机、搬运等</span></label></p><p class="fr ygb_work_check"><label><input name="items'+InfoItems+'" type="radio"><span class="ygb_work_check_span">文员、调度等</span></label></p></td><td><a class="delete" href="javascript:;">删除</a> </td></tr>');
+            });
+        }
+        addNew();
+        /*删除*/
+        function deleteInfo(){
+            $(document).on('click','.delete',function(){
+                $(this).parents('tr').remove();
+            });
+        }
+        deleteInfo();
+        /*确认增加*/
+        $('.ygb_change_box .btn01').click(function(){
+            var i = "";
+            $('.humanName').each(function(){
+                if($(this).val()==""){
+                    alert("请输入姓名！");
+                    $(this).focus();
+                    i = 0;
+                    return false;
+                }else{
+                    i = 1;
+                }
+            });
+            if(i == 1){
+                $('.IDCard').each(function(){
+                    var idcard=$(this).val();
+                    var bo=/^(\d{6})(18|19|20)?(\d{2})([01]\d)([0123]\d)(\d{3})(\d|X)?$/.test(idcard);
+                    var year = idcard. substr(6,4);
+                    var month = idcard. substr(10,2);
+                    var day = idcard. substr(12,2);
+                    if(idcard==""){
+                        alert("请输入身份证号！");
+                        $(this).focus();
+                        i = 0;
+                        return false;
+                    }else if(bo==false||month>12||day>31||year<1900){
+                        alert('请输入正确的身份证号码！');
+                        $(this).focus();
+                        i = 0;
+                        return false;
+                    }
+                });
+            };
+            if(i == 1){
+                $('.mask,.ygb_change_pop').show();
             }
-        })
-    })
+
+        });
+        /*返回修改*/
+        $('.ygb_change_pop .back').click(function(){
+            $('.mask,.ygb_change_pop').hide();
+        });
+
+    });
 </script>
 </html>

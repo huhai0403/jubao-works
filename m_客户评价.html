@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>保险理赔——非现场资料上传</title>
+    <link href="static/mobile/css/rest.css" rel="stylesheet" type="text/css"/>
+    <link href="static/mobile/css/weui.1.0.1.css" rel="stylesheet" type="text/css"/>
+    <link href="static/mobile/css/claims.css" rel="stylesheet" type="text/css"/>
+    <script src="static/mobile/js/jquery-1.9.1.min.js"></script>
+    <script>
+        /*计算网页根元素大小*/
+        (function(){
+            var html = document.documentElement;
+            var windowWidth = html.clientWidth;
+            html.style.fontSize = windowWidth / 7.5 + 'px';
+        })();
+    </script>
+</head>
+<body>
+<div class="top_bar">
+    <span>保险理赔</span>
+    <span>></span>
+    <span>非现场资料上传</span>
+    <a class="return" href="javascript:;">返回</a>
+</div>
+<div class="main_bar">
+    <div class="claims_items">
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__bd">
+                <p class="fl">一般案件处理时间:<span>15</span>天</p>
+                <p class="fr">本案：<span class="c3285ff">12</span>天</p>
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__bd">
+                <p class="fl">预定保险公司响应时间:<span>7</span>天</p>
+                <p class="fr">本案：<span class="red">8</span>天</p>
+            </div>
+        </div>
+        <div class="weui-cell claims_name">
+            <div class="weui-cell__bd">
+                <p class="fl">平均资料收集时间:<span>8</span>天</p>
+                <p class="fr">本案：<span class="c3285ff">12</span>天</p>
+            </div>
+        </div>
+    </div>
+    <div class="star_box">
+        <div class="weui-cell clearfix">
+            <p class="fl">聚保处理速度</p>
+            <ul class="mobile_star fl">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="weui-cell clearfix">
+            <p class="fl">聚保处理速度</p>
+            <ul class="mobile_star fl">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="weui-cell clearfix">
+            <p class="fl">聚保处理速度</p>
+            <ul class="mobile_star fl">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="impression_box">
+        <h1 class="tc">描述您的印象</h1>
+        <div class="weui-flex">
+            <div class="weui-flex__item"><a class="on" href="javascript:;">服务态度好</a> </div>
+            <div class="weui-flex__item"><a class="on" href="javascript:;">沟通很顺畅</a> </div>
+            <div class="weui-flex__item"><a href="javascript:;">聚保服务贴心</a> </div>
+        </div>
+        <div class="weui-flex">
+            <div class="weui-flex__item"><a href="javascript:;">定损太慢</a> </div>
+            <div class="weui-flex__item"><a href="javascript:;">沟通很困难</a> </div>
+            <div class="weui-flex__item"><a href="javascript:;">速度太快啦</a> </div>
+        </div>
+        <div class="weui-flex">
+            <div class="weui-flex__item"><a href="javascript:;">保险公司太慢</a> </div>
+            <div class="weui-flex__item"><a href="javascript:;">系统使用困难</a> </div>
+            <div class="weui-flex__item"><a href="javascript:;">没人理会</a> </div>
+        </div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="您还可以畅所欲言" rows="3"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+    $(function(){
+        /*星星*/
+        $('.mobile_star li').click(function(){
+            $(this).addClass('star');
+            $(this).prevAll().attr('class',"star");
+            $(this).nextAll().attr('class',"");
+        });
+        /*选择印象*/
+        $('.impression_box .weui-flex__item').click(function(){
+           $(this).find('a').toggleClass('on');
+        });
+    });
+
+</script>
+</html>

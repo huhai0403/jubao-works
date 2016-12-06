@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>员工保投保页</title>
+    <meta name="keywords" content="聚保,物流保险,聚保物流,聚保物流保险,货运保险,员工保险" />
+    <meta name="description" content="聚保让您投保不上当,理赔有人帮！让物流人买到放心的保险，让物流平台放心卖保险！提供货运保险,员工保险,零担保，城配保等众多物流保险服务！" />
+    <link rel="shortcut icon" type="image/x-icon" href="static/images/favicon.ico" media="screen" />
+    <link rel="stylesheet" type="text/css" href="static/style/css.css">
+    <script type="text/javascript" src="static/webjs/jquery.js"></script>
+    <script type="text/javascript" src="static/webjs/Base.js"></script>
+    <script type="text/javascript" src="static/webjs/respond.min.js"></script>
+    <script src="static/js/vendor/jquery.ui.widget.js"></script>
+    <script src="static/js/jquery.fileupload.js"></script>
+    <script src="static/js/jedate.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/style/jedate.css">
+    <link rel="stylesheet" href="static/css/jquery.fileupload.css">
+    <style>
+
+        .progress {
+            height: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        }
+        .progress-bar {
+            float: left;
+            width: 0;
+            height: 100%;
+            font-size: 12px;
+            line-height: 20px;
+            color: #fff;
+            text-align: center;
+            background-color: #428bca;
+            -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+            -webkit-transition: width .6s ease;
+            -o-transition: width .6s ease;
+            transition: width .6s ease;
+        }
+        .progress-striped .progress-bar,
+        .progress-bar-striped {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            -webkit-background-size: 40px 40px;
+            background-size: 40px 40px;
+        }
+        .progress.active .progress-bar,
+        .progress-bar.active {
+            -webkit-animation: progress-bar-stripes 2s linear infinite;
+            -o-animation: progress-bar-stripes 2s linear infinite;
+            animation: progress-bar-stripes 2s linear infinite;
+        }
+        .progress-bar[aria-valuenow="1"],
+        .progress-bar[aria-valuenow="2"] {
+            min-width: 30px;
+        }
+        .progress-bar[aria-valuenow="0"] {
+            min-width: 30px;
+            color: #777;
+            background-color: transparent;
+            background-image: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .progress-bar-success {
+            background-color: #5cb85c;
+        }
+        .progress-striped .progress-bar-success {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-info {
+            background-color: #5bc0de;
+        }
+        .progress-striped .progress-bar-info {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-warning {
+            background-color: #f0ad4e;
+        }
+        .progress-striped .progress-bar-warning {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+        .progress-bar-danger {
+            background-color: #d9534f;
+        }
+        .progress-striped .progress-bar-danger {
+            background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+            background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="topBox">
+    <div class="clearfix w top">
+        <div class="logo fl clearfix">
+            <a href="/" class="fl"><img src="static/images/logo.png" alt="logo" /></a>
+            <span class="top_tel fl"> <img src="static/images/laixnidxjsiosa.jpg" /> </span>
+        </div>
+
+        <div class="loginBox fr">
+
+            <a class="login" href="/dashboard">个人中心</a>
+            <a class="register" href="/dashboard/logout">安全退出</a>
+
+        </div>
+    </div>
+
+</div>
+<div class="navBox">
+    <div class="w clearfix">
+        <div class="searchS fr"><a href="/searchorder">保单查询</a></div>
+        <div class="navC">
+            <ul class="clearfix nav index">
+                <li class=""><a href="/zcb">整车保</a></li>
+                <li class=""><a href="/ygb">员工保</a></li>
+                <li class=""><a href="/article">老周解密</a></li>
+                <li class=""><a href="/claims">保险理赔</a></li>
+                <li class=""><a href="/timeline">新闻动态</a></li>
+                <li class=""><a href="/business">商务合作</a></li>
+
+                <li class="mid_nav_top">
+                    <a class="" href="/guide">新手指南</a>
+                    <ul class="mid_nav">
+                        <li><a href="/guide">投保流程</a></li>
+                        <li><a href="/guide">充值流程</a></li>
+                        <li><a href="/guide">分享功能</a></li>
+                        <li><a href="/guide">个人中心</a></li>
+                    </ul>
+                </li>
+                <li class="mid_nav_top">
+                    <a class="" href="/contact">联系我们</a>
+                    <ul class="mid_nav">
+                        <li><a href="/contact">联系我们</a></li>
+                        <li><a href="/about">关于我们</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+
+<div class="ygb_banner_box">
+
+</div>
+<div class="ygb_index_side">
+    <ul>
+        <li>
+            <a class="bb1 br1" href="/dashboard/home">
+                <img src="static/images/ygb_index_side1.png"/>
+                <p>用户中心</p>
+            </a>
+        </li>
+        <li>
+            <a class="bt1 bb1" href="/guide">
+                <img src="static/images/ygb_index_side2.png"/>
+                <p>投保指南</p>
+            </a>
+        </li>
+        <li class=" ">
+            <a class="br2 bt1" href="/">
+                <img src="static/images/ygb_index_side3.png"/>
+                <p>回到首页</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="ygb_choose">
+    <div class="ygb_choose_box">
+        <table class="table">
+            <tr><td width="55" rowspan="3" class="br02 fs20">特<br/>惠<br/>版</td><td class="br01 bb01 fs20 " width="188">工作类型</td><td class="bb01 fs20  br01" colspan="2">项目</td><td width="110" class="ygb_pro_text" style="font-size: 18px;" rowspan="3"><a href="javascript:;" style="font-size: 18px; padding: 0 15px; height: 30px; line-height: 30px; color: #fff; border-radius: 3px; display: inline-block; background: #a1d3f7;box-shadow: 0 3px 0 #479edd;" >查看详情</a></td></tr>
+            <tr><td class="bb01 br01 fs18">司机、搬运等</td><td width="100" class="bb01 br01 price priceOne">600</td><td rowspan="2" class="tl br01 fs18"><span>60万死亡伤残+6万医疗+100元/天误工费+13种扩展保障</span></td></tr>
+            <tr><td class="br01 fs18">文员、调度等</td><td class="br01 price priceTwo" >300</td></tr>
+        </table>
+        <p class="tip02">备注：特惠版适合已有工伤保险的企业购买哦！</p>
+        <table class="table dn">
+            <tr><td width="55" rowspan="3" class="br02 fs20">经<br/>济<br/>版</td><td class="br01 bb01 fs20 " width="188">工作类型</td><td class="bb01 fs20  br01" colspan="2">项目</td><td width="110" class="ygb_pro_text" style="font-size: 18px;" rowspan="3"><a href="javascript:;" style="font-size: 18px; padding: 0 15px; height: 30px; line-height: 30px; color: #fff; border-radius: 3px; display: inline-block; background: #a1d3f7;box-shadow: 0 3px 0 #479edd;" >查看详情</a></td></tr>
+            <tr><td class="bb01 br01 fs18">司机、搬运等</td><td width="100" class="bb01 br01 price priceOne">280</td><td rowspan="2" class="tl br01 fs18"><span>20万死亡伤残+2万医疗+100元/天误工费+13种扩展保障+自费药保障。</span></td></tr>
+            <tr><td class="br01 fs18">文员、调度等</td><td class="br01 price priceTwo" >160</td></tr>
+        </table>
+        <p class="tip02 dn">备注：经济版适合已有工伤保险的企业购买哦！</p>
+        <table class="table dn">
+            <tr><td width="55" rowspan="3" class="br02 fs20">标<br/>准<br/>版</td><td class="br01 bb01 fs20 " width="188">工作类型</td><td class="bb01 fs20  br01" colspan="2">项目</td><td width="110" class="ygb_pro_text" style="font-size: 18px;" rowspan="3"><a href="javascript:;" style="font-size: 18px; padding: 0 15px; height: 30px; line-height: 30px; color: #fff; border-radius: 3px; display: inline-block; background: #a1d3f7;box-shadow: 0 3px 0 #479edd;" >查看详情</a></td></tr>
+            <tr><td class="bb01 br01 fs18">司机、搬运等</td><td width="100" class="bb01 br01 price priceOne">560</td><td rowspan="2" class="tl br01 fs18"><span>40万死亡伤残+4万医疗+100元/天误工费+13种扩展保障+自费药保障+24小时意外。</span></td></tr>
+            <tr><td class="br01 fs18">文员、调度等</td><td class="br01 price priceTwo" >320</td></tr>
+        </table>
+        <p class="tip02 dn">备注：有工伤保险，再买标准版，保障足足的。</p>
+        <table class="table dn">
+            <tr><td width="55" rowspan="3" class="br02 fs20">尊<br/>享<br/>版</td><td class="br01 bb01 fs20 " width="188">工作类型</td><td class="bb01 fs20  br01" colspan="2">项目</td><td width="110" class="ygb_pro_text" style="font-size: 18px;" rowspan="3"><a href="javascript:;" style="font-size: 18px; padding: 0 15px; height: 30px; line-height: 30px; color: #fff; border-radius: 3px; display: inline-block; background: #a1d3f7;box-shadow: 0 3px 0 #479edd;" >查看详情</a></td></tr>
+            <tr><td class="bb01 br01 fs18">司机、搬运等</td><td width="100" class="bb01 br01 price priceOne">840</td><td rowspan="2" class="tl br01 fs18"><span>60万死亡伤残+6万医疗+100元/天误工费+13种扩展保障+自费药保障+24小时意外+100元/天住院津贴。</span></td></tr>
+            <tr><td class="br01 fs18">文员、调度等</td><td class="br01 price priceTwo" >480</td></tr>
+        </table>
+        <p class="tip02 dn">备注：为您点赞，尊享版至少能转移您80%的用工赔偿风险。</p>
+        <p class="tip01">如果您的保障员工较多，可下载员工信息模板填写并上传。</p>
+        <div class="ygb_choose_step">
+            <p>点击后方按钮下载员工信息模板。</p>
+            <p>按照表格信息指示依次填写员工姓名、身份证号、工作类型。</p>
+            <p>点击后方按钮，将填写完毕的excel模板上传。</p>
+            <p>确认<span>员工信息</span>及<span>投保类型</span>。</p>
+            <a class="download_file" href="static/员工保信息模板.xls">下载员工信息模板</a>
+            <a class="upload_file" href="javascript:;">
+                上传员工信息模板
+                <input type="file" name="xlfile" accept="application/vnd.ms-excel,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="xlf1"/>
+            </a>
+            <ul class="file_list" style="width:500px;">
+
+
+            </ul>
+        </div>
+        <p class="tip01">您也可以在下面<span class="red">直接填写</span>员工信息：</p>
+        <div class="ygb_choose_list">
+            <table  id="inputlist">
+                <tr class="h46"><td width="120">姓名</td><td width="250">身份证号</td><td width="320">工作类型</td><td width="80"><a class="addnew" href="javascript:;">新增</a></td></tr>
+
+
+                <tr>
+                    <td style='display:none;'></td>
+                    <td><input class="humanName" placeholder="请输入姓名！" type="text"/></td>
+                    <td><input class="IDCard" placeholder="请输入身份证号！" type="text"/></td>
+                    <td><p class="fl ygb_work_check"><label><input class="ygb_work_check_radio" checked type="radio" name="items1"><span class="ygb_work_check_span">司机、搬运等</span></label></p>
+                        <p class="fr ygb_work_check"><label><input name="items1" type="radio"><span class="ygb_work_check_span">文员、调度等</span></label></p>
+                    </td>
+                    <td><a class="delete" href="javascript:;">删除</a> </td>
+                </tr>
+
+            </table>
+            <a class="add_items" style="background: #98cff7;box-shadow: 0 4px 0 #479edd;display: block;font-weight: bold;width: 100px;height: 30px;line-height: 30px; border-radius: 5px; color: #fff; text-align: center; margin-top: 10px; font-size: 16px;" href="javascript:;">新增</a>
+
+        </div>
+        <p class="ygb_all_price">总共需要支付保费：<span class="red">600</span>元</p>
+        <p class="tip01">请选择您的保单生效时间：</p>
+        <div class="ygb_choose_time">
+            <p class=""><label><input type="radio"><span   class="check_time" >我需要在我支付保费的次日0点立即生效。</span></label></p>
+            <p class="time_type2 check_time">
+                <label><input type="radio"><span  ><input style="display: block; margin-top: 5px; margin-right: 10px;" class="datainp fl" id="indate" type="text" placeholder="请选择生效时间" value=""  readonly>00:00生效 </span></label>
+            </p>
+
+            <div style="right:270px;" class="tip_time">
+                <h4 class="red">小提示：</h4>
+                <i class="red">两者生效时间以付款后较晚者为准。</i>
+            </div>
+        </div>
+        <p class="ygb_company_info companyName"><span>您的公司名称：</span><input class="w240" type="text" value="胡海物流"><i class="red">*请注意填写公司全称不要填错哟！</i></p>
+        <p class="ygb_company_info companyTel"><span>您的手机号码：</span><input class="w240" type="text" value="13098898233"></p>
+        <p class="ygb_company_info companyAdd"><span>您的公司地址：</span><input class="w570" type="text" value="武汉武汉武汉武汉武汉"></p>
+        <div class="btn">
+            <a class="true fl trueInfo" href="javascript:;"  onclick="submit(this)">确认并提交</a>
+            <a class="back fr" href="javascript:;">返回上一页</a>
+        </div>
+    </div>
+    <ul class="check_bot clearfix">
+        <li class="mr_20">
+            <img src="static/images/ygb_choose01.png"/>
+            <span>限时抢购</span>
+        </li>
+        <li class="mr_20">
+            <img src="static/images/ygb_choose02.png"/>
+            <span>经济版</span>
+        </li>
+        <li class="mr_20">
+            <img src="static/images/ygb_choose03.png"/>
+            <span>标准版</span>
+        </li>
+        <li>
+            <img src="static/images/ygb_choose04.png"/>
+            <span>尊享版</span>
+        </li>
+    </ul>
+    <ul class="check_top clearfix">
+        <li class="on mr_20">
+            <img src="static/images/ygb_choose05.png"/>
+            <span>限时抢购</span>
+        </li>
+        <li class="mr_20">
+            <img src="static/images/ygb_choose06.png"/>
+            <span>经济版</span>
+        </li>
+        <li class="mr_20">
+            <img src="static/images/ygb_choose07.png"/>
+            <span>标准版</span>
+        </li>
+        <li>
+            <img src="static/images/ygb_choose08.png"/>
+            <span>尊享版</span>
+        </li>
+    </ul>
+</div>
+
+<div class="mask"></div>
+
+<div class="ygb_login">
+    <div class="ygb_login_box">
+        <h1>登&nbsp&nbsp&nbsp&nbsp陆</h1>
+        <div class="box">
+            <h2>手机号</h2>
+            <input id="username" maxlength="30" type="text"/>
+            <h2>密码</h2>
+            <input id="password" maxlength="30" type="password"/>
+            <a class="forget" href="javascript:;">忘记密码</a>
+            <p class="error_tip">
+                <span id="no_name">请输入手机号！</span>
+                <span id="span_name_error">请输入正确手机号！</span>
+                <span id="no_password">请输入密码！</span>
+                <span id="span_pwd_error">用户名或密码错误！</span>
+                <span id="result_info"></span>
+            </p>
+        </div>
+        <div class="btn">
+            <a class="link" id="login_btn" href="javascript:;" onclick="login()">登&nbsp&nbsp&nbsp陆</a>
+            <a class="reg_link" href="javascript:;">立即注册</a>
+        </div>
+        <div class="other_login clearfix">
+            <a class="fl" onclick="qq()" href="javascript:;"><img src="static/images/lqq.jpg"/> </a>
+            <a class="fr" onclick="wechat()" href="javascript:;"><img src="static/images/lwx.jpg"/> </a>
+        </div>
+        <a class="close" href="javascript:;"><img src="static/images/ygb_login_clos.png"/> </a>
+    </div>
+</div>
+
+<div class="ygb_popbox ygb_popbox01">
+    <p class="title">检测到您公司已在聚保服务平台注册</p>
+    <p class="title">请您点击按钮登录</p>
+    <p class="title">如有疑问请联系聚保：4008059680</p>
+    <a class="btn" href="javascript:;">立即登录</a>
+</div>
+
+<div class="ygb_popbox ygb_popbox02">
+    <p class="text">为方便我们联系到您，请注册账号。</p>
+    <div class="ygb_popbox_reg">
+        <div class="code"><span>手机号：</span><input type="text"/></div>
+        <div class="code clearfix"><span class="fl">手机验证码：</span><input class="fl phone_code" type="text"/><a class="fl" href="javascript:;">获取验证码</a><a class="fl" href="javascript:;"><i>60</i>秒后重新获取</a></div>
+        <div class="code"><span>密码：</span><input type="password"/></div>
+        <div class="code"><span>确认密码：</span><input type="password"/></div>
+    </div>
+    <a class="btn" href="javascript:;">确&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp认</a>
+</div>
+
+<div class="PopUp" style="width:340px;" id="wechat_show">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <a class="pop_go" href="javascript:;"  id="wechat_login" ></a>
+        </div>
+    </div>
+    <span class="aa"><img src="static/images/aa.jpg" width="14" height="13" /></span>
+</div>
+
+<div class="PopUp ygb_pro_popup" style="margin-top: -262.5px; margin-left: -390px;">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <h5>聚保“员工保”13项免费升级保障+4项专属保障</h5>
+            <div class="pop_content">
+                <p style="text-indent: 2em;">聚保“员工保”不仅仅是一般的雇主责任险。他不仅能够真正转移您的用工风险，还协助您关心、体贴您的每一位员工，让其获得最好的医疗保障、足额的误工赔付和高额的伤亡补偿。每个员工损害事项，聚保都为你想得更多、更全、更细致，您对员工的这份心，我们相信能够被有效传导给他们。</p>
+                <p style="text-indent: 2em;">聚保“员工保”，无论您投保任何一个费率档次，我们均免费赠送13项专属升级保障，而根据不同的方案，我们还有4项专属特约保障供您选择。聚保“员工保”，关心您的员工，更关心您！</p>
+                <table class="ygb_pro_info" style="border: 1px solid #000;">
+                    <tr style="font-weight: bolder;text-align: center;"><td width="35">序号</td><td width="300">聚保“员工保”升级保障项目</td><td width="300">其他普通保险</td></tr>
+                    <tr style="text-align: center; font-weight: bold"><td colspan="3">以下13项特约内容为聚保量身打造，免费赠送所有投保企业。</td></tr>
+                    <tr><td>1</td><td>意外医疗医保用药只扣500元之后，100%赔付。</td><td>医疗费用赔偿，不仅要扣您几百元的免赔金额，还得再扣20%的免赔率。</td></tr>
+                    <tr><td>2-1</td><td><span class="red">误工费特约01：</span>误工费标准，可以由您自行选择申报多少，“员工保”就赔多少，不再为工资清单发愁。</td><td>要赔误工费，您得提供过去12个月的员工工资清单。很多临时用工哪里有什么工资清单。或者你就得接受当地最低工资标准赔偿了。</td></tr>
+                    <tr><td>2-2</td><td><span class="red">误工费特约02：</span>误工费与伤残赔偿金可以同时获赔。</td><td>要赔伤残赔偿金，得先扣掉已经赔偿的误工费！企业一点办法都没有。 </td></tr>
+                    <tr><td>3</td><td><span class="red">理赔材料清单特约：</span>理赔不再提供工伤证明资料。</td><td>员工受伤了，必须提供事故工伤证明。咱们工伤都没买，您确定能提供工伤证明资料？</td></tr>
+                    <tr><td>4</td><td><span class="red">律师费、鉴定费、检验费扩展特约：</span>员工不满意，咱支持打官司，所有的诉讼费、律师费、鉴定费、检验费，“员工保”都承担。</td><td>员工赔偿不满意，就要打官司，律师费、鉴定费、检验费，保险公司统统都可以不赔。</td></tr>
+                    <tr><td>5</td><td><span class="red">伤残事故简易赔偿特约：</span>残疾赔偿金直接根据协议约定的比例标准，<span>定额</span>赔偿。</td><td>要赔残疾赔偿金，您得提供工资证明，根据基本工资按相应月份标准赔偿。</td></tr>
+                    <tr><td>6</td><td><span class="red">“雇员”的概念扩展特约：</span>只要为企业或以企业名义实际服务的人员，都认定为雇员，避免理赔争议。</td><td>提交劳动合同、工资证明、法院判决，才能认定雇员。</td></tr>
+                    <tr><td>7</td><td><span class="red">理赔服务时效与预付赔款：</span>发生重大事故，我们马上协助预付赔款；每个理赔环节，我们全程协助沟通，只为让您获得最好的保险理赔服务。</td><td>保险理赔等待时间长，资料不清晰，被保险人权益无保障。</td></tr>
+                    <tr><td>8</td><td><span class="red">简化工伤认定理赔资料特约：</span>劳动合同、工资证明、纳税证明统统都不用提供。</td><td>理赔资料多如牛毛，各种资料和证明（证明是什么原因、证明是我的员工、证明工资有多少），企业极难备齐。</td></tr>
+                    <tr><td>9</td><td><span class="red">错误遗漏条款：</span>人员信息有错误，只要能够识别，保险公司予以认可。</td><td>申报的人员信息弄错了，保险公司要拒赔怎么办？</td></tr>
+                    <tr><td>10</td><td><span class="red">运动或娱乐活动条款：</span>只要是公司组织活动，您的员工受伤，保险公司予以认可。</td><td>公司组织活动，员工受伤要赔偿，工伤保险不予认定怎么办？</td></tr>
+                    <tr><td>11</td><td><span class="red">紧急运输费用条款：</span>员工受伤，需要紧急运送的费用，保险公司予以赔偿。</td><td>员工受伤，紧急运送费用可不少。保险公司不赔偿怎么办？</td></tr>
+                    <tr><td>12</td><td><span class="red">境内公出条款：</span>司机、押运员在全国怎么跑，企业都放心。</td><td>要求是工作时间、工作场所，司机、押运员总是在外面，受伤怎么认定？</td></tr>
+                    <tr><td>13</td><td><span class="red">上下班途中保险条款：</span>上班途中、下班途中，发生意外事故都视同为工伤事故。</td><td>上下班过程，保险公司不认定工伤怎么办？</td></tr>
+                    <tr style="text-align: center; font-weight: bold;"><td colspan="3">下述四项专属特约保障，为收费条款，但在部分产品方案中已经纳入其中。</td></tr>
+                    <tr><td>14</td><td><span class="red">自费药扩展特约：</span>可以选择购买相应的自费药保障</td><td>自费药都得企业自己承担。</td></tr>
+                    <tr><td>15</td><td><span class="red">24小时意外伤害保障特约：</span>可以选择扩展非工作期间的员工意外伤害保障</td><td>员工在非工作期间受伤，雇主责任险不予赔偿。</td></tr>
+                    <tr><td>16</td><td><span class="red">住院津贴补助特约：</span>可以选择扩展员工住院的津贴补助</td><td>员工住院，没有津贴补助。</td></tr>
+                    <tr><td>17</td><td><span class="red">调整伤残等级对应赔偿比例特约：</span>伤残赔偿10级对应提高到10%的赔偿比例，并以此类推，真正获得高额的伤残保障。</td><td>格式条款中的伤残赔偿比例非常低，10级伤残赔偿金比例只有1%-5%。</td></tr>
+                </table>
+            </div>
+            <div class="pop_button">
+                <a class="pop_go" href="javascript:void(0)">
+                    <input type="button" value="确 定">
+                </a>
+            </div>
+        </div>
+    </div>
+	    <span class="aa">
+	        <img src="static/images/aa.jpg" width="14" height="13">
+	    </span>
+</div>
+
+
+
+<div class="footerBox">
+    <div class=" w footer">
+        <div class="footer_nav">
+            <ul class="clearfix" style="height: 150px">
+                <li style="width: 148px;">
+                    <dl>
+                        <dt>保险业务介绍</dt>
+                        <dd><a href="/zcb">整车保</a></dd>
+                        <dd><a href="javascript:;" onclick="zcb_show()">整车保理赔流程</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 138px;">
+                    <dl>
+                        <dt>帮助中心</dt>
+                        <dd><a href="/guide">新手指南</a></dd>
+                        <dd><a href="/guide">常见问题</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 125px;">
+                    <dl>
+                        <dt>商务合作</dt>
+                        <dd><a href="/business">合作伙伴</a></dd>
+                        <dd><a href="/business">广告合作</a></dd>
+                        <dd><a href="/business">保险公司</a></dd>
+                    </dl>
+                </li>
+
+                <li style="width: 174px;">
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a href="/about">关于聚保</a></dd>
+                        <dd><a href="/contact">加入聚保</a></dd>
+
+                    </dl>
+                </li>
+
+                <li style="width: 409px;">
+                    <dl>
+                        <a href="/contact"><dt>联系我们</dt></a>
+                        <dd>
+                            <em>
+                                <p>服务热线：40080-59680</p><p>邮箱：info@jubao56.com</p><p>QQ：1379563155</p><p>联系方式：027-82203258</p><p>地址：湖北省武汉市江岸区解放南路融科天城二期T10-804室</p>
+                                <p style="height:10px;"></p>
+                                扫描右侧二维码,关注聚保物流保险服务平台官网微信
+                            </em>
+                                <span>
+                                    <img src="static/images/weixin.jpg" alt="聚保物流保险服务平台官网微信" style="width: 155px; height: 155px;"/></span>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="ft_cl_Box">
+        <div class="w clearfix ft_cl">
+
+
+            <div class="ft_copyRight">
+                    <span>货运险 | 物流责任险 | 聚保物流保险服务平台 | <a style="color:#747980" href="http://www.miibeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">鄂ICP备15011270号</a><br />
+                        Copyright©2015-2016 www.jubao56.com All Rights Reserved
+                    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="backtop"></div>
+
+<div class="PopUp" id="liuc_window">
+    <div class="PopUp_box">
+        <div class="pop_conditionBox">
+            <h5>整车保投保理赔流程</h5>
+            <div class="pop_content">
+                <p >投保及承保流程：</p>
+                <img src="static/images/tan.png" width="695px" height="65px" >
+                <p >理赔流程：</p>
+                <img src="static/images/tan2.png" >
+                <p>两种报案方式可供选择：</p>
+                <p>电话报案：全国客户服务热线95589，24小时为您提供热诚的服务。</p>
+                <p>上门报案：到本公司各网点的客户服务柜面办理理赔报案；</p>
+            </div>
+            <div class="pop_button">
+                <a class="pop_go" href="#" >
+                    <input type="button" id="double_next" value="知道了" /></a>
+            </div>
+        </div>
+    </div>
+        
+        <span class="aa" id="double_aa">
+            <img src="static/images/aa.jpg" width="14" height="13" /></span>
+
+</div>
+<script type="text/javascript">
+
+    function zcb_show(){
+        $("#liuc_window").animate({opacity:"show"},300).css("margin-top",-$("#liuc_window").height()/2+"px").css("margin-left",-$("#liuc_window").width()/2+"px");
+    }
+    $("#double_next ,#double_aa").unbind("click").bind("click", function () {
+        $("#liuc_window").animate({ opacity: "hide" }, 100);
+
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(".index li").click(function () {
+        $(this).addClass("");
+    });
+    $(function(){
+
+        $(".backtop").click(function() {
+            $('html,body').animate({
+                'scrollTop' : 0
+            }, 600);
+        });
+        $(window).scroll(function ()
+        {
+            var st = $(this).scrollTop();
+            if(st>200){
+                $('.backtop').fadeIn();
+            }
+            else {
+                $('.backtop').fadeOut();
+            }
+        });
+        $('.mid_nav_top').hover(function(){
+            $(this).children('ul').stop().slideDown();
+        },function(){
+            $(this).children('ul').stop().slideUp();
+        });
+    })
+</script>
+
+
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+
+<script>
+    function wechat() {
+        show_we();
+    }
+
+    function show_we() {
+        $("#wechat_show").animate({ opacity: "show" }, 300).css("margin-top", -$("#wechat_show").height() / 0.2 + "px").css("margin-left", -$("#wechat_show").width() / 2 + "px");
+        var obj = new WxLogin({
+            id: "wechat_login",
+            appid: "wxdf6711be44a8af00",
+            scope: "snsapi_login",
+
+            redirect_uri: "http://www.jubao56.com/wxbind",
+
+            state: "loginbind",
+            style: "",
+            href: ""
+        });
+
+    }
+
+    function qq() {
+
+        location.href="https://graph.qq.com/oauth2.0/authorize?client_id=101261660&response_type=code&scope=get_user_info&redirect_uri=http%3A%2F%2Fwww.jubao56.com%2Fqqbind%3Fstate%3Dloginbind"
+
+
+    }
+
+    function login() {
+        $("#login_btn").attr("disabled", true);
+
+        if (check_username($("#username"), $("#span_name_error")) != 0) {
+            $("#login_btn").attr("disabled", false);
+            return;
+        }
+
+        $("#span_pwd_error").html("");
+
+        var url = '/login.json';
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: { mobile: $.trim($("#username").val()), password: $.trim($("#password").val()) },
+            success: function (result) {
+                if (result.success) {
+                    isLogin = true;
+                    $('.ygb_popbox01, .ygb_login, .mask').hide();
+                } else {
+                    $("#result_info").html(result.message);
+                }
+            },
+            complete: function (x, r) {
+                $("#login_btn").attr("disabled", false);
+            }
+        });
+    }
+
+    var reg_name = /^[\u4e00-\u9fa5a-zA-Z0-9]{6,}$/;
+    function check_username(obj, tip) {
+        if ($.trim($(obj).val()) == "") {
+            $(tip).html("请输入用户名.");
+            return -1;
+        }
+        else if (!reg_name.test($(obj).val())) {
+            $(tip).html("含有非法字符.");
+            return -2;
+        }
+        $(tip).html("");
+        return 0;
+    }
+</script>
+<script src="static/jszip.js"></script>
+<script src="static/xlsx.js"></script>
+<script src="static/dist/ods.js"></script>
+
+<script src="static/webjs/selectTime.js"></script>
+<script>
+
+    var cDate = new Date();
+    cDate.setDate(cDate.getDate() + 1);
+    var cYear = cDate.getFullYear();
+    var cMouth = cDate.getMonth() + 1;
+    var cDay = cDate.getDate();
+    if(cDay < 10){
+        cDay = '0'+cDay;
+    }
+    jeDate({
+        dateCell:".datainp",
+        format: 'YYYY-MM-DD',
+        minDate:cYear+"-"+cMouth+"-"+cDay+" 00:00:00",
+        maxDate:"2050-12-31 00:00:00"
+    });
+    console.log(cYear+"-"+cMouth+"-"+cDay);
+    function deletefile(sender) {
+        $(sender).parents("li").remove();
+    }
+
+    var PriceOne = [600,280,560,840];
+    var PriceTwo = [300,160,320,480];
+    var IndexNum = 1;
+    var InfoItems = 2;
+
+    $(function(){
+
+        $('.add_items').click(function(){
+            $('.addnew').click();
+        });
+
+        $('.aa,.pop_go').click(function(){
+            $(this).parents('.PopUp').hide();
+            $('.mask').hide();
+        });
+        $('.ygb_pro_text').click(function(){
+            $('.mask,.ygb_pro_popup').show();
+        });
+
+        $('.ygb_choose_time p').click(function(){
+            $(this).parents('.ygb_choose_time').find('p span').removeClass('check_time');
+            $(this).find('span').addClass('check_time');
+        });
+        $('.datainp').click(function(){
+            $(this).parents('p').click();
+        });
+        $('.close').click(function(){
+            $('.mask,.ygb_login,.error_tip span').hide();
+        });
+        $('.aa').click(function(){
+            $(this).parents('.PopUp').hide();
+        });
+
+        $('#username').blur(function(){
+            var log_ver = /^1\d{10}$/;
+            if($.trim($(this).val()) == ""){
+                $('.error_tip span').hide();
+                $("#login_btn").attr("disabled", false);
+                $('#no_name').show();
+            }
+            else if(!log_ver.test($(this).val())){
+                $('.error_tip span').hide();
+                $("#login_btn").attr("disabled", false);
+                $('#error_name').show();
+            }
+        });
+        $('#password').blur(function(){
+            if($.trim($(this).val()) == ""){
+                $('.error_tip span').hide();
+                $('#no_password').show();
+            }
+        });
+
+        $('html').bind('keyup',function(){
+            if(event.keyCode==13){
+                $('.ygb_login .link').click();
+            }
+        });
+
+        $('.ygb_index_side li').hover(function(){
+            $(this).children('a').stop().animate({left:"-50"});
+        },function(){
+            $(this).children('a').stop().animate({left:"0"});
+        });
+
+
+        function checkProgram(){
+            $('.check_top li').click(function(){
+                $(this).addClass('on');
+                $(this).siblings('li').removeClass('on');
+                var $this = $(this);
+                var $t = $this.index();
+                $('.ygb_choose_box .table,.ygb_choose_box .tip02').addClass('dn');
+                $('.ygb_choose_box .table').eq($t).removeClass('dn');
+                $('.ygb_choose_box .tip02').eq($t).removeClass('dn');
+                IndexNum = $t+1;
+                calculatePrice();
+            });
+        }
+        checkProgram();
+
+        var X = XLSX;
+        var e=e||window.event;
+        var wtf_mode = false;
+        function fixdata(data) {
+            var o = "", l = 0, w = 10240;
+            for(; l<data.byteLength/w; ++l) o+=String.fromCharCode.apply(null,new Uint8Array(data.slice(l*w,l*w+w)));
+            o+=String.fromCharCode.apply(null, new Uint8Array(data.slice(l*w)));
+            return o;
+        }
+        function to_json(workbook) {
+            list = new Array();
+            workbook.SheetNames.forEach(function(sheetName) {
+                var roa = X.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+                for (var i = 0; i < roa.length; i++) {
+                    list.push(roa[i]);
+                }
+            });
+            return list;
+        }
+
+
+        function process_wb(wb) {
+
+            var list = to_json(wb);
+
+
+            for (var i=0;i<list.length;i++) {
+                var d = new Date();
+                if(list[i].工作类型=="司机、搬运等"){
+                    $(".ygb_choose_list table").append('<tr><td style="display:none;"></td><td width="100"><input class="humanName" value='+list[i].姓名+' type="text"></td><td width="250"><input class="IDCard" value='+list[i].身份证号+' type="text"/></td> <td class="worktype" width="340"><p class="fl ygb_work_check"><label><input checked class="ygb_work_check_radio" type="radio" name="items'+d.getTime()+i+'"><span class="ygb_work_check_span">司机、搬运等</span></label></p> <p class="fr ygb_work_check"><label><input type="radio" name="items'+d.getTime()+i+'"><span class="ygb_work_check_span">文员、调度等</span></label></p></td><td><a class="delete" href="javascript:;">删除</a> </td></tr>');
+                } else {
+                    $(".ygb_choose_list table").append('<tr><td style="display:none;"></td><td width="100"><input class="humanName" value='+list[i].姓名+' type="text"></td><td width="250"><input class="IDCard" value='+list[i].身份证号+' type="text"/></td> <td class="worktype" width="340"><p class="fl ygb_work_check"><label><input class="ygb_work_check_radio" type="radio" name="items'+d.getTime()+i+'"><span class="ygb_work_check_span">司机、搬运等</span></label></p> <p class="fr ygb_work_check"><label><input checked type="radio" name="items'+d.getTime()+i+'"><span class="ygb_work_check_span">文员、调度等</span></label></p></td><td><a class="delete" href="javascript:;">删除</a> </td></tr>');
+                }
+
+            }
+            calculatePrice();
+
+        }
+        var filemap = {};
+        var findex = 0;
+        var uploading_count = 0;
+        $('#xlf1').fileupload({
+            url: '/dashboard/ygb/upload',
+            dataType: 'json',
+            formData:{file_type: 1},
+            done: function (e, data) {
+                uploading_count--;
+                var fid = data.files[0].lastModified + data.files[0].name;
+                var result = data.result;
+
+                $("#um" + filemap[fid]).css("display", "inline");
+                if (result.success) {
+                    $("#dw" + filemap[fid]).attr("href", result.extra);
+                    $("#dw" + filemap[fid]).attr("fileid", result.fileid);
+                    $("#dw" + filemap[fid]).css("display", "inline");
+                    $("#um" + filemap[fid]).css("display", "none");
+                }
+                var fname = data.files[0].name;
+                var ext = (fname.substr(fname.length -5)).substr((fname.substr(fname.length-5)).indexOf('.')+1).toLowerCase();
+                if (ext == "xls" || ext == "xlsx") {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var data = e.target.result;
+                        var arr = fixdata(data);
+                        var wb = X.read(btoa(arr), {type: 'base64'});
+                        process_wb(wb);
+                    };
+                    reader.readAsArrayBuffer(data.files[0]);
+                }
+            },
+            fail: function (e, data) {
+                uploading_count--;
+                var fid = data.files[0].lastModified + data.files[0].name;
+                var result = data.result;
+
+                $("#um" + filemap[fid]).css("display", "inline");
+            },
+            submit: function (e, data) {
+                uploading_count++;
+                var fid = data.files[0].lastModified + data.files[0].name;
+                filemap[fid] = findex;
+                findex++;
+                var html =
+                        '<li style="float:left;width:100%;height:30px">' +
+                        '    <div id="pg' + filemap[fid] + '" class="progress" style="margin-top:5px;float:left;width:150px;height:10px">' +
+                        '        <div class="progress-bar progress-bar-success"></div>' +
+                        '    </div>' +
+                        '    <span>' + data.files[0].name + '</span>&nbsp;&nbsp;&nbsp;' +
+                        '    <a id="dw' + filemap[fid] + '" class="cfile" fileid="" href="" filename="' + data.files[0].name + '" target="_blank" style="display:none;">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;' +
+                        '    <span id="um' + filemap[fid] + '" style="display:none">上传失败   </span>' +
+                        '    <a href="javascript:void(0)" onclick="deletefile(this)">删除</a>' +
+                        '</li>';
+                $(".file_list").append(html);
+            },
+            progress: function (e, data) {
+                var fid = data.files[0].lastModified + data.files[0].name;
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                $('#pg' + filemap[fid] + ' .progress-bar').css(
+                        'width',
+                        progress + '%'
+                );
+            },
+            progressall: function (e, data) {
+            }
+        }).prop('disabled', !$.support.fileInput)
+                .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+        function addNew(){
+            $(document).on('click','.addnew',function(){
+                InfoItems++;
+                $('.ygb_choose_list table').append('<tr><td style="display:none;"></td><td><input class="humanName" placeholder="请输入姓名！" type="text"></td><td><input class="IDCard" placeholder="请输入身份证号！" type="text"/></td> <td><p class="fl ygb_work_check"><label><input class="ygb_work_check_radio" checked type="radio" name="items'+InfoItems+'001'+'"><span class="ygb_work_check_span">司机、搬运等</span></label></p><p class="fr ygb_work_check"><label><input name="items'+InfoItems+'001'+'" type="radio"><span class="ygb_work_check_span">文员、调度等</span></label></p></td><td><a class="delete" href="javascript:;">删除</a> </td></tr>');
+                calculatePrice();
+            });
+        }
+        addNew();
+
+        function deleteInfo(){
+            $(document).on('click','.delete',function(){
+                $(this).parents('tr').remove();
+                calculatePrice();
+            });
+        }
+        deleteInfo();
+
+        function checkWorkType(){
+            $(document).on('click','.ygb_work_check',function(){
+                calculatePrice();
+            });
+        }
+        checkWorkType();
+        /*11.21input失去焦点计算保费*/
+        $('.ygb_choose_list').on('blur','.IDCard',function(){
+            calculatePrice()
+        });
+
+
+        function calculatePrice(){
+            var CostOne = PriceOne[IndexNum-1];
+            var CostTwo = PriceTwo[IndexNum-1];
+            var WorkAll = 0;
+            var WorkOne = 0;
+            $("#inputlist tr:gt(0)").each(function() {
+                if($(this).find('.humanName').val() != '' && $(this).find('.IDCard').val() != ''){
+                    WorkAll++;
+                    if ($(this).find("td:eq(3)").find("input:eq(0)").prop("checked") == true) {
+                        WorkOne++;
+                    }
+                }
+
+            });
+            console.log(WorkAll);
+            console.log(WorkOne);
+            $('.ygb_all_price span').html(WorkOne*CostOne + (WorkAll-WorkOne)*CostTwo);
+            WorkAll=0;
+            WorkOne=0;
+        }
+
+        $('.trueInfo').click(function(){
+            var i = "";
+            $('.humanName').each(function(){
+                if($(this).val()==""){
+                    alert("请输入姓名！");
+                    $(this).focus();
+                    i = 0;
+                    return false;
+                } else{
+                    i = 1;
+                }
+            });
+            if(i == 1){
+                $('.IDCard').each(function(){
+                    var idcard=$(this).val();
+                    var bo=/^(\d{6})(18|19|20)?(\d{2})([01]\d)([0123]\d)(\d{3})(\d|X)?$/.test(idcard);
+                    var year = idcard. substr(6,4);
+                    var month = idcard. substr(10,2);
+                    var day = idcard. substr(12,2);
+                    if(idcard==""){
+                        alert("请输入身份证号！");
+                        $(this).focus();
+                        i = 0;
+                        return false;
+                    }else if(bo==false||month>12||day>31||year<1900){
+                        alert('请输入正确的身份证号码！');
+                        $(this).focus();
+                        i = 0;
+                        return false;
+                    }else{
+                        i = 1;
+                    }
+                });
+            }
+            if(i == 1){
+                if($('.companyName input').val() ==""){
+                    alert("请输入公司名称！");
+                    $('.companyName input').focus();
+                    i = 0;
+                    return false;
+                }else {
+                    i = 1;
+                }
+            }
+            if(i == 1){
+                var companyTel=$(".companyTel input").val();
+                var Tel=/^(0|86|17951)?(13[0-9]|15[012356789]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/.test(companyTel);
+                if(companyTel ==""){
+                    alert("请输入手机号！");
+                    $(".companyTel input").focus();
+                    i = 0;
+                    return false;
+                }else if(Tel==false){
+                    alert('请输入正确手机号！');
+                    $(".companyTel input").focus();
+                    i = 0;
+                    return false;
+                }else {
+                    i = 1;
+                }
+            }
+            if(i == 1){
+                if($('.companyAdd input').val() ==""){
+                    alert("请输入公司地址！");
+                    $('.companyAdd input').focus();
+                    i = 0;
+                    return false;
+                }else {
+                    i = 1;
+                }
+            }
+        });
+
+
+        $('.ygb_popbox01 .btn').click(function(){
+            $('.ygb_popbox01').hide();
+            $('.ygb_login').show();
+        })
+    });
+
+    var isLogin = false;
+
+    isLogin = true;
+
+    function submit(obj) {
+        if (!isLogin) {
+            $('.ygb_popbox01,.mask').show();
+            return false;
+        }
+        var names = new Array("员工保特惠版","员工保经济版","员工保标准版","员工保尊享版");
+
+        var proType = names[IndexNum-1];
+        console.log("proType:"+ proType);
+
+        $(document).on('blur','.companyTel input',function(){
+            var companyTel=$(".companyTel input").val();
+            var Tel=/^(0|86|17951)?(13[0-9]|15[012356789]|17[0-9]|18[0-9]|14[57])[0-9]{8}$/.test(companyTel);
+            if(Tel==false){
+                alert('请输入正确手机号！');
+                return false;
+            }
+        });
+
+        $(document).on('blur','.companyName input',function(){
+            var companyName = $('.companyName input').val();
+            if(companyName.length == 0){
+                alert('请输入公司名称！');
+                return false;
+            }
+        });
+
+        $(document).on('blur','.companyAdd input',function(){
+            var companyAdd = $('.companyAdd input').val();
+            if(companyAdd.length == 0){
+                alert('请输入公司地址！');
+                return false;
+            }
+        });
+
+        var data = {};
+        data["product_type"] = proType;
+        data["company_name"] = $('.companyName input').val();
+        data["mobile"] = $(".companyTel input").val();
+        data["company_address"] = $('.companyAdd input').val();
+        data["price"] = $('.ygb_all_price span').text();
+
+        if ($('.ygb_choose_time p').find('span').eq(0).attr('class') == "check_time") {
+            var date = new Date();
+            data["effect_date"] = (new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0)).toISOString();
+            console.log("选中时间："+ (new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0)).toISOString());
+        } else if ($('.ygb_choose_time p').find('span').eq(1).attr('class') == "check_time") {
+            console.log("选中时间:"+ $("#indate").val());
+            data["effect_date"] = (new Date($("#indate").val() + " 00:00:00")).toISOString();
+            console.log("自定义时间:" + (new Date($("#indate").val() + " 00:00:00")).toISOString());
+        }
+
+
+        var file_list = new Array();
+        $(".file_list .cfile").each(function(index) {
+            var file = {}
+            file["id"] = $.trim($(this).attr("fileid"));
+            file["path"] = $.trim($(this).attr("href"));
+            file["filename"] = $.trim($(this).attr("filename"));
+            if (file["path"] != "") {
+                file_list.push(file);
+            }
+        });
+        data["ygb_file"] = JSON.stringify(file_list);
+
+        var employee_list = new Array();
+        $("#inputlist tr:gt(0)").each(function(index) {
+            if($(this).find('.humanName').val() != '' && $(this).find('.IDCard').val() != ''){
+                var employee = {};
+                emp_id = $.trim($(this).find("td:eq(0)").text());
+                employee["id"] = emp_id;
+
+                employee["name"] = $.trim($(this).find("td:eq(1) input").val());
+                employee["idcard"] = $.trim($(this).find("td:eq(2) input").val());
+                if ($(this).find("td:eq(3)").find("input:eq(0)").prop("checked") == true) {
+                    employee["type"] = 1;
+                } else if ($(this).find("td:eq(3)").find("input:eq(1)").prop("checked") == true) {
+                    employee["type"] = 2;
+                }
+                employee_list.push(employee);
+            }
+        });
+        data["employee_list"] = JSON.stringify(employee_list);
+
+
+        $.ajax({
+            url: '/dashboard/ygb/placeorder.json',
+            type: "POST",
+            data: data,
+            success: function(r) {
+                if (r.success) {
+
+                    location.href = '/dashboard/ygb/certupload?order_id=' + r.id;
+                } else if (r.message !== "") {
+                    alert(r.message);
+
+                } else {
+                    alert("对不起，数据验证失败，请检查填写的数据是否符合要求！");
+                }
+            },
+            complete: function (x, r) {
+                $(obj).removeAttr("data-flag");
+            }
+        });
+    }
+</script>
+
+
+
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?8dcdc46116c07356465640ba5ff004fc";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
